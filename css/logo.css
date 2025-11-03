@@ -1,0 +1,15 @@
+/* This is a placeholder CSS for the Vasic Digital logo */
+/* When the actual transparent PNG is ready, replace this with the actual image */
+
+.logo-placeholder {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #dc3545 0%, #ff6b6b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
