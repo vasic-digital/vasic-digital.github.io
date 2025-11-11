@@ -74,7 +74,10 @@ class LanguageSwitcher {
     // Create the language dropdown in the navbar
     createLanguageDropdown() {
         const themeToggle = document.getElementById('theme-toggle');
-        if (!themeToggle || !themeToggle.parentElement) return;
+        if (!themeToggle || !themeToggle.parentElement || !themeToggle.parentElement.parentElement) {
+            console.error('Language Switcher: Could not find theme toggle or navigation structure');
+            return;
+        }
 
         const langItem = document.createElement('li');
         langItem.className = 'nav-item language-switcher-container';
@@ -362,6 +365,11 @@ class LanguageSwitcher {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        window.languageSwitcher = new LanguageSwitcher();
+    });
+} else {
+    // DOM already loaded
     window.languageSwitcher = new LanguageSwitcher();
-});
+}
