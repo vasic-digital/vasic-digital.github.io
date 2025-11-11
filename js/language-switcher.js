@@ -73,18 +73,12 @@ class LanguageSwitcher {
 
     // Create the language dropdown in the navbar
     createLanguageDropdown() {
-        console.log('Language Switcher: createLanguageDropdown() called');
         const themeToggle = document.getElementById('theme-toggle');
-        console.log('Language Switcher: theme-toggle element =', themeToggle);
-        console.log('Language Switcher: theme-toggle.parentElement =', themeToggle?.parentElement);
-        console.log('Language Switcher: theme-toggle.parentElement.parentElement =', themeToggle?.parentElement?.parentElement);
-
         if (!themeToggle || !themeToggle.parentElement || !themeToggle.parentElement.parentElement) {
             console.error('Language Switcher: Could not find theme toggle or navigation structure');
             return;
         }
 
-        console.log('Language Switcher: Creating language dropdown elements');
         const langItem = document.createElement('li');
         langItem.className = 'nav-item language-switcher-container';
 
@@ -121,8 +115,6 @@ class LanguageSwitcher {
 
         // Insert before theme toggle
         themeToggle.parentElement.parentElement.insertBefore(langItem, themeToggle.parentElement);
-        console.log('Language Switcher: Language dropdown inserted into navigation');
-        console.log('Language Switcher: langItem =', langItem);
     }
 
     // Get languages sorted alphabetically by current language
@@ -373,17 +365,11 @@ class LanguageSwitcher {
 }
 
 // Initialize when DOM is loaded
-console.log('Language Switcher: Script loaded, document.readyState =', document.readyState);
-console.log('Language Switcher: translations object exists =', typeof translations !== 'undefined');
-
 if (document.readyState === 'loading') {
-    console.log('Language Switcher: Waiting for DOMContentLoaded');
     document.addEventListener('DOMContentLoaded', () => {
-        console.log('Language Switcher: DOMContentLoaded fired, initializing...');
         window.languageSwitcher = new LanguageSwitcher();
     });
 } else {
     // DOM already loaded
-    console.log('Language Switcher: DOM already loaded, initializing immediately...');
     window.languageSwitcher = new LanguageSwitcher();
 }
