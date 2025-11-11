@@ -143,6 +143,140 @@ body {
   color: var(--accent-primary);
 }
 
+/* Language Switcher */
+.language-switcher-container {
+  position: relative;
+}
+
+.language-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-toggle:hover {
+  background-color: var(--bg-secondary);
+}
+
+.current-flag {
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow-hover);
+  min-width: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1000;
+  border: 1px solid var(--border-color);
+}
+
+.language-dropdown.show {
+  display: block;
+  animation: fadeInDown 0.3s ease;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.language-option:hover {
+  background-color: var(--bg-secondary);
+}
+
+.language-option.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.language-option.active:hover {
+  background-color: var(--accent-secondary);
+}
+
+.lang-flag {
+  font-size: 1.3rem;
+  min-width: 24px;
+}
+
+.lang-name {
+  flex: 1;
+}
+
+/* Scrollbar styling for language dropdown */
+.language-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.language-dropdown::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+.language-dropdown::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 10px;
+}
+
+.language-dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] .language-dropdown {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .nav-menu {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-buttons {
+  flex-direction: row-reverse;
+}
+
+/* Animation for dropdown */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
