@@ -229,23 +229,17 @@ class LanguageSwitcher {
 
         // Contact Section
         const contactTitle = document.querySelector('.contact .section-title');
+        const contactSubtitle = document.querySelector('.contact-subtitle');
         const contactItems = document.querySelectorAll('.contact-item');
-        const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
-        const formButton = document.querySelector('.contact-form button');
 
         if (contactTitle) contactTitle.textContent = t.contact.title;
+        if (contactSubtitle && t.contact.subtitle) contactSubtitle.textContent = t.contact.subtitle;
         if (contactItems.length >= 3) {
             contactItems[0].querySelector('h3').textContent = t.contact.email;
-            contactItems[1].querySelector('h3').textContent = t.contact.location;
-            contactItems[1].querySelector('p').textContent = t.contact.locationText;
-            contactItems[2].querySelector('h3').textContent = t.contact.phone;
+            contactItems[1].querySelector('h3').textContent = t.contact.phone;
+            contactItems[2].querySelector('h3').textContent = t.contact.location;
+            contactItems[2].querySelector('p').textContent = t.contact.locationText;
         }
-        if (formInputs.length >= 3) {
-            formInputs[0].placeholder = t.contact.formName;
-            formInputs[1].placeholder = t.contact.formEmail;
-            formInputs[2].placeholder = t.contact.formMessage;
-        }
-        if (formButton) formButton.textContent = t.contact.formButton;
 
         // Footer
         const footerTagline = document.querySelector('.footer-logo p');

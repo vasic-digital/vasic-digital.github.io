@@ -112,18 +112,70 @@ const translations = {
                 title: "Web Service Factory",
                 tech: "Kotlin • Apache 2.0",
                 description: "Factory pattern implementation for automated web server provisioning and deployment configuration. Instantiate, configure, and deploy websites and microservices with intelligent infrastructure setup, eliminating manual configuration complexity for rapid application delivery."
+            },
+            sonarQubeFactory: {
+                title: "SonarQube Factory",
+                tech: "Kotlin • Apache 2.0",
+                description: "Instantiate, configure SonarQube server and distribute configuration. Automate code quality and security analysis infrastructure deployment with enterprise-grade continuous inspection capabilities."
+            },
+            cachingProxyFactory: {
+                title: "Caching Proxy Factory",
+                tech: "Kotlin • Apache 2.0",
+                description: "Instantiate, configure caching proxy server and distribute configuration. Optimize network performance with intelligent request caching and load distribution for enterprise environments."
+            },
+            helixtrackWebClient: {
+                title: "HelixTrack Web Client",
+                tech: "TypeScript",
+                description: "Modern web application for HelixTrack project management platform. Responsive, feature-rich interface delivering comprehensive project tracking and collaboration capabilities directly in your browser."
+            },
+            helixtrackDesktopClient: {
+                title: "HelixTrack Desktop Client",
+                tech: "TypeScript",
+                description: "Cross-platform desktop application for HelixTrack. Native performance and offline capabilities with seamless synchronization for professional project management on Windows, macOS, and Linux."
+            },
+            helixtrackAndroidClient: {
+                title: "HelixTrack Android Client",
+                tech: "Kotlin",
+                description: "Native Android application for HelixTrack project management. Optimized mobile experience with offline support, push notifications, and seamless integration with Android ecosystem."
+            },
+            helixtrackIosClient: {
+                title: "HelixTrack iOS Client",
+                tech: "Swift",
+                description: "Native iOS application for HelixTrack. Beautiful, performant interface designed for iPhone and iPad with native iOS features, widgets, and iCloud integration."
+            },
+            bearMail: {
+                title: "Bear Mail",
+                tech: "Kotlin",
+                description: "Modern email client application from the Bear Suite. Privacy-focused, feature-rich email experience with intelligent organization, powerful search, and seamless multi-account management."
+            },
+            bearMessenger: {
+                title: "Bear Messenger",
+                tech: "Kotlin",
+                description: "Secure instant messaging application from the Bear Suite. End-to-end encrypted communications with group chats, media sharing, and privacy-first design for secure conversations."
+            },
+            yole: {
+                title: "Yole",
+                tech: "Kotlin",
+                description: "Versatile text editor, notes and ToDo application. Support for Markdown, todo.txt, plaintext, mathematical notation, and much more. Perfect for developers and note-takers alike."
+            },
+            qbitConnect: {
+                title: "qBitConnect",
+                tech: "Kotlin • GPL-3.0",
+                description: "Control qBittorrent from any device and integrate with ShareConnect. Remote torrent management with seamless URL sharing for efficient download workflow automation."
+            },
+            transmissionConnect: {
+                title: "TransmissionConnect",
+                tech: "Java • Apache 2.0",
+                description: "Remote control for Transmission BitTorrent client and integration with ShareConnect. Manage downloads from anywhere with comprehensive remote access and automation capabilities."
             }
         },
         contact: {
             title: "Get in Touch",
+            subtitle: "We'd love to hear from you. Reach out through any of the following channels:",
             email: "Email",
             location: "Location",
             locationText: "Belgrade (Serbia) and Moscow (Russian Federation)",
-            phone: "Phone",
-            formName: "Your Name",
-            formEmail: "Your Email",
-            formMessage: "Your Message",
-            formButton: "Send Message"
+            phone: "Phone"
         },
         footer: {
             tagline: "Innovative software solutions since 2023",
@@ -250,18 +302,70 @@ const translations = {
                 title: "Web Service Factory",
                 tech: "Kotlin • Apache 2.0",
                 description: "Реализация паттерна фабрики для автоматизированного провизионинга веб-серверов и конфигурации развертывания. Создавайте, настраивайте и развертывайте веб-сайты и микросервисы с интеллектуальной настройкой инфраструктуры, устраняя сложность ручной конфигурации для быстрой доставки приложений."
+            },
+            sonarQubeFactory: {
+                title: "SonarQube Factory",
+                tech: "Kotlin • Apache 2.0",
+                description: "Создание и настройка сервера SonarQube с распределением конфигурации. Автоматизация развертывания инфраструктуры анализа качества и безопасности кода с возможностями непрерывной проверки корпоративного уровня."
+            },
+            cachingProxyFactory: {
+                title: "Caching Proxy Factory",
+                tech: "Kotlin • Apache 2.0",
+                description: "Создание и настройка кэширующего прокси-сервера с распределением конфигурации. Оптимизация производительности сети с интеллектуальным кэшированием запросов и распределением нагрузки для корпоративных сред."
+            },
+            helixtrackWebClient: {
+                title: "HelixTrack Web Client",
+                tech: "TypeScript",
+                description: "Современное веб-приложение для платформы управления проектами HelixTrack. Адаптивный, многофункциональный интерфейс обеспечивает комплексное отслеживание проектов и возможности совместной работы прямо в браузере."
+            },
+            helixtrackDesktopClient: {
+                title: "HelixTrack Desktop Client",
+                tech: "TypeScript",
+                description: "Кроссплатформенное десктопное приложение для HelixTrack. Нативная производительность и автономные возможности с бесшовной синхронизацией для профессионального управления проектами на Windows, macOS и Linux."
+            },
+            helixtrackAndroidClient: {
+                title: "HelixTrack Android Client",
+                tech: "Kotlin",
+                description: "Нативное Android-приложение для управления проектами HelixTrack. Оптимизированный мобильный опыт с поддержкой офлайн-режима, push-уведомлениями и бесшовной интеграцией с экосистемой Android."
+            },
+            helixtrackIosClient: {
+                title: "HelixTrack iOS Client",
+                tech: "Swift",
+                description: "Нативное iOS-приложение для HelixTrack. Красивый, производительный интерфейс, разработанный для iPhone и iPad с нативными функциями iOS, виджетами и интеграцией с iCloud."
+            },
+            bearMail: {
+                title: "Bear Mail",
+                tech: "Kotlin",
+                description: "Современный почтовый клиент из Bear Suite. Ориентированный на конфиденциальность, многофункциональный почтовый сервис с интеллектуальной организацией, мощным поиском и бесшовным управлением несколькими учетными записями."
+            },
+            bearMessenger: {
+                title: "Bear Messenger",
+                tech: "Kotlin",
+                description: "Защищенное приложение для мгновенного обмена сообщениями из Bear Suite. Сквозное шифрование с групповыми чатами, обменом медиа и дизайном, ориентированным на конфиденциальность для безопасных разговоров."
+            },
+            yole: {
+                title: "Yole",
+                tech: "Kotlin",
+                description: "Универсальный текстовый редактор, приложение для заметок и задач. Поддержка Markdown, todo.txt, простого текста, математической нотации и многого другого. Идеально подходит для разработчиков и любителей делать заметки."
+            },
+            qbitConnect: {
+                title: "qBitConnect",
+                tech: "Kotlin • GPL-3.0",
+                description: "Управление qBittorrent с любого устройства и интеграция с ShareConnect. Удаленное управление торрентами с бесшовным обменом URL для эффективной автоматизации рабочего процесса загрузки."
+            },
+            transmissionConnect: {
+                title: "TransmissionConnect",
+                tech: "Java • Apache 2.0",
+                description: "Удаленное управление для BitTorrent-клиента Transmission и интеграция с ShareConnect. Управление загрузками из любого места с комплексным удаленным доступом и возможностями автоматизации."
             }
         },
         contact: {
             title: "Свяжитесь с нами",
+            subtitle: "Мы будем рады услышать от вас. Свяжитесь с нами через любой из следующих каналов:",
             email: "Email",
             location: "Местоположение",
             locationText: "Белград (Сербия) и Москва (Российская Федерация)",
-            phone: "Телефон",
-            formName: "Ваше имя",
-            formEmail: "Ваш Email",
-            formMessage: "Ваше сообщение",
-            formButton: "Отправить"
+            phone: "Телефон"
         },
         footer: {
             tagline: "Инновационные программные решения с 2023 года",
@@ -741,8 +845,8 @@ const translations = {
         hero: { title: "Изврсност у софтверском инжењерству", subtitle: "Пионири иновативних алата и апликација на мобилним, десктоп и веб платформама. Поверење програмера широм света са више од 66 форкова на GitHub-у.", btnPrimary: "Истражите наше пројекте", btnSecondary: "Посетите GitHub" },
         about: { title: "О Vasic Digital", text1: "Vasic Digital је савремена организација за софтверско инжењерство специјализована за развој отвореног кода и иновативна дигитална решења.", text2: "Наша мисија је изградња висококвалитетног, скалабилног софтвера који оснажује програмере и кориснике широм света.", text3: "Верујемо у моћ отвореног кода и развоја вођеног заједницом.", stat1Number: "20+", stat1Label: "Пројекти отвореног кода", stat2Number: "4", stat2Label: "GitHub организација", stat3Number: "10+", stat3Label: "Технологије" },
         services: { title: "Наша експертиза", service1Title: "Мобилни развој", service1Text: "Android и мултиплатформске мобилне апликације користећи Kotlin, Java и Dart/Flutter са савременим архитектурним обрасцима.", service2Title: "Управљање медијима и садржајем", service2Text: "Напредна решења за каталогизацију медија, преузимање видеа и организацију садржаја на више платформи.", service3Title: "Системи даљинског управљања", service3Text: "Моћни алати за даљинско управљање за торенте, дељење датотека и дистрибуиране крајње тачке обраде.", service4Title: "Аутоматизовано тестирање", service4Text: "Свеобухватни оквири за тестирање, снимање корисничког интерфејса, снимање екрана и алати за визуелно регресионо тестирање.", service5Title: "Развој отвореног кода", service5Text: "Изградња пројеката вођених заједницом са чистом архитектуром, свеобухватном документацијом и активним одржавањем.", service6Title: "Програмерски алати", service6Text: "Библиотеке и апстракције за вишеструку употребу за Android, JVM и мултиплатформски развој ради повећања продуктивности." },
-        portfolio: { title: "Наш портфолио", intro: "Истражите наше савремене пројекте отвореног кода који оснажују програмере и кориснике широм света иновативним решењима.", viewOnGithub: "Погледај на GitHub-у", catalogizer: { title: "Catalogizer", tech: "Мулти-протокол • Apache 2.0", description: "Напредан мулти-протокол систем за управљање медијским колекцијама." }, grabtube: { title: "GrabTube", tech: "Dart • Apache 2.0", description: "Елегантан преузимач видеа за популарне платформе за стримовање." }, shareconnect: { title: "ShareConnect", tech: "Kotlin • MIT", description: "Иновативно решење за дељење URL-ова за преузимање на даљинске или локалне крајње тачке обраде." }, panoptic: { title: "Panoptic", tech: "Go • MIT", description: "Свеобухватан алат за аутоматизовано тестирање, снимање корисничког интерфејса и снимање екрана." }, androidToolkit: { title: "Android-Toolkit", tech: "Kotlin • Apache 2.0", description: "Основна колекција апстракција и имплементација за Android развој." }, asinka: { title: "Asinka", tech: "Kotlin", description: "Високоперформансна библиотека за синхронизацију међупроцесних објеката." }, helixtrackCore: { title: "HelixTrack Core", tech: "Go • Apache 2.0", description: "Производно спремна, отворена JIRA алтернатива која пружа праћење пројеката и проблема на нивоу предузећа. Карактерише екстремне перформансе са преко 50.000 захтева у секунди, енкрипција војног нивоа AES-256, свеобухватна подршка за agile/scrum и 102% паритет функција са Confluence кроз 387 API акција." }, helixCode: { title: "HelixCode", tech: "Go • MIT", description: "Дистрибуирана AI развојна платформа на нивоу предузећа са интелигентном поделом задатака и подршком за више LLM. Координира рад заснован на LLM кроз више машина са SSH-базираним групама радника, свеобухватни токови рада за планирање, изградњу, тестирање и рефакторисање, плус напредни обрасци ланчаног размишљања." }, helixBuilder: { title: "HelixBuilder", tech: "Shell • Python • Apache 2.0", description: "AI-покретани пајплајн за изградњу апликација који автоматизује развој софтвера кроз вештачку интелигенцију. Карактеришу специјализовани пајплајни за кодирање, тестирање, превођење и генеративне могућности за анимацију, аудио и генерисање слика са модуларном архитектуром за флексибилну имплементацију." }, coreFramework: { title: "Server Factory Core Framework", tech: "Kotlin • Apache 2.0", description: "Основни оквир за серверске апликације који пружа компоненте за вишеструку употребу и архитектурне обрасце. Покреће пројекте попут Mail Server Factory са модуларним дизајном, централизованим евидентирањем, алатима и могућностима управљања узводним токовима да обезбеди доследност у екосистему Server Factory." }, mailServerFactory: { title: "Mail Server Factory", tech: "Kotlin • Docker • Apache 2.0", description: "Поједноставите имплементацију мејл сервера са JSON-базираном конфигурацијом и аутоматизованом имплементацијом на 25 дистрибуција оперативних система. Карактерише енкрипција AES-256-GCM, примена TLS 1.3, QEMU виртуелизација за тестирање, Docker контејнеризација са Postfix, Dovecot, Rspamd и ClamAV, плус надзор и безбедност на нивоу предузећа." }, webServiceFactory: { title: "Web Service Factory", tech: "Kotlin • Apache 2.0", description: "Имплементација обрасца фабрике за аутоматизовано обезбеђивање веб сервера и конфигурацију имплементације. Инстанцирајте, конфигуришите и имплементирајте веб сајтове и микросервисе са интелигентним подешавањем инфраструктуре, елиминишући комплексност мануелне конфигурације за брзу испоруку апликација." } },
-        contact: { title: "Контактирајте нас", email: "Е-пошта", location: "Локација", locationText: "Београд (Србија) и Москва (Руска Федерација)", phone: "Телефон", formName: "Ваше име", formEmail: "Ваша е-пошта", formMessage: "Ваша порука", formButton: "Пошаљи поруку" },
+        portfolio: { title: "Наш портфолио", intro: "Истражите наше савремене пројекте отвореног кода који оснажују програмере и кориснике широм света иновативним решењима.", viewOnGithub: "Погледај на GitHub-у", catalogizer: { title: "Catalogizer", tech: "Мулти-протокол • Apache 2.0", description: "Напредан мулти-протокол систем за управљање медијским колекцијама." }, grabtube: { title: "GrabTube", tech: "Dart • Apache 2.0", description: "Елегантан преузимач видеа за популарне платформе за стримовање." }, shareconnect: { title: "ShareConnect", tech: "Kotlin • MIT", description: "Иновативно решење за дељење URL-ова за преузимање на даљинске или локалне крајње тачке обраде." }, panoptic: { title: "Panoptic", tech: "Go • MIT", description: "Свеобухватан алат за аутоматизовано тестирање, снимање корисничког интерфејса и снимање екрана." }, androidToolkit: { title: "Android-Toolkit", tech: "Kotlin • Apache 2.0", description: "Основна колекција апстракција и имплементација за Android развој." }, asinka: { title: "Asinka", tech: "Kotlin", description: "Високоперформансна библиотека за синхронизацију међупроцесних објеката." }, helixtrackCore: { title: "HelixTrack Core", tech: "Go • Apache 2.0", description: "Производно спремна, отворена JIRA алтернатива која пружа праћење пројеката и проблема на нивоу предузећа. Карактерише екстремне перформансе са преко 50.000 захтева у секунди, енкрипција војног нивоа AES-256, свеобухватна подршка за agile/scrum и 102% паритет функција са Confluence кроз 387 API акција." }, helixCode: { title: "HelixCode", tech: "Go • MIT", description: "Дистрибуирана AI развојна платформа на нивоу предузећа са интелигентном поделом задатака и подршком за више LLM. Координира рад заснован на LLM кроз више машина са SSH-базираним групама радника, свеобухватни токови рада за планирање, изградњу, тестирање и рефакторисање, плус напредни обрасци ланчаног размишљања." }, helixBuilder: { title: "HelixBuilder", tech: "Shell • Python • Apache 2.0", description: "AI-покретани пајплајн за изградњу апликација који автоматизује развој софтвера кроз вештачку интелигенцију. Карактеришу специјализовани пајплајни за кодирање, тестирање, превођење и генеративне могућности за анимацију, аудио и генерисање слика са модуларном архитектуром за флексибилну имплементацију." }, coreFramework: { title: "Server Factory Core Framework", tech: "Kotlin • Apache 2.0", description: "Основни оквир за серверске апликације који пружа компоненте за вишеструку употребу и архитектурне обрасце. Покреће пројекте попут Mail Server Factory са модуларним дизајном, централизованим евидентирањем, алатима и могућностима управљања узводним токовима да обезбеди доследност у екосистему Server Factory." }, mailServerFactory: { title: "Mail Server Factory", tech: "Kotlin • Docker • Apache 2.0", description: "Поједноставите имплементацију мејл сервера са JSON-базираном конфигурацијом и аутоматизованом имплементацијом на 25 дистрибуција оперативних система. Карактерише енкрипција AES-256-GCM, примена TLS 1.3, QEMU виртуелизација за тестирање, Docker контејнеризација са Postfix, Dovecot, Rspamd и ClamAV, плус надзор и безбедност на нивоу предузећа." }, webServiceFactory: { title: "Web Service Factory", tech: "Kotlin • Apache 2.0", description: "Имплементација обрасца фабрике за аутоматизовано обезбеђивање веб сервера и конфигурацију имплементације. Инстанцирајте, конфигуришите и имплементирајте веб сајтове и микросервисе са интелигентним подешавањем инфраструктуре, елиминишући комплексност мануелне конфигурације за брзу испоруку апликација." }, sonarQubeFactory: { title: "SonarQube Factory", tech: "Kotlin • Apache 2.0", description: "Креирање и подешавање SonarQube сервера са дистрибуцијом конфигурације. Автоматизација имплементације инфраструктуре за анализу квалитета и безбедности кода са могућностима континуиране инспекције на нивоу предузећа." }, cachingProxyFactory: { title: "Caching Proxy Factory", tech: "Kotlin • Apache 2.0", description: "Креирање и подешавање кеширајућег прокси сервера са дистрибуцијом конфигурације. Оптимизација перформанси мреже са интелигентним кешовањем захтева и расподелом оптерећења за корпоративна окружења." }, helixtrackWebClient: { title: "HelixTrack Web Client", tech: "TypeScript", description: "Модерна веб апликација за HelixTrack платформу за управљање проектима. Респонзиван, богат функцијама интерфејс који пружа свеобухватне могућности праћења пројеката и сарадње директно у прегледачу." }, helixtrackDesktopClient: { title: "HelixTrack Desktop Client", tech: "TypeScript", description: "Мултиплатформска десктоп апликација за HelixTrack. Нативне перформансе и могућности рада офлајн са беспрекорном синхронизацијом за професионално управљање пројектима на Windows, macOS и Linux." }, helixtrackAndroidClient: { title: "HelixTrack Android Client", tech: "Kotlin", description: "Нативна Android апликација за управљање пројектима HelixTrack. Оптимизовано мобилно искуство са подршком за офлајн рад, push обавештењима и беспрекорном интеграцијом са Android екосистемом." }, helixtrackIosClient: { title: "HelixTrack iOS Client", tech: "Swift", description: "Нативна iOS апликација за HelixTrack. Прелеп, перформантан интерфејс дизајниран за iPhone и iPad са нативним iOS функцијама, виџетима и iCloud интеграцијом." }, bearMail: { title: "Bear Mail", tech: "Kotlin", description: "Модерна апликација за е-пошту из Bear Suite-а. Фокусирана на приватност, богата функцијама са интелигентном организацијом, моћном претрагом и беспрекорним управљањем више налога." }, bearMessenger: { title: "Bear Messenger", tech: "Kotlin", description: "Сигурна апликација за инстант поруке из Bear Suite-а. End-to-end енкриптована комуникација са групним четовима, дељењем медија и дизајном који приоритизује приватност за сигурне разговоре." }, yole: { title: "Yole", tech: "Kotlin", description: "Свестрана апликација за уређивање текста, белешке и ToDo листе. Подршка за Markdown, todo.txt, обичан текст, математичку нотацију и много више. Савршена за програмере и оне који воле да праве белешке." }, qbitConnect: { title: "qBitConnect", tech: "Kotlin • GPL-3.0", description: "Контролишите qBittorrent са било ког уређаја и интегришите са ShareConnect. Даљинско управљање торентима са беспрекорним дељењем URL-а за ефикасну автоматизацију процеса преузимања." }, transmissionConnect: { title: "TransmissionConnect", tech: "Java • Apache 2.0", description: "Даљинска контрола за Transmission BitTorrent клијент и интеграција са ShareConnect. Управљајте преузимањима са било ког места са свеобухватним даљинским приступом и могућностима автоматизације." } },
+        contact: { title: "Контактирајте нас", subtitle: "Волели бисмо да чујемо од вас. Контактирајте нас преко било ког од следећих канала:", email: "Е-пошта", location: "Локација", locationText: "Београд (Србија) и Москва (Руска Федерација)", phone: "Телефон" },
         footer: { tagline: "Иновативна софтверска решења од 2023. године", quickLinks: "Брзи линкови", featuredProjects: "Издвојени пројекти", contactSection: "Контакт", emailUs: "Пошаљите нам е-пошту", scheduleCall: "Закажите позив", support: "Подршка", careers: "Каријера", viewAllProjects: "Погледај све пројекте", copyright: "© 2025 Vasic Digital. Сва права задржана." }
     },
     fr: {
