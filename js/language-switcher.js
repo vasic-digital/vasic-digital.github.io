@@ -206,7 +206,7 @@ class LanguageSwitcher {
         if (portfolioTitle) portfolioTitle.textContent = t.portfolio.title;
         if (portfolioIntro) portfolioIntro.textContent = t.portfolio.intro;
 
-        const projectKeys = ['catalogizer', 'grabtube', 'shareconnect', 'panoptic', 'androidToolkit', 'asinka'];
+        const projectKeys = ['catalogizer', 'grabtube', 'shareconnect', 'panoptic', 'androidToolkit', 'asinka', 'helixtrackCore', 'helixCode', 'helixTranslate', 'helixFlow', 'llmsVerifier', 'coreFramework', 'mailServerFactory', 'helixtrackWebClient', 'helixtrackDesktopClient', 'helixtrackAndroidClient', 'helixtrackIosClient', 'yole'];
         portfolioItems.forEach((item, index) => {
             if (t.portfolio[projectKeys[index]]) {
                 const project = t.portfolio[projectKeys[index]];

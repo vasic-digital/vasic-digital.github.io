@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasic Digital - Advanced Software Engineering</title>
+    <meta name="description" content="Vasic Digital — advanced software engineering. Open-source platforms for AI, project management, infrastructure automation, and mobile, across five GitHub organizations.">
+    <meta name="theme-color" content="#dc3545">
+    <!-- No-flash theme bootstrap: apply saved/OS theme before first paint -->
+    <script>(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -52,7 +56,7 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">Excellence in Software Engineering</h1>
-                <p class="hero-subtitle">Pioneering innovative tools and applications from enterprise project management and AI-powered development to automated infrastructure and mobile platforms. Trusted by developers worldwide across 4 GitHub organizations with 20+ open-source projects.</p>
+                <p class="hero-subtitle">Pioneering tools and platforms — from enterprise project management and AI-powered development to automated infrastructure and mobile apps. Built in the open across five GitHub organizations and 240+ repositories.</p>
                 <div class="hero-buttons">
                     <a href="#portfolio" class="btn btn-primary">Explore Our Projects</a>
                     <a href="https://github.com/vasic-digital" target="_blank" class="btn btn-secondary">Visit GitHub</a>
@@ -72,20 +76,20 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p>Vasic Digital is a cutting-edge software engineering organization specializing in open-source development and innovative digital solutions. We create powerful, developer-friendly tools and applications that solve real-world problems across multiple platforms and technologies.</p>
-                        <p>Our mission is to build high-quality, scalable software that empowers developers and users worldwide. From enterprise-grade project tracking systems and AI-powered development platforms to automated server deployment tools, mobile applications, and media management systems, our diverse portfolio showcases our commitment to excellence and innovation across the Server Factory, HelixTrack, HelixDevelopment, and Bear Suite organizations.</p>
+                        <p>Our mission is to build high-quality, scalable software that empowers developers and users worldwide. From enterprise-grade project tracking systems and AI-powered development platforms to automated server deployment tools, mobile applications, and media management systems, our diverse portfolio showcases our commitment to excellence and innovation across the Server Factory, HelixTrack, HelixDevelopment, Helix-Flow, and Vasic Digital organizations.</p>
                         <p>We believe in the power of open source and community-driven development. Our projects on GitHub have garnered significant attention, with dozens of forks and active contributors worldwide, serving developers and organizations across multiple continents.</p>
                     </div>
                     <div class="about-stats">
                         <div class="stat">
-                            <h3 class="stat-number">20+</h3>
-                            <p class="stat-label">Open Source Projects</p>
+                            <h3 class="stat-number">240+</h3>
+                            <p class="stat-label">Repositories</p>
                         </div>
                         <div class="stat">
-                            <h3 class="stat-number">4</h3>
+                            <h3 class="stat-number">5</h3>
                             <p class="stat-label">GitHub Organizations</p>
                         </div>
                         <div class="stat">
-                            <h3 class="stat-number">10+</h3>
+                            <h3 class="stat-number">15+</h3>
                             <p class="stat-label">Technologies</p>
                         </div>
                     </div>
@@ -347,7 +351,7 @@
                         <div class="portfolio-content">
                             <h3>HelixTrack Core</h3>
                             <p class="project-tech"><i class="fas fa-code"></i> Go • Apache 2.0</p>
-                            <p>Production-ready, open-source JIRA alternative delivering enterprise-grade project and issue tracking. Features extreme performance with 50,000+ requests per second, military-grade AES-256 encryption, comprehensive agile/scrum support, and 102% feature parity with Confluence across 387 API actions.</p>
+                            <p>Production-ready, open-source JIRA alternative delivering enterprise-grade project and issue tracking. Built with Go for high-throughput performance, features AES-256 encryption, comprehensive agile/scrum support, and a rich REST API for complete project lifecycle management.</p>
                             <div class="project-links">
                                 <a href="https://github.com/Helix-Track/Core" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i> View on GitHub
@@ -378,6 +382,88 @@
                             <p>Enterprise-grade distributed AI development platform with intelligent task division and multi-LLM support. Coordinate LLM-powered work across multiple machines with SSH-based worker pools, comprehensive workflows for planning, building, testing, and refactoring, plus advanced chain-of-thought reasoning patterns.</p>
                             <div class="project-links">
                                 <a href="https://github.com/HelixDevelopment/HelixCode" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HelixTranslate -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="gradHT" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#ff8e8e;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="100" cy="100" r="80" fill="url(#gradHT)" opacity="0.2"/>
+                                <text x="64" y="112" font-size="42" fill="white" font-family="serif">A</text>
+                                <text x="108" y="112" font-size="42" fill="white" font-family="sans-serif">文</text>
+                                <path d="M 60 130 L 140 130" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>HelixTranslate</h3>
+                            <p class="project-tech"><i class="fas fa-language"></i> Go • Apache 2.0</p>
+                            <p>High-performance, enterprise-grade universal ebook translation toolkit — any ebook format, any language pair. Multiple translation engines, a REST API with HTTP/3 support, and real-time WebSocket events.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/HelixDevelopment/HelixTranslate" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Helix-Flow Platform -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="gradHF" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="100" cy="100" r="80" fill="url(#gradHF)" opacity="0.2"/>
+                                <path d="M 65 75 C 110 75 90 125 135 125" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/>
+                                <circle cx="65" cy="75" r="8" fill="white"/>
+                                <circle cx="135" cy="125" r="8" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Helix-Flow Platform</h3>
+                            <p class="project-tech"><i class="fas fa-bolt"></i> Go</p>
+                            <p>One platform for all your AI inference needs — run powerful AI models faster and smarter, at any scale, with predictable costs.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/Helix-Flow/Platform" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LLMsVerifier -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="gradLV" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="100" cy="100" r="80" fill="url(#gradLV)" opacity="0.2"/>
+                                <path d="M 70 100 L 92 122 L 134 78" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>LLMsVerifier</h3>
+                            <p class="project-tech"><i class="fas fa-vial-circle-check"></i> Go</p>
+                            <p>Benchmark and verify large language models — a toolkit for measuring and validating LLM behavior and quality.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/vasic-digital/LLMsVerifier" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i> View on GitHub
                                 </a>
                             </div>
@@ -464,7 +550,7 @@
                             <p class="project-tech"><i class="fas fa-code"></i> TypeScript</p>
                             <p>Modern web application for HelixTrack project management platform. Responsive, feature-rich interface delivering comprehensive project tracking and collaboration capabilities directly in your browser.</p>
                             <div class="project-links">
-                                <a href="https://github.com/Helix-Track/Web-Client" target="_blank" class="project-link">
+                                <a href="https://github.com/Helix-Track" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i> View on GitHub
                                 </a>
                             </div>
@@ -493,7 +579,7 @@
                             <p class="project-tech"><i class="fas fa-code"></i> TypeScript</p>
                             <p>Cross-platform desktop application for HelixTrack. Native performance and offline capabilities with seamless synchronization for professional project management on Windows, macOS, and Linux.</p>
                             <div class="project-links">
-                                <a href="https://github.com/Helix-Track/Desktop-Client" target="_blank" class="project-link">
+                                <a href="https://github.com/Helix-Track" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i> View on GitHub
                                 </a>
                             </div>
@@ -522,7 +608,7 @@
                             <p class="project-tech"><i class="fas fa-code"></i> Kotlin</p>
                             <p>Native Android application for HelixTrack project management. Optimized mobile experience with offline support, push notifications, and seamless integration with Android ecosystem.</p>
                             <div class="project-links">
-                                <a href="https://github.com/Helix-Track/Android-Client" target="_blank" class="project-link">
+                                <a href="https://github.com/Helix-Track" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i> View on GitHub
                                 </a>
                             </div>
@@ -550,71 +636,13 @@
                             <p class="project-tech"><i class="fas fa-code"></i> Swift</p>
                             <p>Native iOS application for HelixTrack. Beautiful, performant interface designed for iPhone and iPad with native iOS features, widgets, and iCloud integration.</p>
                             <div class="project-links">
-                                <a href="https://github.com/Helix-Track/iOS-Client" target="_blank" class="project-link">
+                                <a href="https://github.com/Helix-Track" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i> View on GitHub
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Bear Mail -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad21" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad21)" opacity="0.2"/>
-                                <rect x="55" y="75" width="90" height="60" rx="5" fill="none" stroke="white" stroke-width="4"/>
-                                <path d="M 55 75 L 100 115 L 145 75" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                <circle cx="65" cy="60" r="8" fill="white"/>
-                                <circle cx="75" cy="50" r="6" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Bear Mail</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Kotlin</p>
-                            <p>Modern email client application from the Bear Suite. Privacy-focused, feature-rich email experience with intelligent organization, powerful search, and seamless multi-account management.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Bear-Suite/Mail" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Bear Messenger -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad22" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff8e8e;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad22)" opacity="0.2"/>
-                                <rect x="60" y="70" width="80" height="60" rx="8" fill="none" stroke="white" stroke-width="4"/>
-                                <line x1="75" y1="90" x2="125" y2="90" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                                <line x1="75" y1="105" x2="110" y2="105" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                                <circle cx="70" cy="50" r="8" fill="white"/>
-                                <circle cx="82" cy="42" r="6" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Bear Messenger</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Kotlin</p>
-                            <p>Secure instant messaging application from the Bear Suite. End-to-end encrypted communications with group chats, media sharing, and privacy-first design for secure conversations.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Bear-Suite/Messenger" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Yole -->
                     <div class="portfolio-item">
@@ -719,7 +747,7 @@
                             <li><a href="https://github.com/Server-Factory" target="_blank">Server Factory</a></li>
                             <li><a href="https://github.com/Helix-Track" target="_blank">Helix Track</a></li>
                             <li><a href="https://github.com/HelixDevelopment" target="_blank">Helix Development</a></li>
-                            <li><a href="https://github.com/Bear-Suite" target="_blank">Bear Suite</a></li>
+                            <li><a href="https://github.com/Helix-Flow" target="_blank">Helix Flow</a></li>
                             <li><a href="https://github.com/vasic-digital" target="_blank">Vasic Digital</a></li>
                         </ul>
                     </div>
@@ -735,7 +763,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Vasic Digital. All rights reserved.</p>
+                <p>&copy; 2026 Vasic Digital. All rights reserved.</p>
                 <div class="social-links">
                     <a href="https://github.com/vasic-digital" target="_blank" title="GitHub Organization"><i class="fab fa-github"></i></a>
                 </div>
