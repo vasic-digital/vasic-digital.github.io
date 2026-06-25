@@ -1,0 +1,215 @@
+/* =============================================================================
+   Article "Read more" modal — vasic.digital
+   Standalone plain CSS. Link this after style.css.
+   Reuses existing tokens (--bg-primary, --card-bg, --accent-primary, …)
+   with safe fallbacks. Themed via :root[data-theme="dark|light"].
+   ============================================================================= */
+
+.vd-article-modal {
+  --vda-scrim: rgba(0, 0, 0, 0.5);
+  --vda-panel-bg: var(--card-bg, #ffffff);
+  --vda-panel-fg: var(--text-primary, #212529);
+  --vda-muted: var(--text-secondary, #6c757d);
+  --vda-accent: var(--accent-primary, #dc3545);
+  --vda-border: var(--border-color, #e9ecef);
+  --vda-page-bg: var(--bg-secondary, #f8f9fa);
+  --vda-shadow: var(--shadow-hover, 0 18px 50px -16px rgba(0, 0, 0, 0.35));
+  --vda-font: inherit;
+
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: clamp(0px, 4vw, 48px);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+:root[data-theme="dark"] .vd-article-modal { --vda-scrim: rgba(0, 0, 0, 0.7); }
+
+.vd-article-modal[data-open="true"] {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ---- Scrim / backdrop ----------------------------------------------------- */
+.vd-article-modal__scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--vda-scrim);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  backdrop-filter: blur(6px) saturate(120%);
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+.vd-article-modal[data-open="true"] .vd-article-modal__scrim { opacity: 1; }
+
+/* ---- Panel ---------------------------------------------------------------- */
+.vd-article-modal__panel {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: min(88vh, 920px);
+  display: flex;
+  flex-direction: column;
+  background: var(--vda-panel-bg);
+  color: var(--vda-panel-fg);
+  border: 1px solid var(--vda-border);
+  border-radius: 16px;
+  box-shadow: var(--vda-shadow);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(18px) scale(.97);
+  transition: opacity 250ms ease, transform 250ms cubic-bezier(.22, 1, .36, 1);
+}
+.vd-article-modal[data-open="true"] .vd-article-modal__panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.vd-article-modal__panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--vda-accent), var(--accent-secondary, #ff6b6b));
+}
+
+/* ---- Close button --------------------------------------------------------- */
+.vd-article-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--vda-border);
+  border-radius: 10px;
+  background: var(--vda-panel-bg);
+  color: var(--vda-panel-fg);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: border-color .2s, color .2s, transform .1s;
+}
+.vd-article-modal__close:hover { border-color: var(--vda-accent); color: var(--vda-accent); }
+.vd-article-modal__close:active { transform: scale(.94); }
+.vd-article-modal__close:focus-visible { outline: 2.5px solid var(--vda-accent); outline-offset: 2px; }
+
+/* ---- Body / typography ---------------------------------------------------- */
+.vd-article-modal__body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: clamp(28px, 5vw, 48px) clamp(22px, 5vw, 44px);
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+.vd-article-modal__body :first-child { margin-top: 0; }
+.vd-article-modal__body :last-child { margin-bottom: 0; }
+.vd-article-modal__body h1,
+.vd-article-modal__body h2,
+.vd-article-modal__body h3 { line-height: 1.25; margin: 1.6em 0 .5em; }
+.vd-article-modal__body h1 { font-size: 1.85rem; margin-top: 0; }
+.vd-article-modal__body h2 { font-size: 1.4rem; }
+.vd-article-modal__body h3 { font-size: 1.15rem; }
+.vd-article-modal__body p { margin: 0 0 1.1em; }
+.vd-article-modal__body a { color: var(--vda-accent); text-decoration: underline; text-underline-offset: 2px; }
+.vd-article-modal__body img { max-width: 100%; height: auto; border-radius: 10px; }
+.vd-article-modal__body pre {
+  background: var(--vda-page-bg);
+  border: 1px solid var(--vda-border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  font-size: .9rem;
+}
+.vd-article-modal__body blockquote {
+  margin: 1.2em 0;
+  padding: .2em 0 .2em 1.1em;
+  border-left: 3px solid var(--vda-accent);
+  color: var(--vda-muted);
+}
+.vd-article-modal__body ul,
+.vd-article-modal__body ol { margin: 0 0 1.1em; padding-left: 1.4em; }
+
+/* ---- Loading / error state ------------------------------------------------ */
+.vd-article-modal__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 200px;
+  padding: 2rem;
+  color: var(--vda-muted);
+  font-size: .92rem;
+  text-align: center;
+}
+.vd-article-modal__spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid var(--vda-border);
+  border-top-color: var(--vda-accent);
+  animation: vd-article-spin .8s linear infinite;
+}
+.vd-article-modal__state button {
+  margin-top: .4rem;
+  padding: .55rem 1.1rem;
+  border: 1px solid var(--vda-border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--vda-panel-fg);
+  font-size: .85rem;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.vd-article-modal__state button:hover { border-color: var(--vda-accent); }
+
+@keyframes vd-article-spin { to { transform: rotate(360deg); } }
+
+/* ---- Scrollbar polish ----------------------------------------------------- */
+.vd-article-modal__body::-webkit-scrollbar { width: 10px; }
+.vd-article-modal__body::-webkit-scrollbar-thumb {
+  background: var(--vda-border);
+  border-radius: 8px;
+  border: 2px solid var(--vda-panel-bg);
+}
+
+/* ---- Responsive drawer on small screens ----------------------------------- */
+@media (max-width: 600px) {
+  .vd-article-modal { place-items: end center; padding: 0; }
+  .vd-article-modal__panel {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 18px 18px 0 0;
+    transform: translateY(100%);
+  }
+  .vd-article-modal[data-open="true"] .vd-article-modal__panel { transform: translateY(0); }
+}
+
+/* ---- Reduced motion ------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .vd-article-modal__scrim,
+  .vd-article-modal__panel {
+    transition: opacity 120ms linear;
+    transform: none !important;
+  }
+  .vd-article-modal__spinner { animation-duration: 1.6s; }
+}
+
+/* ---- Body scroll lock helper (toggled by JS) ------------------------------ */
+body.vd-article-lock { overflow: hidden; }
+
+/* Injected article (read-more) content typography */
+.hx-article { line-height:1.7; }
+.hx-article-head { border-bottom:1px solid var(--border-color,#2a2a35); padding-bottom:.75rem; margin-bottom:1.25rem; }
+.hx-article-head h1 { margin:0 0 .35rem; font-size:clamp(1.5rem,4vw,2rem); }
+.hx-article-tech { font-family:monospace; font-size:.8rem; opacity:.7; margin:.2rem 0; }
+.hx-article-repo a { color:var(--accent-primary,#dc3545); }
+.hx-article h2 { margin:1.5rem 0 .5rem; font-size:1.15rem; }
+.hx-article p { margin:0 0 1rem; }

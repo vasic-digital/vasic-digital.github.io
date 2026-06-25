@@ -224,6 +224,10 @@ class LanguageSwitcher {
                 if (link) {
                     link.innerHTML = `<i class="fab fa-github"></i> ${t.portfolio.viewOnGithub}`;
                 }
+                const readMore = item.querySelector('.read-more');
+                if (readMore && t.portfolio.readMore) {
+                    readMore.textContent = t.portfolio.readMore;
+                }
             }
         });
 

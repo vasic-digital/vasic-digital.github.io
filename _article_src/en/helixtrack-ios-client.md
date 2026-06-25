@@ -1,0 +1,22 @@
+---
+title: HelixTrack iOS Client
+slug: helixtrack-ios-client
+repo: ""
+tech: Swift, iOS
+teaser: "A beautiful, native HelixTrack experience for iPhone and iPad — built in Swift with the iOS features users expect, from widgets to iCloud."
+---
+
+## The hook
+On Apple's platforms, "good enough" stands out for the wrong reasons. The HelixTrack iOS Client is built to belong there: a native Swift app for iPhone and iPad with a beautiful, performant interface and the iOS-native touches — widgets, system integration, iCloud — that make a tool feel like it was made for the device, not merely available on it.
+
+## Why it's fascinating
+This is HelixTrack speaking fluent iOS. Rather than a cross-platform compromise, it's a native Swift client designed around Apple's design language and capabilities, connecting to the same HelixTrack platform as every other client. That means project tracking that looks and feels right on iPhone and iPad, takes advantage of native features like widgets for at-a-glance status, and integrates with the broader Apple ecosystem — all while staying fully in sync with a user's work across web, desktop and Android.
+
+## The hard problems
+Meeting iOS users' expectations is a high bar. Apple's platform rewards apps that feel native and punishes those that don't — which means careful attention to performance, fluid interface behavior, and proper use of platform features like widgets and iCloud. A data-rich project tool has to present complex information beautifully on small screens and larger tablets alike, handle the iOS app lifecycle correctly, and faithfully reflect a server-side permissions and data model. Building all of that natively in Swift, kept in sync with a fast backend, is a serious, focused effort.
+
+## What makes it game-changing
+A first-class iOS client extends HelixTrack to one of the most demanding and influential user bases without asking them to settle. Widgets put project status on the home screen; native performance makes daily use a pleasure rather than a chore; iCloud and system integration make it feel like part of the device. For an open, multi-platform tracking platform, having a genuinely native Apple experience — not a lowest-common-denominator port — is what makes it a credible choice for iPhone- and iPad-centric teams.
+
+## How we solved the hardest parts
+The client is written natively in Swift specifically to access the platform features and performance that define a great iOS experience — widgets, iCloud and tight system integration that hybrid approaches can't fully reach. It consumes the same HelixTrack platform API as the web, desktop and Android clients, so it shares one source of truth and inherits the platform's permissions and data model rather than reinventing them. The interface is crafted for both iPhone and iPad form factors, presenting dense project data clearly across screen sizes. Building on the shared Core contract keeps the iOS client consistent with the rest of the ecosystem while letting it lean fully into what makes Apple's platforms distinct.

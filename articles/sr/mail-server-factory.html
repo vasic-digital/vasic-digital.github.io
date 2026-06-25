@@ -1,0 +1,63 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>Mail Server Factory</h1>
+    <p class="hx-article-tech">Kotlin, Shell, Docker, Postfix, Dovecot, Rspamd, ClamAV, QEMU</p>
+    <p class="hx-article-repo"><a href="https://github.com/Server-Factory/Mail-Server-Factory" target="_blank" rel="noopener">https://github.com/Server-Factory/Mail-Server-Factory &rarr;</a></p>
+  </header>
+<h2 id="uvod">Uvod</h2>
+<p>Samostalno hostovanje e-pošte je čuveni obred inicijacije koji većinu
+ljudi slomi: Postfix, Dovecot, filteri neželjene pošte, antivirus, TLS,
+DNS i desetine načina da se sve to pogrešno podesi. <em>Mail Server
+Factory</em> zamenjuje sve te muke jednom jedinom idejom — opišite
+željeni server u JSON formatu, a fabrika će ga za vas izgraditi i
+osigurati. „Upravljajte svojim mail serverom kao pravi šef.”</p>
+<h2 id="zašto-je-fascinantno">Zašto je fascinantno</h2>
+<p><em>Mail Server Factory</em> je alat za automatizovano postavljanje
+mail servera, spreman za produkciju, koji pretvara deklarativnu
+konfiguraciju u potpuno sastavljen, osiguran e-poštanski sistem. Spaja
+isprobanu tehnologiju — Postfix za SMTP, Dovecot za IMAP, Rspamd za
+neželjenu poštu, ClamAV za antivirus — u jedinstveno rešenje, sa
+ugrađenom sigurnošću i monitoringom na nivou preduzeća. Može da cilja
+širok spektar operativnih sistema i da ih dosegne preko različitih vrsta
+veza — SSH, Docker, Kubernetes, AWS SSM, Azure, GCP, libvirt i još mnogo
+toga — tako da ista konfiguracija može da se primeni u gotovo svakom
+okruženju. Čak koristi QEMU virtuelizaciju kako bi testirao na
+različitim distribucijama.</p>
+<h2 id="teški-problemi">Teški problemi</h2>
+<p>E-pošta je jedan od najmanje oproštajnih sistema za upravljanje:
+jedna greška u konfiguraciji znači nedostavljene poruke, otvoreni relej
+ili server koji završi na crnoj listi. Automatsko podešavanje na više
+distribucija operativnih sistema dodatno komplikuje stvar — nazivi
+paketa, putanje, sistemi za inicijalizaciju i podrazumevane vrednosti se
+razlikuju. A onda tu je i sigurnost, koja kod e-pošte ne sme biti
+naknadna briga: jaka enkripcija, savremeni TLS, filteri neželjene pošte
+i zlonamernog softvera moraju biti ispravno podešeni svaki put. I
+provera da li automatizacija zaista radi na svim tim ciljnim sistemima
+zahteva testnu strategiju koju većina projekata nikada ne pokuša — zbog
+čega je pristup testiranju zasnovan na virtuelizaciji i obiman set
+uspešnih testova toliko važan.</p>
+<h2 id="šta-ga-čini-revolucionarnim">Šta ga čini revolucionarnim</h2>
+<p><em>Mail Server Factory</em> demokratizuje nešto što je do sada bilo
+dostupno samo stručnjacima za sistemske administracije. Jedan JSON opis
+plus fabrika jednako je osiguranom, nadgledanom mail serveru spremnom za
+produkciju — i sve to se može ponoviti. Širok spektar načina povezivanja
+znači da se alat prirodno uklapa u savremenu infrastrukturu, bilo da se
+radi o goloj virtuelnoj mašini: implementacija preko Dockera, u
+Kubernetes, putem cloud SSM kanala ili na libvirt VM. Ta prenosivost, u
+kombinaciji sa ugrađenim sigurnosnim okvirom, čini ga zaista praktičnim
+putem ka posedovanju sopstvene e-pošte umesto njenog iznajmljivanja.</p>
+<h2 id="kako-smo-rešili-najteže-delove">Kako smo rešili najteže
+delove</h2>
+<p>Dizajn odvaja „šta želite” (deklarativna JSON konfiguracija) od „kako
+to izgraditi svuda” (implementacioni mehanizam), što omogućava da jedna
+konfiguracija bude primenjiva na više operativnih sistema. Ispravnost na
+više distribucija rešava se pomoću QEMU virtuelizacije za testiranje,
+tako da se izlaz fabrike proverava na stvarnim sistemima, umesto da se
+samo pretpostavlja — a sve to podržano obimnim setom uspešnih testova.
+Kontejnerizacija pomoću Dockera i pažljivo odabran stek (Postfix,
+Dovecot, Rspamd, ClamAV) standardizuju pokretne delove, dok sigurnosni
+okvir nameće jaku enkripciju i TLS po podrazumevanim podešavanjima.
+Podrška za desetak vrsta veza — od SSH-a do cloud i Kubernetes rešenja —
+pretvara alat iz „radi na mom serveru” u „implementira se na vašoj
+infrastrukturi”, bez obzira kakva ta infrastruktura bila.</p>
+</article>

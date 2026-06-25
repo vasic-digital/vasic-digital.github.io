@@ -1,0 +1,59 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>HelixCode</h1>
+    <p class="hx-article-tech">Go, Gin, PostgreSQL, Redis, SSH, WebSocket, MCP</p>
+    <p class="hx-article-repo"><a href="https://github.com/HelixDevelopment/HelixCode" target="_blank" rel="noopener">https://github.com/HelixDevelopment/HelixCode &rarr;</a></p>
+  </header>
+<h2 id="kuka">Kuka</h2>
+<p>Šta ako vaš AI kodni asistent nije jedan proces na jednom laptopu,
+već koordinisana mreža radnika raspoređenih preko svih mašina koje
+posedujete — deli zadatke inteligentno, čuva stanje rada dok radi, i
+preživljava padove bez gubitka jednog minuta rada? To je HelixCode:
+preduzećki razvojni platforma za AI sa distribuiranim razvojem.</p>
+<h2 id="zašto-je-fascinirajuće">Zašto je fascinirajuće</h2>
+<p>HelixCode tretira AI-pomognuti razvoj kao problem distribuiranog
+računarstva, a ne kao chatbota. On izvodi inteligentnu podelu zadataka
+sa čuvanjem rada, upravlja bazenom SSH-povezanih radnika preko Linux,
+macOS, Windows i više, i pokreće kompletne tokove razvoja — planiranje,
+izgradnja, testiranje, refaktorisanje — sa multi-providerskom podrškom
+LLM (Llama.cpp, Ollama, OpenAI). On govori Model Context Protocol,
+izlaže REST, CLI, terminal-UI i WebSocket klijente, i uključuje napredne
+obrasce razmišljanja kao što su chain-of-thought i tree-of-thoughts. On,
+u stvari, predstavlja operativni sistem za LLM-om podržani
+inženjering.</p>
+<h2 id="teški-problemi">Teški problemi</h2>
+<p>Distribuiranje stvarnog rada preko heterogenih mašina je teško;
+distribuiranje neterminističkog LLM rada je još teže. Morate podeliti
+zadatak tako da delovi mogu da se izvode paralelno bez sukoba, pratiti
+zavisnosti između njih, i — što je ključno — nikada ne izgubiti napredak
+kada radnik umre u letu. To zahteva automatsko čuvanje stanja i
+vraćanje, trajno stanje zadatka, i monitoring zdravlja preko bazena SSH
+radnika. Na vrhu toga sedi LLM sloj: hardverski-svesna selekcija modela,
+ujedinjeni providerski interfejs tako da se bilo koji model može
+zameniti, pozivanje alata, i multi-korak razmišljanje koje mora da
+ostane koherentno preko distribuiranog izvršavanja.</p>
+<h2 id="šta-ga-čini-revolucionarnim">Šta ga čini revolucionarnim</h2>
+<p>HelixCode skalira AI razvoj izvan jednog kontekstnog prozora i jedne
+kutije. Koordinišući LLM-om podržani rad preko mnogih mašina sa
+garantovanim čuvanjem rada, on pretvara nestabilne, restart-from-scratch
+AI sesije u otporne, dugotrajne inženjerske tokove. Širina — kompletan
+životni ciklus tokova, multi-klijentski pristup, cross-platform radnici,
+mobile-ready okviri, multi-kanal obaveštenja preko Slack, Discord, Email
+i Telegram — znači da može da sedi u centru stvarnog timskog procesa, a
+ne samo individualnog terminala.</p>
+<h2 id="kako-smo-rešili-najteže-delove">Kako smo rešili najteže
+delove</h2>
+<p>Platforma je izgrađena u slojevima: REST + WebSocket + MCP API na
+vrhu core servisa (autentifikacija i upravljanje sesijama, SSH-bazeni
+radnici, upravljanje zadacima sa čuvanjem stanja, upravljanje projektima
+i tokovima, i LLM providerska integracija), podržana od PostgreSQL i
+Redis. Otpornost dolazi iz čuvanja stanja i vraćanja kao osnovnog —
+stanje zadatka se čuva tako da neuspešni radnik nastavlja umesto da
+ponovo pokreće. Providerska arhitektura apstrahuje svaki LLM iza jednog
+interfejsa, sa hardverskom detekcijom koja bira modele koji zaista
+odgovaraju mašini, tako da isti tok rada može da se izvodi bez obzira da
+li radnik ima datacentar GPU ili skromni CPU. Obrazi razmišljanja se
+implementiraju kao ponovljivi tokovi rada, što omogućava sistemu da
+planira, gradi, testira i refaktoriše sa strukturiranim chain-of-thought
+umesto jednom promptingom.</p>
+</article>

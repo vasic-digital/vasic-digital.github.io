@@ -1,0 +1,54 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>HelixTranslate</h1>
+    <p class="hx-article-tech">Go, REST, HTTP/3, WebSocket, SSH workers</p>
+    <p class="hx-article-repo"><a href="https://github.com/HelixDevelopment/HelixTranslate" target="_blank" rel="noopener">https://github.com/HelixDevelopment/HelixTranslate &rarr;</a></p>
+  </header>
+<h2 id="the-hook">The hook</h2>
+<p>Books are trapped by language and format. HelixTranslate frees them:
+a high-performance, enterprise-grade toolkit that takes any ebook format
+and translates it into any language pair, with a real-time dashboard so
+you can watch entire translation jobs progress live.</p>
+<h2 id="why-its-fascinating">Why it’s fascinating</h2>
+<p>HelixTranslate is built in Go for serious throughput and pairs a
+universal translation pipeline with a comprehensive monitoring system.
+It supports multiple translation engines, exposes a modern REST API with
+HTTP/3 support, and streams every event — progress, errors, completion —
+over WebSocket to an interactive web dashboard. It can offload heavy
+work to remote SSH workers and integrates real LLM translation through
+providers like OpenAI, Anthropic and DeepSeek. The combination of
+“translate anything” with “see everything as it happens” is what makes
+it special.</p>
+<h2 id="the-hard-problems">The hard problems</h2>
+<p>Universal ebook translation is two hard problems stacked. First,
+formats: ebooks come in wildly different structures, and preserving
+layout, structure and meaning while swapping languages is delicate.
+Second, scale and observability: translation is slow, expensive and
+failure-prone, so running many sessions concurrently demands real-time
+visibility into each one — live progress, immediate error detection,
+per-session tracking — or the whole thing becomes an opaque black box.
+Distributing that work to remote SSH workers adds coordination and
+monitoring challenges on top.</p>
+<h2 id="what-makes-it-game-changing">What makes it game-changing</h2>
+<p>HelixTranslate makes large-scale, multi-engine translation operable.
+The real-time monitoring system means you’re never flying blind during
+long jobs — you see progress bars, event logs and worker status as they
+happen, and errors surface instantly instead of after the fact. By
+abstracting over multiple engines and LLM providers, it avoids lock-in
+to any single translation backend and lets the best tool win per job.
+The HTTP/3 API and WebSocket event stream make it a modern,
+integration-ready service rather than a one-off script.</p>
+<h2 id="how-we-solved-the-hardest-parts">How we solved the hardest
+parts</h2>
+<p>The architecture cleanly separates the translation CLI/engine from a
+dedicated monitoring server: translation jobs emit WebSocket events that
+flow to a central monitor, which fans them out to a live web dashboard.
+That event-driven design is what delivers real-time visibility without
+coupling the heavy translation work to the UI. Multiple strategies —
+demo, mock-LLM, and SSH worker modes — let the same monitored pipeline
+run against simulated or real backends, which is invaluable for testing
+distributed behavior safely. Provider integration is pluggable, so
+adding a new translation engine or LLM is an extension rather than a
+rewrite, and SSH worker support lets the system scale horizontally when
+a single machine isn’t enough.</p>
+</article>

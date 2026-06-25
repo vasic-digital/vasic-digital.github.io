@@ -1,0 +1,51 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>Panoptic</h1>
+    <p class="hx-article-tech">Go, multi-platform UI automation</p>
+    <p class="hx-article-repo"><a href="https://github.com/vasic-digital/Panoptic" target="_blank" rel="noopener">https://github.com/vasic-digital/Panoptic &rarr;</a></p>
+  </header>
+<h2 id="the-hook">The hook</h2>
+<p>Most test tools stop at “pass” or “fail.” Panoptic shows you exactly
+what happened: it drives your app, records the screen, captures
+timestamped screenshots, and hands you visual proof. It’s automated
+testing that produces an evidence trail you can actually watch.</p>
+<h2 id="why-its-fascinating">Why it’s fascinating</h2>
+<p>Panoptic is a single, comprehensive Go framework that automates web,
+desktop and mobile applications through one interface. UI automation
+across those three worlds usually means three different toolchains,
+three sets of skills, and three brittle integrations. Panoptic unifies
+them — element detection and interaction, high-quality screenshot
+capture, and full video recording — so a single test strategy spans your
+whole product surface. That breadth, delivered in fast, dependency-light
+Go, is what makes it stand out.</p>
+<h2 id="the-hard-problems">The hard problems</h2>
+<p>Cross-platform UI automation is one of the least forgiving domains in
+software. Web DOMs, native desktop widgets and mobile view hierarchies
+expose elements in completely different ways, and timing is everywhere —
+animations, async loads, transitions. Reliably finding and interacting
+with an element, then capturing a clean, correctly-timed screenshot or a
+smooth recording of the result, requires solving synchronization,
+rendering and platform-abstraction problems all at once. Doing it
+without flaky tests — the curse of every automation suite — is the real
+bar.</p>
+<h2 id="what-makes-it-game-changing">What makes it game-changing</h2>
+<p>Panoptic reframes QA output. Instead of opaque logs, you get visual
+regression material: screenshots and recordings that make failures
+self-explanatory and reviews fast. By covering web, desktop and mobile
+from one framework, it lets teams standardize their entire
+automated-testing approach instead of maintaining a patchwork. And
+because it’s written in Go, it deploys as a lean, fast, portable binary
+that fits naturally into CI pipelines and headless environments.</p>
+<h2 id="how-we-solved-the-hardest-parts">How we solved the hardest
+parts</h2>
+<p>The framework is organized around a platform-agnostic automation core
+with platform-specific drivers behind it, so the test author works
+against a consistent model while Panoptic handles the messy differences
+between a browser, a desktop window and a mobile screen. Screenshot and
+video capture are built in as primitives rather than afterthoughts,
+which is what enables the rich visual evidence other tools lack. The
+same recording and diffing capabilities that power its own QA — the
+project ships reusable visual-regression, screen-diff and replay-buffer
+modules — make Panoptic a foundation other testing systems can build on,
+not just a standalone runner.</p>
+</article>

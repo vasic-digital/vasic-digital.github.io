@@ -1,0 +1,27 @@
+---
+title: HelixTrack Android Client
+slug: helixtrack-android-client
+repo: ""
+tech: Kotlin, Android
+teaser: "HelixTrack in your pocket — a native Android client with offline support, push notifications and a mobile-first take on project tracking."
+---
+
+## Mamac
+
+Projektni rad ne čeka da se vratite za sto. HelixTrack Android klijent stavlja celu platformu u vaš džep: izvorna Kotlin aplikacija napravljena za način na koji ljudi stvarno koriste telefone – brzi pogledi, trenutna ažuriranja, obaveštenja koja su bitna i mogućnost da nastavite čak i kada signal nestane.
+
+## Zašto je fascinantno
+
+Ovo je HelixTrack ponovo zamišljen za mobilne uređaje, a ne samo smanjen da stane u njih. Izvorni Android klijent znači pravu integraciju s platformom – push obaveštenja koja prikazuju pravo ažuriranje u pravom trenutku, podrška za rad van mreže i korisnički interfejs prilagođen dodiru i malim ekranima. Povezuje se s istom HelixTrack platformom kao veb i desktop klijenti, pa korisnikov telefon postaje punopravni prozor u njegove projekte, potpuno sinhronizovan sa svim ostalim mestima na kojima radi.
+
+## Teški problemi
+
+Mobilni klijenti za upravljanje projektima moraju mnogo toga da urade s malo toga: ograničen prostor na ekranu, povremena konektivnost, stroga ograničenja baterije i životnog ciklusa, kao i korisnici koji očekuju trenutnu reakciju. Podrška za rad van mreže podrazumeva upravljanje lokalnim stanjem i usklađivanje podataka kada se konektivnost vrati – pravi izazov u sinhronizaciji. Push obaveštenja moraju biti pravovremena i relevantna, a da ne postanu buka. I sve to mora da poštuje dozvole i model podataka platforme do poslednje tačke, tako da ono što korisnik vidi na mobilnom uređaju odgovara onome što bi video bilo gde drugde. Izvorni Android razvoj donosi i svoje zahteve u vezi sa životnim ciklusom, fragmentacijom i performansama.
+
+## Šta ga čini revolucionarnim
+
+Sposoban izvorni mobilni klijent pretvara alat za projekte iz „mesta na koje odlazim" u „nešto što nosim sa sobom". Podrška za rad van mreže i push obaveštenja znače da tragač nastavlja da radi u prazninama stvarnog dana – tokom vožnje, na terenu, bilo gde gde nema pouzdanog Wi-Fi-ja. Kao deo otvorenog, višeplatformskog ekosistema, Android klijent omogućava timovima da se susretnu s korisnicima na uređaju koji već najviše koriste, a da ih pritom ne vežu za vlasničko mobilno iskustvo. Proširuje doseg HelixTrack-a tačno tamo gde se savremeni rad sve više odvija.
+
+## Kako smo rešili najteže delove
+
+Klijent je izvorno napravljen u Kotlinu kako bi se postigla prava integracija s platformom – obaveštenja, upravljanje životnim ciklusom i performanse koje omotač ne može da ponudi – a komunicira s API-jem HelixTrack platforme tako da deli isti izvor istine kao i svi ostali klijenti. Mogućnost rada van mreže rešena je održavanjem lokalnog radnog stanja i sinhronizacijom promena kada se uređaj ponovo poveže, čime se mobilno iskustvo održava upotrebljivim i tokom prekida u konektivnosti. Mobilni korisnički interfejs dizajniran je oko dodira i ograničenog prostora na ekranu, umesto da bude prenet sa većih površina, a konzumiranjem istog Core ugovora kao i ostatak porodice, direktno nasleđuje sigurnosni model i model dozvola platforme, umesto da ih duplicira.

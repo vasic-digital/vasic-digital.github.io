@@ -1,0 +1,52 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>GrabTube</h1>
+    <p class="hx-article-tech">Dart, Flutter</p>
+    <p class="hx-article-repo"><a href="https://github.com/vasic-digital/GrabTube" target="_blank" rel="noopener">https://github.com/vasic-digital/GrabTube &rarr;</a></p>
+  </header>
+<h2 id="the-hook">The hook</h2>
+<p>Downloading a video shouldn’t feel like operating command-line
+plumbing. GrabTube turns the messy world of video extraction into a
+single, elegant Flutter app: paste a link, pick your quality, and get a
+clean, high-quality file — on whichever device you happen to be
+holding.</p>
+<h2 id="why-its-fascinating">Why it’s fascinating</h2>
+<p>GrabTube is a consumer-grade front door to a notoriously
+developer-grade problem. Under the hood, downloading from popular
+streaming platforms is a constant arms race of shifting formats, signed
+URLs and adaptive streams. GrabTube wraps all of that behind a polished,
+intuitive interface built with Dart and Flutter, which means one
+codebase delivers a genuinely native experience across platforms rather
+than a clunky web wrapper. It’s the rare tool that respects both the
+user who just wants their video and the engineering reality of getting
+it.</p>
+<h2 id="the-hard-problems">The hard problems</h2>
+<p>Streaming platforms do not want to be easy to download from. Media is
+fragmented into adaptive segments, manifests change, and quality
+variants multiply. A good downloader has to resolve the best available
+stream, stitch it together, and report progress honestly — all without
+freezing the UI. On mobile especially, that means careful asynchronous
+work: long-running downloads that survive backgrounding, surface real
+progress, and fail gracefully when a source format suddenly shifts.
+Doing this with a UI that stays fluid and beautiful is the actual
+challenge.</p>
+<h2 id="what-makes-it-game-changing">What makes it game-changing</h2>
+<p>GrabTube proves that “powerful” and “delightful” aren’t opposites. By
+choosing Flutter, the project gets one shared, maintainable codebase
+that looks and feels right on every platform, with the kind of smooth,
+modern interface most open-source downloaders never bother with. It
+brings high quality and fast speeds to people who would never open a
+terminal — democratizing a capability that has historically been locked
+behind technical know-how.</p>
+<h2 id="how-we-solved-the-hardest-parts">How we solved the hardest
+parts</h2>
+<p>The key decision was architectural: keep the download/extraction
+engine cleanly separated from the presentation layer so the volatile,
+fast-moving extraction logic can evolve without disturbing the
+carefully-crafted UI. Flutter’s reactive model is leveraged to stream
+progress updates into the interface in real time, so users always see
+what’s happening. Asynchronous Dart pipelines handle the long-running
+fetch-and-assemble work off the main thread, keeping the app responsive
+even during large multi-segment downloads. The outcome is a downloader
+that hides ferocious complexity behind a single calm screen.</p>
+</article>

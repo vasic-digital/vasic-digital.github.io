@@ -1,0 +1,58 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>HelixCode</h1>
+    <p class="hx-article-tech">Go, Gin, PostgreSQL, Redis, SSH, WebSocket, MCP</p>
+    <p class="hx-article-repo"><a href="https://github.com/HelixDevelopment/HelixCode" target="_blank" rel="noopener">https://github.com/HelixDevelopment/HelixCode &rarr;</a></p>
+  </header>
+<h2 id="the-hook">The hook</h2>
+<p>What if your AI coding assistant wasn’t one process on one laptop,
+but a coordinated network of workers spread across every machine you own
+— dividing tasks intelligently, checkpointing as it goes, and surviving
+crashes without losing a minute of work? That’s HelixCode: an
+enterprise-grade distributed AI development platform.</p>
+<h2 id="why-its-fascinating">Why it’s fascinating</h2>
+<p>HelixCode treats AI-assisted development as a distributed computing
+problem, not a chatbot. It performs intelligent task division with work
+preservation, manages a pool of SSH-connected workers across Linux,
+macOS, Windows and more, and drives entire development workflows —
+planning, building, testing, refactoring — with multi-provider LLM
+support (Llama.cpp, Ollama, OpenAI). It speaks the Model Context
+Protocol, exposes REST, CLI, terminal-UI and WebSocket clients, and
+layers in advanced reasoning patterns like chain-of-thought and
+tree-of-thoughts. It is, in effect, an operating system for LLM-powered
+engineering.</p>
+<h2 id="the-hard-problems">The hard problems</h2>
+<p>Distributing real work across heterogeneous machines is hard;
+distributing non-deterministic LLM work is harder. You need to split a
+task so that pieces can run in parallel without conflicting, track
+dependencies between them, and — crucially — never lose progress when a
+worker dies mid-flight. That demands automatic checkpointing and
+rollback, durable task state, and health monitoring across an SSH worker
+pool. On top of that sits the LLM layer: hardware-aware model selection,
+a unified provider interface so any model can be swapped in, tool
+calling, and multi-step reasoning that has to remain coherent across
+distributed execution.</p>
+<h2 id="what-makes-it-game-changing">What makes it game-changing</h2>
+<p>HelixCode scales AI development beyond a single context window and a
+single box. By coordinating LLM-powered work across many machines with
+guaranteed work preservation, it turns flaky, restart-from-scratch AI
+sessions into resilient, long-running engineering pipelines. The breadth
+— full lifecycle workflows, multi-client access, cross-platform workers,
+mobile-ready frameworks, multi-channel notifications via Slack, Discord,
+Email and Telegram — means it can sit at the center of a real team’s
+process, not just an individual’s terminal.</p>
+<h2 id="how-we-solved-the-hardest-parts">How we solved the hardest
+parts</h2>
+<p>The platform is built in layers: a REST + WebSocket + MCP API on top
+of core services (auth and session management, the SSH-based worker
+pool, task management with checkpointing, project and workflow
+management, and LLM provider integration), backed by PostgreSQL and
+Redis. Resilience comes from making checkpointing and rollback
+foundational — task state is persisted so a failed worker resumes rather
+than restarts. The provider architecture abstracts every LLM behind one
+interface, with hardware detection choosing models that actually fit the
+machine, so the same workflow runs whether a worker has a datacenter GPU
+or a modest CPU. Reasoning patterns are implemented as reusable workflow
+modes, letting the system plan, build, test and refactor with structured
+chain-of-thought rather than one-shot prompting.</p>
+</article>

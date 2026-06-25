@@ -1,0 +1,52 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>GrabTube</h1>
+    <p class="hx-article-tech">Dart, Flutter</p>
+    <p class="hx-article-repo"><a href="https://github.com/vasic-digital/GrabTube" target="_blank" rel="noopener">https://github.com/vasic-digital/GrabTube &rarr;</a></p>
+  </header>
+<h2 id="kuka">Kuka</h2>
+<p>Preuzimanje videa ne bi trebalo da se oseća kao upravljanje komandnom
+linijom za cevi. GrabTube pretvara zamršeni svet izvlačenja videa u
+jedan, elegantan Flutter aplikaciju: zalijepite link, izaberite kvalitet
+i dobijte čist, visokokvalitetni fajl — na bilo kom uređaju koji
+slučajno držite.</p>
+<h2 id="zašto-je-fascinirajuće">Zašto je fascinirajuće</h2>
+<p>GrabTube je potrošački-stepen prednja vrata za problem koji je poznat
+po tome što je razvojni-stepen. Pod haubom, preuzimanje sa popularnih
+platformi za striming je stalni trka u naoružanju promenljivih formata,
+potpisanih URL-ova i adaptivnih tokova. GrabTube sve to sakriva iza
+poliranog, intuitivnog interfejsa izrađenog sa Dart i Flutter, što znači
+da jedna baza koda pruža istinski nativni iskustvo preko platformi,
+umesto neuglednog web omotača. To je retko oruđe koje poštuje korisnika
+koji samo želi svoj video i inženjersku realnost njegovog dobijanja.</p>
+<h2 id="teški-problemi">Teški problemi</h2>
+<p>Platforme za striming ne žele da budu lako preuzete. Mediji su
+fragmentirani u adaptivne segmente, manifesti se menjaju, a varijante
+kvaliteta se umnožavaju. Dobar preuzimač mora da reši najbolji dostupni
+tok, spoji ga zajedno i prijavi napredak iskreno — sve bez zamrzavanja
+korisničkog interfejsa. Posebno na mobilnim uređajima, to znači pažljiv
+asinhroni rad: dugotrajna preuzimanja koja preživljavaju pozadinu,
+prikazuju stvarni napredak i lepoto ulaze kada izvor format naglo
+promeni. Činjenje ovoga sa korisničkim interfejsom koji ostaje tečan i
+lep je stvarni izazov.</p>
+<h2 id="šta-ga-čini-revolucionarnim">Šta ga čini revolucionarnim</h2>
+<p>GrabTube dokazuje da “moćan” i “ukusno” nisu suprotnosti. Birajući
+Flutter, projekat dobija jedan zajednički, održiv kod koji izgleda i
+oseća se ispravno na svim platformama, sa vrstom glatko, modernog
+interfejsa koji većina otvorenih preuzimača nikad ne brine. On donosi
+visoku kvalitetu i brzine ljudima koji nikad ne bi otvorili terminal —
+demokratizujući mogućnost koja je istorijski bila zaključana iza
+tehničkog znanja.</p>
+<h2 id="kako-smo-rešili-najteže-delove">Kako smo rešili najteže
+delove</h2>
+<p>Ključna odluka je bila arhitektonska: držati engine za
+preuzimanje/izvlačenje čisto odvojen od predstavnog sloja tako da se
+nestalna, brzo kretajuća logika izvlačenja može razvijati bez ometanja
+pažljivo izrađenog korisničkog interfejsa. Flutterov reaktivni model se
+koristi za strimovanje ažuriranja napretka u interfejsu u realnom
+vremenu, tako da korisnici uvek vide šta se dešava. Asinhroni Dart
+pipelini rukuju dugotrajnim radom za preuzimanje i sastavljanje van
+glavnog tok, čuvajući aplikaciju odzivnom čak i tokom velikih
+multi-segment preuzimanja. Rezultat je preuzimač koji sakriva svirepu
+složenost iza jedne mirne ekrana.</p>
+</article>

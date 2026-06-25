@@ -1,0 +1,54 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>Server Factory Core Framework</h1>
+    <p class="hx-article-tech">Kotlin</p>
+    <p class="hx-article-repo"><a href="https://github.com/Server-Factory/Core-Framework" target="_blank" rel="noopener">https://github.com/Server-Factory/Core-Framework &rarr;</a></p>
+  </header>
+<h2 id="the-hook">The hook</h2>
+<p>Behind every reliable automation tool is a foundation nobody sees.
+The Server Factory Core Framework is that foundation — the reusable
+Kotlin engine that powers tools like Mail Server Factory, giving the
+entire Server Factory ecosystem a single, consistent backbone for
+building server-based applications.</p>
+<h2 id="why-its-fascinating">Why it’s fascinating</h2>
+<p>Most infrastructure automation is a pile of one-off scripts that
+drift apart over time. Server Factory took the opposite approach:
+extract the common machinery — modular design, centralized logging,
+shared utilities, upstream management — into a Core Framework, then
+build each provisioning tool on top of it. That’s why the ecosystem’s
+tools feel coherent: they inherit the same architectural patterns and
+the same dependable plumbing. It’s framework thinking applied to the
+unglamorous but critical world of server deployment.</p>
+<h2 id="the-hard-problems">The hard problems</h2>
+<p>Designing a framework that multiple distinct tools can build on is
+fundamentally harder than building any single tool. You have to
+anticipate what server-provisioning applications will need in common —
+logging that behaves consistently, utilities that don’t leak
+assumptions, an upstream-management model that fits many services —
+without over-constraining the tools that depend on you. Get the
+abstractions wrong and every consuming tool inherits the mistake; get
+them right and you accelerate all of them at once. Maintaining that
+foundation as the ecosystem grows, while keeping consumers stable, is an
+ongoing discipline.</p>
+<h2 id="what-makes-it-game-changing">What makes it game-changing</h2>
+<p>The Core Framework is leverage. Because the hard, shared parts live
+in one place, each new factory — for mail, web services, caching
+proxies, SonarQube and more — starts with a proven base instead of a
+blank file. Consistency across the ecosystem means lower maintenance,
+fewer surprises, and a uniform operational experience whatever you’re
+provisioning. As open source, it also documents a clean, reusable
+pattern for anyone building their own server-automation tooling:
+separate the shared engine from the specific tool.</p>
+<h2 id="how-we-solved-the-hardest-parts">How we solved the hardest
+parts</h2>
+<p>The framework deliberately concentrates the cross-cutting concerns —
+logging, utilities, modular structure and upstream management — so
+individual factories never reimplement them. That modular design is the
+mechanism that keeps consumers consistent: they compose framework
+components rather than copy them. The proof is the ecosystem itself.
+Mail Server Factory and its sibling factories all stand on this base,
+which means the framework’s abstractions have been validated by real,
+production-oriented provisioning tools rather than imagined in
+isolation. The framework’s value is measured not in features but in how
+much it lets the tools above it skip.</p>
+</article>
