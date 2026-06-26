@@ -1,0 +1,22 @@
+---
+title: Catalogizer
+slug: catalogizer
+repo: https://github.com/vasic-digital/Catalogizer
+tech: Go, Gin, React, TypeScript, SQLCipher, WebSocket
+teaser: "One library, every protocol: Catalogizer finds, identifies and organizes 50+ media types across SMB, FTP, NFS, WebDAV and local disk."
+---
+
+## El anzuelo
+La vida mediática de la mayoría de la gente está dispersa por todas partes: un recurso compartido en NAS aquí, un archivo FTP allá, un montaje WebDAV, una pila de discos locales. Catalogizer trata todo eso como una única biblioteca unificada, buscable y de actualización automática. Apúntalo a tu almacenamiento y descubrirá, identificará, enriquecerá y supervisará toda tu colección sin que nunca más tengas que tocar una hoja de cálculo.
+
+## Por qué fascina
+Catalogizer no es un reproductor de medios pegado a un explorador de carpetas. Es un motor de inteligencia mediática. Reconoce automáticamente más de 50 tipos de medios —películas, series, música, juegos, software, documentales y más— y luego recurre a autoridades externas como TMDB, IMDB, TVDB, MusicBrainz, Spotify y Steam para adjuntar metadatos ricos y precisos. El resultado es un catálogo que sabe qué es cada archivo, no solo dónde está. Una interfaz web moderna en React + TypeScript mantiene todo en tiempo real mediante WebSocket, mientras que un backend de alto rendimiento en Go sobre el framework Gin se encarga del trabajo pesado.
+
+## Los problemas difíciles
+Catalogar a través de protocolos es engañosamente brutal. Los recursos compartidos SMB desaparecen a mitad de un escaneo, las conexiones FTP se agotan, NFS se comporta de manera distinta en macOS que en cualquier otro sistema, y los proveedores de metadatos limitan el acceso, discrepan o no devuelven nada. Un escáner ingenuo falla en cuanto un montaje parpadea. Catalogizer tuvo que diseñarse para ser resiliente: maneja con elegancia desconexiones temporales de SMB, se reconecta automáticamente y almacena el estado en caché sin conexión para que una caída de red nunca corrompa el catálogo. Además, debía identificar la calidad de los archivos, rastrear múltiples versiones de un mismo título y mantener una biblioteca en constante cambio coherente en tiempo real, todo mientras mantiene la base de datos subyacente cifrada.
+
+## Lo que lo hace revolucionario
+Catalogizer unifica un ecosistema de almacenamiento fragmentado y multiprotocolo en un sistema coherente, consultable y rico en análisis. Hace lo que los gestores de medios comerciales se niegan a hacer: hablar SMB, FTP, NFS, WebDAV y sistemas de archivos locales de forma intercambiable; sincronizarse con Amazon S3 y Google Cloud Storage; exportar informes profesionales en PDF con gráficos y tendencias de crecimiento; convertir documentos; e importar/exportar favoritos en JSON y CSV. Como la base de datos está cifrada con SQLCipher y el acceso está protegido con JWT y control basado en roles, es seguro usarlo tanto en un hogar como en una organización. Es una respuesta abierta y autoalojada a la pregunta: *"¿Dónde está todo mi contenido y qué es exactamente?"*.
+
+## Cómo resolvimos las partes más complejas
+La arquitectura es deliberadamente modular: un núcleo con una API REST en Go, un almacén cifrado con SQLCipher a su lado, una capa de WebSocket en tiempo real que alimenta el frontend en React y un motor de detección de medios independiente que actúa como fachada de una abstracción de sistema de archivos multiprotocolo y conectable. Esa separación es lo que hace posible la resiliencia ante protocolos: el motor de detección nunca asume que una fuente es accesible, por lo que un montaje SMB inestable degrada a caché sin conexión en lugar de fallar. La integración de metadatos externos se trata como un *pipeline* de enriquecimiento, no como una dependencia crítica, de modo que los proveedores pueden ser lentos, incompletos o incluso ausentes sin bloquear la ingesta. El análisis de calidad y el seguimiento de versiones se ejecutan como procesos de primera clase sobre los medios detectados, lo que permite al catálogo decir: *"Tienes esta película tres veces, y esta es la mejor copia"*. La disciplina de ingeniería detrás es real: el proyecto se rige por una CONSTITUCIÓN escrita que exige un 100 % de cobertura de pruebas y un ciclo completo de control de calidad en la rama principal, con auditorías de seguridad integradas en el proceso de lanzamiento. La diferencia entre un escáner de hobby y algo en lo que puedes confiar para toda tu colección.

@@ -1,0 +1,60 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>ShareConnect</h1>
+    <p class="hx-article-tech">Kotlin, Android (API 26+), Java 17</p>
+    <p class="hx-article-repo"><a href="https://github.com/vasic-digital/ShareConnect" target="_blank" rel="noopener">https://github.com/vasic-digital/ShareConnect &rarr;</a></p>
+  </header>
+<h2 id="der-haken">Der Haken</h2>
+<p>Auf deinem Smartphone taucht ein Link auf. Wohin damit – dein
+Torrent-Client, dein Heim-Downloader, dein Plex-Server, deine Nextcloud?
+ShareConnect beantwortet diese Frage mit einem einzigen Tippen. Es ist
+die universelle „Sende diesen Link an das richtige Ziel”-Schicht für
+dein gesamtes Self-Hosting-Ökosystem.</p>
+<h2 id="warum-es-fasziniert">Warum es fasziniert</h2>
+<p>ShareConnect ist keine einzelne App – es ist eine ganze Familie von
+Konnektoren, vereint unter einem einzigen Sharing-Erlebnis. Es spricht
+mit qBittorrent, Transmission, uTorrent, JDownloader, MeTube, yt-dlp,
+Nextcloud, FileBrowser, Plex, Jellyfin, Emby und vielen mehr und
+verwandelt einen fragmentierten Zoo an Diensten in ein kohärentes Netz
+von Zielen. Über das Android-Teilen-Menü wird eine URL intelligent an
+den richtigen Verarbeitungspunkt weitergeleitet – egal, ob dieser im
+selben Raum oder irgendwo im Internet liegt.</p>
+<h2 id="die-kniffligen-probleme">Die kniffligen Probleme</h2>
+<p>Jeder Backend-Dienst hat seine eigene API, sein
+Authentifizierungsmodell, seine Eigenheiten und Fehlerquellen. Eine
+zuverlässige Brücke zu über einem Dutzend Diensten zu bauen, bedeutet,
+all diese Heterogenität zu absorbieren, ohne sie dem Nutzer zuzumuten.
+Dazu kommt der hohe Anspruch des Projekts: Es handelt sich um
+produktionsreife Android-Software mit 100 % Testabdeckung – Unit-,
+Instrumentierungs-, Automatisierungs- und KI-gestützte QA-Tests – einem
+SonarQube-A+-Rating, ~95 % Code-Coverage, nahezu null technischer
+Schulden und ohne kritische Sicherheitslücken. Zwanzig produktionsreife
+Anwendungen gleichzeitig auf diesem Niveau zu halten, ist eine
+ernsthafte ingenieurtechnische Herausforderung, nicht nur eine Frage des
+Programmierens.</p>
+<h2 id="was-es-zum-game-changer-macht">Was es zum Game-Changer
+macht</h2>
+<p>ShareConnect beseitigt die Reibungsverluste eines
+Self-Hosting-Lebensstils. Statt die klobigen Web-Oberflächen der
+einzelnen Dienste aufzurufen, teilst du einmal – und das System erledigt
+den Rest. Da es offen und konnektorbasiert ist, wächst es mit deinem
+Setup mit: Fügst du einen neuen Mediaserver oder Downloader hinzu, kann
+ShareConnect ihn sofort ansteuern. Es behandelt den modernen Heimserver
+nicht als Ansammlung separater Kisten, sondern als ein einziges,
+orchestriertes Ziel, das du mit dem Gerät in deiner Hand steuerst.</p>
+<h2 id="wie-wir-die-härtesten-probleme-gelöst-haben">Wie wir die
+härtesten Probleme gelöst haben</h2>
+<p>Die Architektur basiert auf einer sauberen Konnektor-Abstraktion:
+Jeder Dienst wird hinter einer gemeinsamen Schnittstelle implementiert,
+sodass der Routing-Kern nie die unordentlichen Details eines bestimmten
+Backends kennen muss. Neue Konnektoren lassen sich einbinden, ohne das
+Gesamtsystem zu destabilisieren. Qualität wird nicht erhofft, sondern
+erzwungen – das Projekt führt mehrstufige Test-Suiten (Unit-,
+Instrumentierungs-, End-to-End-Automatisierung sowie KI-gestützte QA)
+durch und gibt Releases erst nach Sicherheits- und
+Code-Qualitätsprüfungen frei. Diese Strenge ist der Grund, warum ein
+Projekt mit so vielen Integrationen glaubwürdig behaupten kann, dass
+jede einzelne davon „produktionsreif” ist. Modernes Kotlin auf Android
+API 26+ mit Java 17 hält den Code aktuell und wartbar, während die Liste
+der Konnektoren wächst.</p>
+</article>

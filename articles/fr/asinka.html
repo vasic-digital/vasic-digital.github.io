@@ -1,0 +1,59 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>Asinka</h1>
+    <p class="hx-article-tech">Kotlin</p>
+    <p class="hx-article-repo"><a href="https://github.com/vasic-digital/Asinka" target="_blank" rel="noopener">https://github.com/vasic-digital/Asinka &rarr;</a></p>
+  </header>
+<h2 id="le-déclic">Le déclic</h2>
+<p>Deux processus, une seule source de vérité. Asinka (Асинка) est une
+bibliothèque de synchronisation d’objets interprocessus haute
+performance qui permet à des applications indépendantes de partager un
+état dynamique comme si elles ne formaient qu’un seul programme – sans
+code d’interfaçage fragile, sans conditions de course, sans
+approximation.</p>
+<h2 id="pourquoi-cest-fascinant">Pourquoi c’est fascinant</h2>
+<p>La communication interprocessus est l’un de ces problèmes qui
+semblent simples et se révèlent être un champ de mines. Asinka l’aborde
+de front avec une bibliothèque Kotlin ciblée, dont la seule mission est
+de faire en sorte que les objets d’un processus reflètent fidèlement les
+modifications apportées dans un autre. Cette capacité ouvre discrètement
+la voie à des architectures puissantes : applications compagnons
+évoluant en parfaite synchronisation, plugins partageant des données
+avec leur hôte, ou services coopératifs sur une même machine nécessitant
+une vue cohérente d’objets partagés sans avoir à réinventer la
+synchronisation à chaque fois.</p>
+<h2 id="les-défis-de-taille">Les défis de taille</h2>
+<p>Synchroniser des objets modifiables à travers les frontières des
+processus est complexe pour des raisons qui se manifestent à
+l’exécution, pas à la compilation. Il faut sérialiser et réconcilier
+l’état, gérer les mises à jour concurrentes des deux côtés sans
+corrompre les données, et tout cela avec une efficacité suffisante pour
+que la synchronisation ne devienne pas plus lente que le travail qu’elle
+supporte. La sécurité des threads est incontournable – deux processus
+modifiant un état partagé, c’est précisément le scénario qui engendre
+des <em>heisenbugs</em>. Et le système doit rester robuste quand l’un
+des côtés est lent, surchargé ou temporairement indisponible.</p>
+<h2 id="ce-qui-en-fait-un-tournant">Ce qui en fait un tournant</h2>
+<p>Asinka transforme une corvée récurrente et source d’erreurs en une
+simple dépendance à ajouter. En offrant une synchronisation d’objets
+sûre et efficace comme brique réutilisable, elle permet aux développeurs
+de concevoir des systèmes multi-processus qui étaient auparavant trop
+risqués ou trop coûteux à mettre en œuvre. Elle fait passer la
+communication interprocessus (IPC) d’un échange de messages artisanaux
+et propices aux bugs à une abstraction propre au niveau des objets –
+vous modifiez un objet ici, il est correct là-bas. C’est un changement
+significatif dans la façon dont des applications coopératives peuvent
+être construites.</p>
+<h2 id="comment-nous-avons-résolu-les-problèmes-les-plus-ardus">Comment
+nous avons résolu les problèmes les plus ardus</h2>
+<p>La bibliothèque est conçue dès le départ pour un accès concurrentiel
+sécurisé, de sorte que les modifications simultanées sont réconciliées
+plutôt que mises en compétition. Le partage d’état est modélisé au
+niveau des objets, offrant aux développeurs un modèle mental intuitif –
+ils raisonnent en termes d’objets, pas de protocoles réseau – tandis
+qu’Asinka gère en coulisses la sérialisation et la propagation.
+L’efficacité est traitée comme une exigence prioritaire, maintenant la
+couche de synchronisation suffisamment légère pour s’intégrer dans le
+chemin critique des applications réelles. Le résultat est un outil
+petit, précis, qui excelle dans une tâche véritablement complexe.</p>
+</article>

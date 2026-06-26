@@ -1,0 +1,22 @@
+---
+title: ShareConnect
+slug: shareconnect
+repo: https://github.com/vasic-digital/ShareConnect
+tech: Kotlin, Android (API 26+), Java 17
+teaser: "Share any downloadable URL straight to the right remote or local engine — torrents, downloaders, media servers — from any Android device."
+---
+
+## L’accroche
+Vous tombez sur un lien sur votre téléphone. Où l’envoyer — vers votre boîte de torrents, votre téléchargeur domestique, votre serveur Plex ou votre Nextcloud ? ShareConnect répond à cette question d’un simple geste. C’est la couche universelle « envoyer cette URL à l’outil qui doit la traiter » pour l’ensemble de votre écosystème auto-hébergé.
+
+## Pourquoi c’est fascinant
+ShareConnect n’est pas une simple application — c’est toute une famille de connecteurs unifiés sous une seule expérience de partage. Il dialogue avec qBittorrent, Transmission, uTorrent, JDownloader, MeTube, yt-dlp, Nextcloud, FileBrowser, Plex, Jellyfin, Emby et bien d’autres, transformant un zoo fragmenté de services en un ensemble cohérent de destinations. Depuis le menu de partage Android, une URL est acheminée intelligemment vers le bon point de traitement, qu’il se trouve dans la pièce d’à côté ou à l’autre bout d’Internet.
+
+## Les défis de taille
+Chaque backend possède sa propre API, son modèle d’authentification, ses particularités et ses modes de défaillance. Créer un pont fiable vers une douzaine de services (voire plus) implique d’absorber toute cette hétérogénéité sans en faire porter le poids à l’utilisateur. Et ce n’est pas tout : le projet se fixe une barre très haute. Il s’agit d’un logiciel Android de qualité professionnelle, avec une couverture de tests à 100 % (unitaires, d’instrumentation, d’automatisation et d’assurance qualité par IA), une note A+ sur SonarQube, environ 95 % de couverture de code, une dette technique quasi nulle et aucune vulnérabilité critique de sécurité. Maintenir vingt applications prêtes pour la production à ce niveau d’exigence relève davantage d’une discipline d’ingénierie rigoureuse que d’un simple défi de développement.
+
+## Ce qui en fait un outil révolutionnaire
+ShareConnect élimine les frictions du mode de vie auto-hébergé. Au lieu d’ouvrir l’interface web maladroite de chaque service, vous partagez une fois et le système fait ce qu’il faut. Grâce à son approche ouverte et modulaire, il évolue avec votre infrastructure — ajoutez un nouveau serveur multimédia ou un téléchargeur, et ShareConnect peut s’y connecter. Il ne considère plus le serveur domestique moderne comme un empilement de boîtes indépendantes, mais comme une destination unifiée et orchestrée, contrôlable depuis l’appareil que vous avez déjà en main.
+
+## Comment nous avons résolu les défis les plus ardus
+L’architecture repose sur une abstraction de connecteur épurée : chaque service est implémenté derrière une interface commune, de sorte que le cœur du routage n’a jamais besoin de connaître les détails techniques désordonnés d’un backend en particulier. Les nouveaux connecteurs s’intègrent sans déstabiliser le reste. La qualité est imposée, et non simplement espérée — le projet exécute des suites de tests en couches (unitaires, d’instrumentation, d’automatisation de bout en bout, ainsi que des tests QA pilotés par IA) et conditionne les mises en production à des analyses de sécurité et de qualité de code. Cette rigueur explique pourquoi un projet couvrant autant d’intégrations peut légitimement qualifier chacune d’entre elles de « prête pour la production ». Le code, écrit en Kotlin moderne pour Android API 26+ avec Java 17, reste à jour et maintenable au fur et à mesure que le catalogue de connecteurs s’étoffe.

@@ -1,0 +1,75 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>LLMsVerifier</h1>
+    <p class="hx-article-tech">Go, SQLCipher, Docker, Kubernetes, Python/JS SDKs</p>
+    <p class="hx-article-repo"><a href="https://github.com/vasic-digital/LLMsVerifier" target="_blank" rel="noopener">https://github.com/vasic-digital/LLMsVerifier &rarr;</a></p>
+  </header>
+<h2 id="le-crochet">Le crochet</h2>
+<p>Chaque fournisseur de LLM affirme que son modèle est rapide,
+performant et disponible. LLMsVerifier les oblige à le prouver. Avant
+toute utilisation, un modèle doit réussir une série de vérifications
+concrètes — dont le test sans détour <em>« Vois-tu mon code ? »</em> —
+afin que vous ne déployiez jamais un modèle discrètement défaillant, qui
+ment sur ses capacités ou dont les performances se dégradent en
+silence.</p>
+<h2 id="pourquoi-cest-fascinant">Pourquoi c’est fascinant</h2>
+<p>LLMsVerifier est une plateforme d’entreprise dédiée à la
+vérification, au suivi et à l’optimisation des performances des LLM,
+tous fournisseurs confondus. Elle intègre des adaptateurs pour douze
+fournisseurs — OpenAI, Anthropic, Cohere, Groq, Together AI, Mistral,
+xAI, Replicate, DeepSeek, Cerebras, Cloudflare Workers AI et SiliconFlow
+— et soumet chacun à des tests exhaustifs : existence, réactivité,
+latence, streaming, appel de fonctions, vision et embeddings. Elle les
+surveille ensuite en temps réel avec un basculement intelligent en cas
+de défaillance, et génère des analyses alimentées par l’IA, des
+tendances et des recommandations d’optimisation. Dans un monde qui mise
+tout sur les LLM, voici la couche de contrôle qualité que presque
+personne ne met en place.</p>
+<h2 id="les-défis-complexes">Les défis complexes</h2>
+<p>Vérifier un LLM est une tâche subtile. Les modèles peuvent répondre
+en ignorant votre entrée réelle, prétendre posséder des capacités qu’ils
+n’ont pas, réussir un test une fois puis échouer sous charge, ou
+diffuser des tokens différemment selon les fournisseurs. LLMsVerifier
+affronte tous ces écueils : il impose une vérification obligatoire pour
+s’assurer qu’un modèle voit et comprend bien le code qu’on lui soumet,
+teste chaque dimension de capacité de manière indépendante, et suit la
+latence et le comportement en streaming, variables selon les
+fournisseurs. Vient ensuite la partie opérationnelle ardue — une
+surveillance continue de l’état de santé avec basculement automatique,
+de sorte qu’une défaillance en production déclenche une reprise plutôt
+qu’une panne. Ajoutez à cela les exigences des entreprises (stockage
+chiffré, SSO, observabilité), et la barre est placée très haut.</p>
+<h2 id="ce-qui-en-fait-un-changement-de-paradigme">Ce qui en fait un
+changement de paradigme</h2>
+<p>LLMsVerifier transforme <em>« on espère que le modèle fonctionne
+»</em> en <em>« nous en avons la preuve, en continu »</em>. Un tournant
+pour toute organisation exploitant l’IA en production : il détecte la
+dérive des capacités, les points de terminaison inactifs et les
+régressions de qualité avant même les utilisateurs, et rend le choix des
+fournisseurs fondé sur des preuves grâce à des recommandations et un
+système de notation des modèles. Son système de suffixe de marque et
+d’export de configurations vérifiées garantit que seuls les modèles
+ayant effectivement passé les vérifications intègrent une configuration
+déployable — une certitude, pas une supposition. Avec ses disjoncteurs,
+ses métriques Prometheus et son déploiement prêt pour Kubernetes, il est
+conçu pour être la colonne vertébrale de la fiabilité d’une stack LLM
+sérieuse.</p>
+<h2 id="comment-nous-avons-résolu-les-problèmes-les-plus-ardus">Comment
+nous avons résolu les problèmes les plus ardus</h2>
+<p>L’idée centrale est de considérer la vérification comme un garde-fou,
+pas comme un simple rapport : un modèle ne peut littéralement pas être
+utilisé tant qu’il n’a pas validé le test obligatoire <em>« Vois-tu mon
+code ? »</em> et les vérifications de capacités pertinentes. Chaque
+capacité — streaming, appel de fonctions, vision, embeddings — est
+vérifiée indépendamment, ce qui permet de détecter précisément les
+supports partiels plutôt que de les supposer. La surveillance en temps
+réel s’appuie sur un mécanisme de disjoncteur et de basculement,
+garantissant une réévaluation continue de l’état de santé et un
+contournement automatique des fournisseurs défaillants. Douze
+adaptateurs de fournisseurs coexistent derrière une interface unifiée,
+ce qui permet d’appliquer la même batterie de tests rigoureux à des API
+très différentes. Le renforcement pour les entreprises — chiffrement
+SQLCipher, LDAP/SSO, et intégrations avec Splunk, DataDog, New Relic et
+ELK — rend le vérificateur lui-même suffisamment fiable pour mériter
+votre confiance.</p>
+</article>

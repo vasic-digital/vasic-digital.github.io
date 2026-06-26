@@ -1,0 +1,57 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>HelixTrack Desktop Client</h1>
+    <p class="hx-article-tech">TypeScript</p>
+  </header>
+<h2 id="kanca">Kanca</h2>
+<p>Bazı işler gerçek bir uygulamayı, kırk sekme arasından birini değil,
+hak eder. HelixTrack Masaüstü İstemcisi tam da bunu sunar: Windows,
+macOS ve Linux için çapraz platform bir masaüstü uygulaması. Proje
+yönetimine yerel performans ve çevrimdışı çalışma imkânı getirir — ve
+yeniden bağlandığınız anda her şeyi sessizce senkronize eder.</p>
+<h2 id="neden-büyüleyici">Neden büyüleyici?</h2>
+<p>Masaüstü İstemcisi, HelixTrack platformunun güç kullanıcısı
+arayüzüdür. Web istemcisi anında, kurulum gerektirmeyen erişim için
+optimize edilmişken, masaüstü istemcisi derinlik için optimize
+edilmiştir: yerel tepki hızı, bağlantısız çalışabilme yeteneği ve
+işletim sistemiyle sıkı entegrasyon. TypeScript ile geliştirilen ve
+HelixTrack platformunun API’si ile kavramlarını paylaşan bu uygulama,
+gün boyu takipçilerinde yaşayan profesyonellere, işleri için odaklanmış
+ve yüksek performanslı bir ortam sunar.</p>
+<h2 id="zorlu-sorunlar">Zorlu sorunlar</h2>
+<p>Çevrimdışı çalışabilen masaüstü yazılımlar, doğru şekilde hayata
+geçirilmesi en zor kategorilerden biridir. Çünkü yerel çalışmaya izin
+verdiğiniz anda senkronizasyon sorununu da miras alırsınız: Çevrimdışı
+yapılan değişiklikler, başka yerlerde yapılan değişikliklerle sorunsuz
+bir şekilde birleşmeli, veri kaybı yaşanmamalı ve kullanıcıların
+anlamlandıramayacağı çakışmalar oluşmamalıdır. Buna bir de çapraz
+platform desteği ekleyin — üç farklı işletim sisteminde yerel hissi
+veren tek bir kod tabanı — ve tutarlılık ile platform beklentileri
+arasında denge kurmaya çalışırsınız. Tüm bunları hızlı, güvenilir ve
+sunucunun izinleri ile veri modeline sadık kalarak sürdürmek,
+mühendislik açısından ciddi bir meydan okumadır.</p>
+<h2 id="oyunu-değiştiren-özellik">Oyunu değiştiren özellik</h2>
+<p>Çevrimdışı çalışabilme özelliği, proje yönetiminin ne olabileceğini
+dönüştürür: Uçaklar, trenler, kesintili bağlantılar ve derinlemesine
+odaklanma seansları artık ölü bölge olmaktan çıkar. Masaüstü istemcisi,
+ağdan bağımsız olarak çalışmaya devam etmenizi sağlar, ardından otomatik
+olarak senkronize eder — böylece araç, sürekli bağlantı talep etmek
+yerine gerçek hayata uyum sağlar. Çapraz platform olması, karma işletim
+sistemine sahip ekiplerin aynı yerel kalitede deneyimi yaşamasına olanak
+tanır. Açık bir platformun parçası olması da koltuk başına kilitlenmeyi
+ortadan kaldırır. Bu, kontrol ettiğiniz bir takipçiden ziyade içinde
+çalıştığınız bir takipçi olmanın farkıdır.</p>
+<h2 id="en-zor-kısımları-nasıl-çözdük">En zor kısımları nasıl
+çözdük?</h2>
+<p>İstemci, HelixTrack platformunun API’si etrafında yapılandırılmış
+olup yerel bir çalışma durumu da korur; böylece uygulama bağlantı
+kesildiğinde bile duyarlı ve kullanılabilir kalır. Senkronizasyon,
+birinci sınıf bir öncelik olarak ele alınır: Yerel değişiklikler,
+yeniden bağlandığında sunucuyla uzlaştırılır ve kullanıcının gerçek
+kaynağı ile platformun verileri arasında uyum sağlanır. Paylaşılan
+TypeScript kod tabanı, uygulamayı Windows, macOS ve Linux’a taşırken her
+birinde yerel hissi veren bir deneyim sunar. Web, mobil ve diğer
+istemcilerle aynı Core sözleşmesini tükettiği için ekosistemle tutarlı
+kalır — aynı veri, aynı izinler, aynı platform, yalnızca masaüstü için
+optimize edilmiştir.</p>
+</article>

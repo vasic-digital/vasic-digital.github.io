@@ -1,0 +1,71 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>Mail Server Factory</h1>
+    <p class="hx-article-tech">Kotlin, Shell, Docker, Postfix, Dovecot, Rspamd, ClamAV, QEMU</p>
+    <p class="hx-article-repo"><a href="https://github.com/Server-Factory/Mail-Server-Factory" target="_blank" rel="noopener">https://github.com/Server-Factory/Mail-Server-Factory &rarr;</a></p>
+  </header>
+<h2 id="der-einstieg">Der Einstieg</h2>
+<p>Einen E-Mail-Server selbst zu hosten ist berüchtigt dafür, die
+meisten Leute in die Knie zu zwingen: Postfix, Dovecot, Spam-Filterung,
+Antiviren-Schutz, TLS, DNS und ein Dutzend Möglichkeiten, es subtil
+falsch zu machen. <em>Mail Server Factory</em> ersetzt all diese Qualen
+durch eine einzige Idee – beschreiben Sie den gewünschten Server in
+JSON, und lassen Sie die Factory ihn für Sie bauen und absichern.
+<em>„Betreiben Sie Ihren Mailserver wie ein Profi.”</em></p>
+<h2 id="warum-es-fasziniert">Warum es fasziniert</h2>
+<p><em>Mail Server Factory</em> ist ein produktionsreifes,
+automatisiertes Provisionierungstool für Mailserver, das eine
+deklarative Konfiguration in einen vollständig aufgebauten, gesicherten
+E-Mail-Stack verwandelt. Es fügt die mühsam erprobten Komponenten –
+Postfix für SMTP, Dovecot für IMAP, Rspamd für Spam-Filterung, ClamAV
+für Antiviren-Schutz – zu einer kohärenten Bereitstellung zusammen, mit
+unternehmenssicherer Absicherung und Überwachung von Anfang an. Es
+unterstützt eine Vielzahl von Betriebssystemen und kann diese über
+verschiedene Verbindungstypen ansteuern – SSH, Docker, Kubernetes, AWS
+SSM, Azure, GCP, libvirt und mehr – sodass dieselbe Konfiguration in
+fast jeder Umgebung eingesetzt werden kann. Selbst die Testumgebung
+nutzt QEMU-Virtualisierung, um die Kompatibilität über verschiedene
+Distributionen hinweg zu prüfen.</p>
+<h2 id="die-kniffligen-probleme">Die kniffligen Probleme</h2>
+<p>E-Mail ist eines der unnachsichtigsten Systeme im Betrieb: Ein
+einziger Konfigurationsfehler kann zu nicht zugestellten Nachrichten,
+einem offenen Relay oder einem Server führen, der auf einer Sperrliste
+landet. Die Automatisierung über mehrere Betriebssystem-Distributionen
+hinweg vervielfacht die Herausforderung – Paketnamen, Pfade,
+Init-Systeme und Standardwerte unterscheiden sich überall. Dazu kommt
+die Sicherheit, die bei E-Mail kein nachträglicher Gedanke sein darf:
+Starke Verschlüsselung, modernes TLS, Spam- und Malware-Filterung müssen
+jedes Mal korrekt eingerichtet sein. Und die Überprüfung, ob die
+Automatisierung auf all diesen Zielsystemen tatsächlich funktioniert,
+erfordert eine Teststrategie, die die meisten Projekte nie in Angriff
+nehmen – weshalb ein virtualisierungsbasierter Testansatz und eine
+umfangreiche, erfolgreiche Testsuite hier so entscheidend sind.</p>
+<h2 id="was-es-zum-game-changer-macht">Was es zum Game-Changer
+macht</h2>
+<p><em>Mail Server Factory</em> demokratisiert etwas, das bisher tiefem
+Sysadmin-Know-how vorbehalten war. Eine JSON-Beschreibung plus die
+Factory ergeben einen gehärteten, überwachten, produktionsreifen
+Mailserver – und das reproduzierbar. Die Bandbreite der Verbindungstypen
+macht es so flexibel wie eine einfache VM: Bereitstellung per Docker, in
+Kubernetes, über einen Cloud-SSM-Kanal oder auf einer libvirt-VM. Diese
+Portabilität in Kombination mit einem integrierten Sicherheitsframework
+macht es zu einem echten, praktikablen Weg, die Kontrolle über die
+eigene E-Mail-Kommunikation zu übernehmen, statt sie zu mieten.</p>
+<h2 id="wie-wir-die-härtesten-herausforderungen-gelöst-haben">Wie wir
+die härtesten Herausforderungen gelöst haben</h2>
+<p>Das Design trennt das <em>„Was Sie wollen”</em> (deklarative
+JSON-Konfiguration) vom <em>„Wie es überall gebaut wird”</em> (die
+Implementierungs-Engine), was es ermöglicht, eine einzige Konfiguration
+über viele Betriebssysteme hinweg einzusetzen. Die Kompatibilität mit
+mehreren Distributionen wird durch QEMU-Virtualisierung für Tests
+sichergestellt, sodass die Ausgabe der Factory nicht nur angenommen,
+sondern an realen Systemen validiert wird – gestützt auf eine
+umfangreiche, erfolgreiche Testsuite. Die Containerisierung mit Docker
+und ein kuratierter Stack (Postfix, Dovecot, Rspamd, ClamAV)
+standardisieren die beweglichen Teile, während das Sicherheitsframework
+starke Verschlüsselung und TLS standardmäßig durchsetzt. Die
+Unterstützung von einem Dutzend Verbindungstypen – von SSH bis zu Cloud-
+und Kubernetes-Umgebungen – verwandelt das Tool von <em>„Läuft auf
+meinem Server”</em> zu <em>„Wird auf Ihrer Infrastruktur
+bereitgestellt”</em>, egal, wie diese aussieht.</p>
+</article>

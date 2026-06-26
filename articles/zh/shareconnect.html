@@ -1,0 +1,34 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>ShareConnect</h1>
+    <p class="hx-article-tech">Kotlin, Android (API 26+), Java 17</p>
+    <p class="hx-article-repo"><a href="https://github.com/vasic-digital/ShareConnect" target="_blank" rel="noopener">https://github.com/vasic-digital/ShareConnect &rarr;</a></p>
+  </header>
+<h2 id="吸睛之处">吸睛之处</h2>
+<p>你在手机上发现一个链接。它该去哪儿？你的种子盒、家用下载器、Plex
+服务器，还是 Nextcloud？ShareConnect
+一键解决——它是你整个自托管生态系统的「通用分发层」，只需轻点，即可将 URL
+发送至最合适的处理工具。</p>
+<h2 id="为何引人入胜">为何引人入胜</h2>
+<p>ShareConnect
+不是单一应用，而是一整套连接器家族，统一于同一个分享体验之下。它能与
+qBittorrent、Transmission、uTorrent、JDownloader、MeTube、yt-dlp、Nextcloud、FileBrowser、Plex、Jellyfin、Emby
+等多种服务对话，将原本零散的服务群整合为一套条理分明的目的地。无论目标服务位于隔壁房间还是远在互联网另一端，Android
+分享菜单中的 URL 都能被智能路由至正确的处理终端。</p>
+<h2 id="难点所在">难点所在</h2>
+<p>每个后端都有各自的
+API、认证模式、怪癖和故障模式。要为十余种服务构建可靠的桥梁，意味着必须消化所有这些差异，同时不让用户感受到任何复杂性。而项目对自身的要求更高：这是一款面向生产环境的
+Android 软件，拥有 100% 的单元测试、集成测试、自动化测试及 AI
+质检覆盖率，SonarQube 评级为 A+，代码覆盖率近
+95%，技术债务几乎为零，且无严重安全漏洞。同时维护二十个达到生产标准的应用，这不仅是编码问题，更是一项严谨的工程管理挑战。</p>
+<h2 id="颠覆性意义">颠覆性意义</h2>
+<p>ShareConnect 消除了自托管生活的摩擦。无需再逐一打开各服务笨拙的 Web
+界面，只需一次分享，系统便会自动完成正确操作。由于采用开放式连接器架构，它能与你的技术栈同步成长——添加新的媒体服务器或下载工具后，ShareConnect
+即可无缝接入。它不再将现代家庭服务器视为一堆孤立的盒子，而是一个统一调度的整体，且一切操控都能通过你手中的设备轻松完成。</p>
+<h2 id="最难部分的解决之道">最难部分的解决之道</h2>
+<p>项目架构围绕简洁的连接器抽象层构建：每个服务均通过统一接口实现，路由核心无需了解任何后端的复杂细节。新连接器可随时接入，且不会影响现有稳定性。质量不是靠期待，而是靠严格执行——项目运行多层测试套件（单元测试、集成测试、端到端自动化测试，以及
+AI
+驱动的质检），并以安全和代码质量扫描作为发布门槛。正是这种严谨性，让一个涵盖如此多集成的项目能够理直气壮地宣称每个模块都「达到生产标准」。基于
+Android API 26+ 的现代 Kotlin 代码（兼容 Java
+17），确保了代码库在连接器不断扩充的同时，始终保持可维护性和前沿性。</p>
+</article>

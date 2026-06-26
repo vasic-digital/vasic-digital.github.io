@@ -1,0 +1,27 @@
+---
+title: Server Factory Core Framework
+slug: server-factory-core-framework
+repo: https://github.com/Server-Factory/Core-Framework
+tech: Kotlin
+teaser: "The shared engine behind the Server Factory ecosystem — reusable components and patterns that make automated server provisioning consistent."
+---
+
+## Kanca
+
+Her güvenilir otomasyon aracının arkasında, kimsenin görmediği bir temel yatar. Server Factory Core Framework, işte bu temeldir — Mail Server Factory gibi araçlara güç veren, yeniden kullanılabilir Kotlin motoru. Tüm Server Factory ekosistemine, sunucu tabanlı uygulamalar geliştirmek için tek ve tutarlı bir omurga sağlar.
+
+## Neden büyüleyici?
+
+Çoğu altyapı otomasyonu, zamanla birbirinden kopan tek seferlik betiklerden oluşur. Server Factory ise tam tersini yaptı: modüler tasarım, merkezi kayıt tutma, paylaşılan yardımcı programlar ve yukarı akış yönetimi gibi ortak mekanizmaları Core Framework’e taşıdı, ardından her bir sağlama aracını bunun üzerine inşa etti. İşte bu yüzden ekosistemin araçları tutarlı bir his veriyor: Aynı mimari kalıpları ve aynı güvenilir altyapıyı miras alıyorlar. Çekici olmayan ama kritik öneme sahip sunucu dağıtım dünyasına uygulanan bir çerçeve düşüncesi.
+
+## Zorlu sorunlar
+
+Birden fazla farklı aracın üzerine inşa edilebileceği bir çerçeve tasarlamak, tek bir aracı geliştirmekten temelde daha zordur. Sunucu sağlama uygulamalarının ortak ihtiyaçlarını —tutarlı davranan kayıt tutma, varsayımlara dayanmayan yardımcı programlar, birçok hizmete uygun bir yukarı akış yönetim modeli— öngörmek zorundasınızdır; ancak buna bağımlı araçları fazla kısıtlamadan. Soyutlamaları yanlış yaparsanız, bunu kullanan her araç hatayı miras alır; doğru yaparsanız, hepsini birden hızlandırırsınız. Ekosistem büyüdükçe bu temeli korumak, aynı zamanda tüketicilerin istikrarını sağlamak, sürekli bir disiplin gerektirir.
+
+## Oyunu değiştiren özellik
+
+Core Framework, kaldıraç etkisi yaratır. Zor ve ortak parçalar tek bir yerde toplandığı için, her yeni fabrika —posta, web hizmetleri, önbellekleme vekilleri, SonarQube ve daha fazlası— sıfırdan başlamak yerine kanıtlanmış bir temel üzerinde yükselir. Ekosistem genelindeki tutarlılık, daha az bakım, daha az sürpriz ve ne sağlarsanız sağlayın tek tip bir operasyonel deneyim anlamına gelir. Açık kaynak olması, ayrıca kendi sunucu otomasyon araçlarını geliştiren herkes için temiz ve yeniden kullanılabilir bir model sunar: Ortak motoru, özel araçlardan ayırın.
+
+## En zor kısımları nasıl çözdük?
+
+Çerçeve, kesitsel kaygıları —kayıt tutma, yardımcı programlar, modüler yapı ve yukarı akış yönetimi— kasıtlı olarak bir araya getirir, böylece bireysel fabrikalar bunları asla yeniden uygulamak zorunda kalmaz. Bu modüler tasarım, tüketicilerin tutarlı kalmasını sağlayan mekanizmadır: Çerçeve bileşenlerini kopyalamak yerine bir araya getirirler. Kanıt, ekosistemin kendisidir. Mail Server Factory ve kardeş fabrikalarının hepsi bu temele dayanır; bu da çerçevenin soyutlamalarının, hayal ürünü değil, gerçek ve üretim odaklı sağlama araçları tarafından doğrulandığı anlamına gelir. Çerçevenin değeri, sunduğu özelliklerle değil, üstündeki araçların ne kadarını atlayabildiğiyle ölçülür.

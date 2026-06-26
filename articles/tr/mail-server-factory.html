@@ -1,0 +1,65 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>Mail Server Factory</h1>
+    <p class="hx-article-tech">Kotlin, Shell, Docker, Postfix, Dovecot, Rspamd, ClamAV, QEMU</p>
+    <p class="hx-article-repo"><a href="https://github.com/Server-Factory/Mail-Server-Factory" target="_blank" rel="noopener">https://github.com/Server-Factory/Mail-Server-Factory &rarr;</a></p>
+  </header>
+<h2 id="kanca">Kanca</h2>
+<p>Kendi e-posta sunucunuzu barındırmak, çoğu insanın pes etmesine neden
+olan meşhur bir geçiş ritüelidir: Postfix, Dovecot, spam filtreleme,
+antivirüs, TLS, DNS ve her biri ince ayrıntılarda yanlış gidebilecek
+onlarca yol. <strong>Mail Server Factory</strong>, tüm bu acıyı tek bir
+fikirle ortadan kaldırıyor — istediğiniz sunucuyu JSON ile tanımlayın,
+gerisini fabrika sizin için inşa edip güçlendirsin. <strong>“E-Posta
+Sunucunuzu Patron Gibi Yönetin.”</strong></p>
+<h2 id="neden-büyüleyici">Neden büyüleyici?</h2>
+<p><strong>Mail Server Factory</strong>, üretime hazır, otomatik bir
+e-posta sunucusu sağlama aracı. Bildirimsel bir yapılandırmayı alıp tam
+donanımlı, güvenli bir e-posta yığınına dönüştürüyor. Zamanla kazanılmış
+zorlu bileşenleri — SMTP için Postfix, IMAP için Dovecot, spam için
+Rspamd, antivirüs için ClamAV — tek bir tutarlı dağıtımda bir araya
+getiriyor; kurumsal güvenlik ve izleme özellikleri de hazır olarak
+geliyor. Çok çeşitli işletim sistemlerini hedefleyebiliyor ve SSH,
+Docker, Kubernetes, AWS SSM, Azure, GCP, libvirt gibi farklı bağlantı
+türleri üzerinden erişebiliyor — aynı yapılandırma neredeyse her ortama
+uyum sağlıyor. Hatta QEMU sanallaştırmasıyla farklı dağıtımlar üzerinde
+test bile yapabiliyor.</p>
+<h2 id="zorlu-sorunlar">Zorlu sorunlar</h2>
+<p>E-posta, işletilmesi en affetmeyen sistemlerden biri: Tek bir yanlış
+yapılandırma, teslim edilemeyen postalar, açık bir röle ya da sunucunun
+kara listeye düşmesi anlamına gelebilir. Bunu birçok işletim sistemi
+dağıtımında otomatikleştirmek, zorluğu katlayarak artırır — paket
+adları, yollar, başlatma sistemleri ve varsayılan ayarlar her yerde
+farklıdır. Ardından bir de güvenlik meselesi var; e-posta için sonradan
+düşünülmüş bir şey olamaz: Güçlü şifreleme, modern TLS, spam ve kötü
+amaçlı yazılım filtreleme her seferinde doğru şekilde
+yapılandırılmalıdır. Tüm bu hedeflerde otomasyonun gerçekten çalıştığını
+doğrulamak ise çoğu projenin hiç denemediği bir test stratejisi
+gerektirir — işte bu yüzden sanallaştırmaya dayalı test yaklaşımı ve
+kapsamlı bir geçen test paketi burada bu kadar önemli.</p>
+<h2 id="oyunu-değiştiren-özellik">Oyunu değiştiren özellik</h2>
+<p><strong>Mail Server Factory</strong>, derin sistem yöneticisi
+uzmanlığıyla adeta kapalı tutulan bir alanı demokratikleştiriyor. Bir
+JSON tanımlaması ve fabrika, tekrarlanabilir şekilde güçlendirilmiş,
+izlenen, üretime hazır bir e-posta sunucusuna eşit. Bağlantı türlerinin
+genişliği, modern altyapıya sanki çıplak bir sanal makineymiş gibi doğal
+uyum sağlıyor: Docker üzerinden, Kubernetes’e, bulut SSM kanalları
+aracılığıyla ya da libvirt sanal makinesine dağıtım yapabiliyor. Bu
+taşınabilirlik, yerleşik güvenlik çerçevesiyle birleşince, e-postanızı
+kiralamak yerine sahiplenmenin gerçekten pratik bir yolunu sunuyor.</p>
+<h2 id="en-zor-kısımları-nasıl-çözdük">En zor kısımları nasıl
+çözdük?</h2>
+<p>Tasarım, “ne istediğiniz” (bildirimsel JSON yapılandırması) ile “onu
+her yerde nasıl inşa edeceğiniz” (uygulama motoru) arasındaki ayrımı
+netleştiriyor; bu da tek bir yapılandırmanın birçok işletim sistemi
+hedefine dağıtılmasını sağlıyor. Çoklu dağıtım doğruluğu, QEMU
+sanallaştırmasıyla test edilerek ele alınıyor; böylece fabrikanın
+çıktısı varsayıma dayanmak yerine gerçek sistemler üzerinde doğrulanıyor
+— arkasında kapsamlı bir geçen test paketi var. Docker ile
+konteynerleştirme ve özenle seçilmiş bir yığın (Postfix, Dovecot,
+Rspamd, ClamAV) hareketli parçaları standartlaştırırken, güvenlik
+çerçevesi güçlü şifreleme ve TLS’yi varsayılan olarak zorunlu kılıyor.
+SSH’den bulut ve Kubernetes’e kadar onlarca bağlantı türünü desteklemek,
+aracı “benim sunucumda çalışır”dan “senin altyapına dağıtılır”a
+dönüştürüyor — altyapınız ne olursa olsun.</p>
+</article>

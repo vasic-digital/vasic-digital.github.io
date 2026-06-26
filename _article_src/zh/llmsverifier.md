@@ -1,0 +1,22 @@
+---
+title: LLMsVerifier
+slug: llmsverifier
+repo: https://github.com/vasic-digital/LLMsVerifier
+tech: Go, SQLCipher, Docker, Kubernetes, Python/JS SDKs
+teaser: "Trust, but verify your models: an enterprise platform that proves an LLM actually works — and keeps working — before you depend on it."
+---
+
+## 核心吸引点
+每家大型语言模型（LLM）供应商都宣称自家模型快速、强大且稳定可用。LLMsVerifier 则让它们用事实证明。任何模型在投入使用前，都必须通过一系列严格的实时检验——包括直截了当的「你看到我的代码了吗？」验证——确保你永远不会在不知不觉中部署一个隐患重重、虚夸能力或悄然退化的模型。
+
+## 为何引人入胜
+LLMsVerifier 是一款企业级平台，专为验证、监控和优化跨供应商的 LLM 性能而设计。它支持十二家主流供应商——OpenAI、Anthropic、Cohere、Groq、Together AI、Mistral、xAI、Replicate、DeepSeek、Cerebras、Cloudflare Workers AI 及 SiliconFlow——并对每家进行全面测试：可用性、响应速度、流式输出、函数调用、视觉理解及嵌入向量生成。随后，它通过智能故障转移实时监控模型表现，并生成 AI 驱动的分析报告、趋势洞察及优化建议。在这个全力押注 LLM 的时代，它是几乎无人构建的质量把关层。
+
+## 棘手难题
+验证 LLM 并非易事。模型可能在忽略实际输入的情况下回复、声称拥有并不具备的能力、单次测试通过却在高负载下失效，或在不同供应商间呈现截然不同的流式输出行为。LLMsVerifier 直面这些挑战：它强制执行验证流程，确保模型真正「看到」并理解所提供的代码；独立测试每项能力维度；跟踪因供应商而异的延迟和流式行为。更难的是运维层面——持续健康检查配合自动故障转移，确保生产环境中供应商出现异常时触发恢复而非宕机。再加上企业级需求（加密存储、单点登录、可观测性），门槛之高可想而知。
+
+## 颠覆性意义
+LLMsVerifier 将「希望模型正常运行」转变为「持续拥有实证」。这一转变对任何在生产环境中运行 AI 的组织而言都至关重要：它能在用户发现之前捕捉能力漂移、端点失效及质量退化，并通过模型推荐和评分体系，基于证据而非猜测选择供应商。其品牌后缀与已验证配置导出系统确保只有通过验证的模型才能进入可部署配置——这是保证而非猜测。凭借熔断机制、Prometheus 指标及 Kubernetes 就绪部署，它被设计为构建可靠 LLM 架构的坚实后盾。
+
+## 如何攻克最难部分
+核心洞察在于将验证视为「门槛」而非「报告」：模型必须通过强制性的「你看到我的代码了吗？」检查及相关能力测试，方可投入使用。每项能力——流式输出、函数调用、视觉理解、嵌入向量生成——均独立验证，精准识别部分支持而非想当然。实时监控层配备熔断机制与故障转移模式，持续重新验证健康状态，自动绕过失效供应商。十二家供应商适配器隐藏在统一接口之后，使得同一套严格测试能够跨截然不同的 API 无缝运行。企业级加固——SQLCipher 加密、LDAP/SSO 集成，以及与 Splunk、DataDog、New Relic 和 ELK 的对接——则确保验证器本身值得信赖，成为你信任的基石。

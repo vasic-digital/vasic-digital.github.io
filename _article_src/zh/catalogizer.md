@@ -1,0 +1,22 @@
+---
+title: Catalogizer
+slug: catalogizer
+repo: https://github.com/vasic-digital/Catalogizer
+tech: Go, Gin, React, TypeScript, SQLCipher, WebSocket
+teaser: "One library, every protocol: Catalogizer finds, identifies and organizes 50+ media types across SMB, FTP, NFS, WebDAV and local disk."
+---
+
+## 吸睛之处
+大多数人的媒体资源散落各处——这里一个NAS共享，那里一个FTP归档，还有WebDAV挂载、一堆本地硬盘。Catalogizer将这一切整合为一个可搜索、自动更新的统一媒体库。只需指向你的存储位置，它便会自动发现、识别、丰富并持续监控整个收藏，无需再碰电子表格。
+
+## 为何引人入胜
+Catalogizer不是简单的媒体播放器加文件夹浏览器。它是一台媒体智能引擎，能自动识别50多种媒体类型——电影、电视剧、音乐、游戏、软件、纪录片等，并从TMDB、IMDB、TVDB、MusicBrainz、Spotify和Steam等外部权威数据源获取丰富准确的元数据。最终呈现的目录不仅知道每个文件的存储位置，更能识别其真正内容。基于React + TypeScript的现代Web界面通过WebSocket实时更新，而Gin框架上的高性能Go后端则承担繁重的计算任务。
+
+## 棘手难题
+跨协议编目看似简单，实则困难重重。SMB共享扫描中途断连、FTP连接超时、NFS在macOS与其他系统上的表现迥异，元数据提供商限流、数据不一致或干脆无响应。任何一个挂载点的瞬间失效都会让简单的扫描器崩溃。Catalogizer从设计之初便注重韧性：它优雅处理SMB临时断连，自动重连，并离线缓存状态，确保网络中断也不会破坏目录。此外，它还需识别媒体质量、跟踪同一作品的多个版本，并实时维护不断变化的媒体库一致性——所有这些都基于加密的底层数据库。
+
+## 颠覆性意义
+Catalogizer将碎片化、多协议的存储环境整合为一个统一、可查询、富含分析功能的系统。它做到了商业媒体管理工具不愿涉足的领域：无缝支持SMB、FTP、NFS、WebDAV和本地文件系统；同步至Amazon S3和Google Cloud Storage；导出带图表和增长趋势的专业PDF报告；转换文档格式；以JSON和CSV格式导入/导出收藏夹。由于数据库采用SQLCipher加密，访问控制基于JWT和角色权限，无论家庭还是组织都能安全使用。它是一个开放、自托管的答案，解答了"所有东西都去哪了？它们究竟是什么？"的终极疑问。
+
+## 如何攻克最难关
+架构设计刻意模块化：核心是Go REST API，旁边是加密的SQLCipher存储，实时WebSocket层为React前端提供数据，专用的媒体检测引擎则面向可插拔的多协议文件系统抽象层。这种分离设计正是协议韧性的关键——检测引擎从不假设数据源可用，因此SMB挂载的波动只会降级为离线缓存，而非直接失败。外部元数据集成被视为一个丰富管道而非硬性依赖，因此即使提供商响应缓慢、数据不完整或缺失，也不会阻塞数据摄取。质量分析和版本跟踪作为独立流程运行，使目录能够精准识别："这部电影你有三个版本，这是最佳拷贝。"背后的工程纪律严谨：项目遵循一份成文的《宪章》，要求100%测试覆盖率和完整的QA主干流程，安全审计则内嵌于发布环节——这正是区分业余扫描器与值得托付整个收藏的可靠系统的关键所在。

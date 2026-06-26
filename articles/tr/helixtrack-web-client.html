@@ -1,0 +1,54 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>HelixTrack Web Client</h1>
+    <p class="hx-article-tech">TypeScript</p>
+  </header>
+<h2 id="kanca">Kanca</h2>
+<p>Harika bir izleme motoru, ancak onu gördüğünüz pencere kadar iyidir.
+HelixTrack Web İstemcisi işte bu pencere: modern, duyarlı bir TypeScript
+uygulaması ki HelixTrack proje yönetim platformunun tüm gücünü tek bir
+tarayıcı sekmesinde sunar — kurulum yok, sürtünme yok, aç ve çalışmaya
+başla.</p>
+<h2 id="neden-büyüleyici">Neden büyüleyici</h2>
+<p>Web İstemcisi, HelixTrack ekosisteminin en erişilebilir yüzüdür.
+Yüksek performanslı HelixTrack Çekirdek API’sine bağlanır ve kapsamlı
+proje izleme ile iş birliğini doğrudan tarayıcıda, kullanıcının elindeki
+cihaz ne olursa olsun gerçekleştirir. Hızlı, şifreli ve yüksek
+verimlilik için tasarlanmış bir arka uçla aynı tempoda ilerleyen, ciddi
+ve özellik dolu bir yönetim arayüzünü TypeScript ile inşa etmek anlamlı
+bir çaba gerektirir — ve tam da bu sayede bir ekip, tek bir yerel
+kurulum yapmadan HelixTrack’i benimseyebilir.</p>
+<h2 id="zorlu-sorunlar">Zorlu sorunlar</h2>
+<p>Veri yoğun, gerçek zamanlı proje araçları için geliştirilen web
+istemcileri, görünenden çok daha talepkârdır. Projeler, sorunlar,
+panolar, izinler gibi karmaşık hiyerarşileri, veri büyüdükçe bile hızlı
+ve okunaklı kalan bir arayüzde sunmak gerekir. Farklı ekran boyutlarında
+duyarlılık, öngörülebilir durum yönetimi ve sunucuda tanımlanan izin
+modelini sadakatle yansıtan bir kullanıcı arayüzü, hiç de basit
+değildir. Üstelik her etkileşim, gecikme ve hataları zarifçe yöneterek
+ağ bağlantısı zayıf olsa bile kullanıcıya anında hissettirecek şekilde
+Çekirdek API’ye net bir şekilde eşlenmelidir.</p>
+<h2 id="oyunu-değiştiren-özellik">Oyunu değiştiren özellik</h2>
+<p>Web İstemcisi, tarayıcıda çalışarak yeni bir aracı benimsemenin
+önündeki en büyük engeli ortadan kaldırır: herkesin cihazına kurulum
+yapma zorunluluğunu. Bir bağlantıya sahip olan herkes, izleme, planlama
+ve iş birliğine katılabilir. HelixTrack’i gerçek anlamda çoklu cihaz
+dostu ve ekip uyumlu hale getirir; yerel masaüstü ve mobil istemcileri
+tamamlayarak evrensel varsayılan seçenek olur. Pahalı, tescilli izleme
+araçlarından kaçan kuruluşlar için açık, yetenekli bir web arayüzü,
+geçişi gerçekçi kılan unsurdur.</p>
+<h2 id="en-zor-kısımları-nasıl-çözdük">En zor kısımları nasıl
+çözdük</h2>
+<p>İstemci, HelixTrack Çekirdek REST API’sine karşı özel olarak
+geliştirilmiş bir ön yüz olarak tasarlandı — bu net ayrım, kullanıcı
+arayüzünün tamamen deneyime odaklanmasını sağlarken, arka uç veri ve
+performans sorumluluğunu üstlenir. TypeScript, özellik dolu bir arayüzün
+büyüdükçe sürdürülebilir kalmasını sağlayan tür güvenliği sunar ve
+kullanıcılara ulaşmadan önce tüm hata sınıflarını yakalar. Arayüz,
+baştan itibaren duyarlı olarak tasarlandığı için aynı uygulama hem
+masaüstü hem de mobil tarayıcılara hizmet eder. Diğer tüm HelixTrack
+istemcileriyle aynı API’yi kullandığı için platformun güvenlik ve izin
+modelini yeniden icat etmek yerine devralır; böylece kullanıcının
+tarayıcıda görebileceği ve yapabileceği her şey, çekirdekte uygulanan
+kurallarla tam olarak örtüşür.</p>
+</article>

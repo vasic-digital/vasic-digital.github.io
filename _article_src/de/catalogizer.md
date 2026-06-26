@@ -1,0 +1,22 @@
+---
+title: Catalogizer
+slug: catalogizer
+repo: https://github.com/vasic-digital/Catalogizer
+tech: Go, Gin, React, TypeScript, SQLCipher, WebSocket
+teaser: "One library, every protocol: Catalogizer finds, identifies and organizes 50+ media types across SMB, FTP, NFS, WebDAV and local disk."
+---
+
+## Der Einstieg
+Die meisten Menschen haben ihre Medien überall verstreut – hier ein NAS-Share, dort ein FTP-Archiv, ein WebDAV-Mount, ein Stapel lokaler Laufwerke. Catalogizer behandelt all das als eine einzige, durchsuchbare, sich selbst aktualisierende Bibliothek. Richten Sie es auf Ihre Speicherorte aus, und es entdeckt, identifiziert, bereichert und überwacht Ihre gesamte Sammlung – ohne dass Sie jemals wieder eine Tabellenkalkulation anfassen müssen.
+
+## Warum es fasziniert
+Catalogizer ist kein Mediaplayer, der an einen Ordnerbrowser angehängt wurde. Es ist eine Medienintelligenz-Engine. Automatisch erkennt es über 50 Medientypen – Filme, Serien, Musik, Spiele, Software, Dokumentationen und mehr – und greift auf externe Quellen wie TMDB, IMDB, TVDB, MusicBrainz, Spotify und Steam zu, um reichhaltige, präzise Metadaten anzureichern. Das Ergebnis ist ein Katalog, der nicht nur weiß, wo eine Datei liegt, sondern was sie tatsächlich ist. Eine moderne React- und TypeScript-Weboberfläche hält alles über WebSocket in Echtzeit aktuell, während ein leistungsstarker Go-Backend auf dem Gin-Framework die Hauptarbeit übernimmt.
+
+## Die harten Probleme
+Die Katalogisierung über Protokolle hinweg ist tückisch. SMB-Shares verschwinden mitten im Scan, FTP-Verbindungen brechen ab, NFS verhält sich unter macOS anders als überall sonst, und Metadaten-Anbieter drosseln Anfragen, liefern widersprüchliche Ergebnisse oder gar nichts. Ein naiver Scanner scheitert schon beim ersten Aussetzer eines Mounts. Catalogizer musste von Grund auf robust sein: Es bewältigt temporäre SMB-Unterbrechungen elegant, stellt Verbindungen automatisch wieder her und speichert den Zustand offline, sodass ein Netzwerkausfall den Katalog nie beschädigt. Darüber hinaus musste es Qualitätsmerkmale erkennen, mehrere Versionen desselben Titels verfolgen und eine sich ständig ändernde Bibliothek in Echtzeit konsistent halten – alles bei verschlüsselter Datenbank.
+
+## Was es revolutionär macht
+Catalogizer verwandelt ein zersplittertes, multi-protokollbasiertes Speichersystem in ein kohärentes, abfragbares und analytikreiches System. Es tut, was kommerzielle Medienmanager verweigern: SMB, FTP, NFS, WebDAV und lokale Dateisysteme gleichwertig unterstützen; mit Amazon S3 und Google Cloud Storage synchronisieren; professionelle PDF-Berichte mit Diagrammen und Wachstumstrends exportieren; Dokumente konvertieren; und Favoriten im JSON- und CSV-Format importieren und exportieren. Da die Datenbank mit SQLCipher verschlüsselt ist und der Zugriff per JWT mit rollenbasierter Steuerung abgesichert wird, ist es sicher für Haushalte wie für Organisationen. Es ist die offene, selbst gehostete Antwort auf die Frage: *„Wo ist all mein Zeug, und was ist es eigentlich?"*
+
+## Wie wir die härtesten Herausforderungen gemeistert haben
+Die Architektur ist bewusst modular aufgebaut: ein Go-REST-API im Kern, daneben ein verschlüsselter SQLCipher-Speicher, eine Echtzeit-WebSocket-Schicht für die React-Oberfläche und eine dedizierte Medien-Erkennungs-Engine, die eine erweiterbare Multi-Protokoll-Dateisystemabstraktion nutzt. Diese Trennung ermöglicht die Robustheit gegenüber Protokollen – die Erkennungs-Engine geht nie davon aus, dass eine Quelle erreichbar ist, sodass ein instabiler SMB-Mount stattdessen auf den Offline-Cache zurückfällt, statt einen Fehler zu verursachen. Die Integration externer Metadaten wird als Anreicherungspipeline behandelt, keine harte Abhängigkeit, sodass Anbieter langsam, unvollständig oder gar nicht antworten können, ohne die Erfassung zu blockieren. Qualitätsanalyse und Versionsverfolgung laufen als eigenständige Durchläufe über erkannte Medien, sodass der Katalog sagen kann: *„Diesen Film hast du dreimal, und das ist die beste Kopie."* Dahinter steckt echte Ingenieursdisziplin: Das Projekt wird durch eine schriftliche VERFASSUNG geregelt, die 100 % Testabdeckung und einen vollständigen QS-Zyklus vor der Veröffentlichung vorschreibt – inklusive Sicherheitsaudits im Release-Prozess. Der Unterschied zwischen einem Hobby-Scanner und etwas, dem man seine gesamte Sammlung anvertrauen kann.

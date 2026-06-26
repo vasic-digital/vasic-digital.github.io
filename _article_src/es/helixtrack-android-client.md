@@ -1,0 +1,22 @@
+---
+title: HelixTrack Android Client
+slug: helixtrack-android-client
+repo: ""
+tech: Kotlin, Android
+teaser: "HelixTrack in your pocket — a native Android client with offline support, push notifications and a mobile-first take on project tracking."
+---
+
+## El gancho
+El trabajo en proyectos no espera a que vuelvas a tu escritorio. HelixTrack Android Client pone toda la plataforma en tu bolsillo: una app nativa en Kotlin diseñada para la forma en que la gente usa realmente sus teléfonos —miradas rápidas, actualizaciones ágiles, notificaciones que importan y la capacidad de seguir adelante incluso cuando la señal falla.
+
+## Por qué fascina
+Esto es HelixTrack reinventado para móvil, no simplemente reducido para adaptarse. Un cliente nativo para Android significa una verdadera integración con la plataforma: notificaciones push que muestran la actualización adecuada en el momento justo, soporte offline para trabajar en movimiento y una interfaz optimizada para pantallas táctiles y reducidas. Se conecta a la misma plataforma HelixTrack que los clientes web y de escritorio, por lo que el teléfono del usuario se convierte en una ventana de primera clase a sus proyectos, perfectamente sincronizada con todos los demás entornos de trabajo.
+
+## Los desafíos complejos
+Los clientes móviles de gestión de proyectos deben hacer mucho con poco: espacio de pantalla limitado, conectividad intermitente, estrictas restricciones de batería y ciclo de vida, y usuarios que exigen una respuesta instantánea. El soporte offline implica gestionar el estado local y reconciliarlo al recuperar la conexión —un auténtico reto de sincronización—. Las notificaciones push deben ser oportunas y relevantes, sin convertirse en ruido. Y todo ello debe respetar al pie de la letra los permisos y el modelo de datos de la plataforma, para que lo que un usuario ve en móvil coincida con lo que vería en cualquier otro lugar. El desarrollo nativo para Android añade sus propias exigencias en cuanto a ciclo de vida, fragmentación y rendimiento.
+
+## Lo que lo hace revolucionario
+Un cliente móvil nativo y competente es lo que transforma una herramienta de proyectos de "un lugar al que voy" a "algo que llevo conmigo". El soporte offline y las notificaciones push permiten que el rastreador siga funcionando en los huecos de un día real: desplazamientos, obras, cualquier lugar sin Wi-Fi fiable. Como parte de un ecosistema abierto y multiplataforma, el cliente Android permite a los equipos conectar con los usuarios en el dispositivo que ya usan más, sin encerrar a nadie en una experiencia móvil propietaria. Extiende el alcance de HelixTrack exactamente a donde cada vez más se desarrolla el trabajo moderno.
+
+## Cómo resolvimos los aspectos más difíciles
+El cliente está desarrollado de forma nativa en Kotlin para lograr una auténtica integración con la plataforma —notificaciones, gestión del ciclo de vida y rendimiento que un *wrapper* no puede igualar— y se comunica con la API de la plataforma HelixTrack, compartiendo así la misma fuente de verdad que el resto de clientes. La capacidad offline se gestiona manteniendo un estado de trabajo local y sincronizando los cambios al reconectarse el dispositivo, garantizando que la experiencia móvil sea utilizable incluso con interrupciones de conectividad. La interfaz móvil está diseñada en torno al tacto y al espacio limitado de pantalla, en lugar de adaptarse desde una superficie mayor, y al consumir el mismo contrato Core que el resto de la familia, hereda directamente el modelo de seguridad y permisos de la plataforma, sin necesidad de duplicarlo.

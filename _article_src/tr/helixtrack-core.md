@@ -1,0 +1,27 @@
+---
+title: HelixTrack Core
+slug: helixtrack-core
+repo: https://github.com/Helix-Track/Core
+tech: Go, Gin, SQLCipher, REST
+teaser: "An open-source JIRA alternative built in Go for extreme performance — full agile tracking, hierarchical permissions, and an encrypted core."
+---
+
+## Kanca
+
+Proje takibi yavaş, pahalı ve kapalı bir sistem haline geldi. HelixTrack Core, buna verilen yanıt: Ciddi bir işlem kapasitesine sahip, üretime hazır, açık kaynaklı bir hata takip sistemi. Go ile geliştirilmiş, "özgür dünyanın açık kaynaklı JIRA alternatifi" olarak lanse ediliyor. Modern bir proje yönetim platformunun motoru — hızlı, güvenli ve tamamen sizin.
+
+## Neden büyüleyici?
+
+HelixTrack Core, ağır ticari takip sistemlerinin yaptığı her şeyi yapmayı hedefleyen bir REST API mikroservisi: Tam hata takibi, çevik ve scrum iş akışları, ekip yönetimi, hiyerarşik izin motoru — hepsi sade, kendi sunucunuzda barındırılabilir ve açık kaynaklı. Milisaniyenin altında yanıt süreleri ve yüksek işlem kapasitesiyle üstün performans sunarken, SQLCipher şifrelemesiyle verileri dinlenme halinde koruyor. Bu çekirdeğin etrafında, web, masaüstü, mobil ve daha fazlası için geliştirilmiş, aynı hızlı ve iyi tanımlanmış API ile iletişim kuran bir dizi istemci ürünü yer alıyor.
+
+## Zorlu sorunlar
+
+Yerleşik bir kurumsal aracın yerini almak, yazılım dünyasının en zor işlerinden biri. Çünkü "özellik eşitliği" devasa boyutlarda ve kullanıcılar bunu fark edilmeyecek kadar hızlı bekliyor. Hata takibi aldatıcı derecede derin: İş akışları, öğeler arasındaki ilişkiler, çevik panolar ve hem ayrıntılı hem de doğru olması gereken bir izin modeli. Özellikle hiyerarşik izinler, klasik bir hata ve güvenlik açığı kaynağı — iç içe geçmiş ekipler ve projeler arasında, yüksek istek hızlarında, sistemi yavaşlatmadan erişim kontrolünü doğru şekilde sağlamak gerçekten zor. Ardından tüm bunları, farklı istemcilerin güvenebileceği temiz bir REST API arkasında yapmak gerekiyor.
+
+## Oyunu değiştiren özellik
+
+HelixTrack Core, kuruluşlara pahalı ve tescilli takip sistemlerinden güvenilir bir çıkış yolu sunuyor. Go ile geliştirilmiş ve kendi sunucunuzda barındırılabilir olması sayesinde, kendi altyapınızda, şifreli olarak, koltuk başına ek ücret ödemeden ve satıcı bağımlılığına düşmeden çalışabiliyor. Hızlı ve odaklanmış bir arka uç ile ayrı bir istemci ekosisteminden oluşan mimarisi, ekiplerin platformu tercih ettikleri yüzeyde benimserken tek bir gerçek kaynağı paylaşabileceği anlamına geliyor. Açık kaynaklı olması, ticari takip sistemlerinin sunmadığı özgürlük ve performansı hedefliyor.
+
+## En zor kısımları nasıl çözdük?
+
+Belirleyici tercih, Gin çatısı üzerinde Go ile geliştirilmiş bir mikroservis çekirdeği oldu: Veri modeline sahip, kapsamlı bir REST API sunan, yüksek performanslı tek bir arka uç. Platformun tüm istemcileri, bu çekirdeğin etrafında inşa edildi, içine değil. Bu ayrım, hem performansın hem de çoklu platform erişiminin mümkün olmasını sağlıyor — çekirdek sürekli optimize edilebilirken, istemciler bağımsız olarak gelişebiliyor. Güvenlik, sonradan eklenmiş değil, yapısal: SQLCipher veri deposunu şifrelerken, izin motoru tasarım gereği hiyerarşik. Çevresindeki geniş istemci yelpazesi (web, masaüstü, Android, iOS ve daha fazlası), merkezdeki API sözleşmesinin, üzerinde bütün bir ürün ailesi inşa edilebilecek kadar sağlam olduğunun kanıtı.

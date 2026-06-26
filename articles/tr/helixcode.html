@@ -1,0 +1,64 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>HelixCode</h1>
+    <p class="hx-article-tech">Go, Gin, PostgreSQL, Redis, SSH, WebSocket, MCP</p>
+    <p class="hx-article-repo"><a href="https://github.com/HelixDevelopment/HelixCode" target="_blank" rel="noopener">https://github.com/HelixDevelopment/HelixCode &rarr;</a></p>
+  </header>
+<h2 id="kanca">Kanca</h2>
+<p>Ya yapay zeka destekli kodlama asistanınız tek bir dizüstü
+bilgisayarda çalışan tek bir süreç değil de, sahip olduğunuz tüm
+cihazlara yayılmış, görevleri akıllıca bölen, ilerlemeyi sürekli
+kaydeden ve çökme durumunda bile çalışmayı bir dakika bile kaybetmeden
+sürdüren koordineli bir işçi ağı olsaydı? İşte HelixCode tam da bu:
+Kurumsal düzeyde bir dağıtık yapay zeka geliştirme platformu.</p>
+<h2 id="neden-büyüleyici">Neden büyüleyici?</h2>
+<p>HelixCode, yapay zeka destekli geliştirmeyi bir sohbet robotu olarak
+değil, dağıtık bir hesaplama problemi olarak ele alıyor. Akıllı görev
+bölümü ve iş koruması sunarken, Linux, macOS, Windows ve daha fazlasında
+SSH bağlantılı işçilerden oluşan bir havuzu yönetiyor; planlama, inşa
+etme, test etme, yeniden yapılandırma gibi tüm geliştirme süreçlerini
+çoklu sağlayıcı LLM desteğiyle (Llama.cpp, Ollama, OpenAI) yürütüyor.
+Model Bağlam Protokolü’nü konuşuyor, REST, CLI, terminal arayüzü ve
+WebSocket istemcilerine erişim sağlıyor; zincirleme düşünme ve ağaç
+yapılı düşünme gibi ileri akıl yürütme kalıplarını da katmanlıyor.
+Kısacası, LLM destekli mühendislik için bir işletim sistemi.</p>
+<h2 id="zorlu-sorunlar">Zorlu sorunlar</h2>
+<p>Farklı türde makineler arasında gerçek işleri dağıtmak zordur;
+belirsiz LLM işlerini dağıtmak ise daha da zordur. Görevleri, parçaların
+çakışmadan paralel çalışabileceği şekilde bölmek, aralarındaki
+bağımlılıkları takip etmek ve —en önemlisi— bir işçi çalışma sırasında
+çöktüğünde ilerlemeyi asla kaybetmemek gerekir. Bunun için otomatik
+kontrol noktaları ve geri alma mekanizmaları, dayanıklı görev durumu ve
+SSH işçi havuzu genelinde sağlık izleme şarttır. Bunun üzerine bir de
+LLM katmanı eklenir: Donanıma duyarlı model seçimi, herhangi bir modelin
+takılıp çıkarılabileceği birleşik bir sağlayıcı arayüzü, araç çağırma ve
+dağıtık yürütme boyunca tutarlılığını koruması gereken çok adımlı akıl
+yürütme.</p>
+<h2 id="oyunu-değiştiren-özellikler">Oyunu değiştiren özellikler</h2>
+<p>HelixCode, yapay zeka geliştirmeyi tek bir bağlam penceresi ve tek
+bir cihazın ötesine taşıyor. LLM destekli işleri, iş kaybı garantisiyle
+birçok makine arasında koordine ederek, istikrarsız ve baştan başlamayı
+gerektiren yapay zeka oturumlarını dayanıklı, uzun süreli mühendislik
+boru hatlarına dönüştürüyor. Kapsamı —tam yaşam döngüsü süreçleri, çoklu
+istemci erişimi, platformlar arası işçiler, mobil uyumlu çerçeveler,
+Slack, Discord, e-posta ve Telegram üzerinden çok kanallı bildirimler—
+onun sadece bireysel bir terminalde değil, gerçek bir ekibin
+süreçlerinin merkezinde yer alabileceği anlamına geliyor.</p>
+<h2 id="en-zor-kısımları-nasıl-çözdük">En zor kısımları nasıl
+çözdük?</h2>
+<p>Platform katmanlı bir yapı üzerine inşa edildi: Temel hizmetlerin
+(kimlik doğrulama ve oturum yönetimi, SSH tabanlı işçi havuzu, kontrol
+noktalarıyla görev yönetimi, proje ve iş akışı yönetimi, LLM sağlayıcı
+entegrasyonu) üzerine REST + WebSocket + MCP API’si oturtulmuş.
+Dayanıklılık, kontrol noktaları ve geri alma mekanizmalarının temel
+alınmasıyla sağlanıyor — görev durumu kalıcı olarak saklandığından,
+başarısız olan bir işçi yeniden başlamak yerine kaldığı yerden devam
+ediyor. Sağlayıcı mimarisi, her LLM’yi tek bir arayüz altında
+soyutluyor; donanım tespiti, makineye uygun modelleri seçerek aynı iş
+akışının, bir işçinin veri merkezi GPU’su ya da mütevazı bir CPU’su
+olmasına bakılmaksızın çalışmasını sağlıyor. Akıl yürütme kalıpları,
+sistemin tek seferlik istemler yerine yapılandırılmış zincirleme
+düşünmeyle planlama, inşa etme, test etme ve yeniden yapılandırma
+yapabilmesi için yeniden kullanılabilir iş akışı modları olarak
+uygulanıyor.</p>
+</article>

@@ -1,0 +1,22 @@
+---
+title: HelixTrack Core
+slug: helixtrack-core
+repo: https://github.com/Helix-Track/Core
+tech: Go, Gin, SQLCipher, REST
+teaser: "An open-source JIRA alternative built in Go for extreme performance — full agile tracking, hierarchical permissions, and an encrypted core."
+---
+
+## L’accroche
+Le suivi de projets est devenu lent, coûteux et verrouillé. HelixTrack Core est la réponse : un gestionnaire de tickets open source, prêt pour la production, développé en Go pour des performances sérieuses, présenté comme « l’alternative open source à JIRA pour un monde libre ». C’est le cœur battant d’une plateforme moderne de gestion de projets – rapide, sécurisée et entièrement vôtre.
+
+## Pourquoi c’est fascinant
+HelixTrack Core est un microservice REST qui ambitionne de tout faire aussi bien qu’un outil commercial lourd – suivi complet des tickets, workflows agile et scrum, gestion d’équipe, moteur de permissions hiérarchiques – tout en restant léger, auto-hébergeable et ouvert. Il vise des performances extrêmes avec des réponses en moins d’une milliseconde et une architecture conçue pour un débit élevé, tout en protégeant les données au repos grâce au chiffrement SQLCipher. Autour de ce noyau s’articule toute une gamme de clients pour le web, le bureau, le mobile et au-delà, tous connectés à la même API rapide et bien définie.
+
+## Les défis de taille
+Remplacer un outil d’entreprise bien ancré est l’une des tâches les plus ardues en développement logiciel, car la « parité fonctionnelle » est un monstre et les utilisateurs exigent qu’elle soit invisible en termes de rapidité. Le suivi des tickets est trompeusement complexe : workflows, relations entre éléments, tableaux agile, et un modèle de permissions qui doit être à la fois granulaire et infaillible. Les permissions hiérarchiques, en particulier, sont une source classique de bugs et de failles de sécurité – concevoir un contrôle d’accès fiable pour des équipes et projets imbriqués, à haut débit, sans ralentir le système, relève du défi. Ensuite, il faut tout intégrer derrière une API REST propre, sur laquelle de nombreux clients peuvent s’appuyer.
+
+## Ce qui change la donne
+HelixTrack Core offre aux organisations une porte de sortie crédible face aux solutions de suivi propriétaires et onéreuses. Développé en Go et auto-hébergeable, il peut fonctionner sur votre propre infrastructure, chiffré, sans coût par utilisateur ni verrouillage par un éditeur. Son architecture – un backend rapide et ciblé, associé à un écosystème de clients distincts – permet aux équipes d’adopter la plateforme sur l’interface de leur choix tout en partageant une seule source de vérité. C’est un projet open source qui mise résolument sur la liberté et les performances, là où les solutions commerciales font défaut.
+
+## Comment nous avons résolu les problèmes les plus ardus
+Le choix décisif a été d’adopter un noyau microservice en Go, basé sur le framework Gin : un backend unique et haute performance, propriétaire du modèle de données et exposant une API REST complète, autour duquel sont construits tous les clients de la plateforme, plutôt que directement intégrés. Cette séparation est ce qui rend à la fois les performances et la portée multiplateforme réalisables – le noyau peut être optimisé sans relâche tandis que les clients évoluent indépendamment. La sécurité est structurelle, et non ajoutée après coup : SQLCipher chiffre le stockage des données, et le moteur de permissions est hiérarchique par conception. La diversité des clients disponibles (web, bureau, Android, iOS et bien plus) prouve que le contrat d’API au centre est assez solide pour bâtir toute une famille de produits.

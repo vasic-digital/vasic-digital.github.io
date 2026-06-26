@@ -1,0 +1,65 @@
+<article class="hx-article">
+  <header class="hx-article-head">
+    <h1>Server Factory Core Framework</h1>
+    <p class="hx-article-tech">Kotlin</p>
+    <p class="hx-article-repo"><a href="https://github.com/Server-Factory/Core-Framework" target="_blank" rel="noopener">https://github.com/Server-Factory/Core-Framework &rarr;</a></p>
+  </header>
+<h2 id="el-gancho">El gancho</h2>
+<p>Detrás de cada herramienta de automatización confiable hay un
+fundamento que nadie ve. El <em>Server Factory Core Framework</em> es
+ese fundamento: el motor reutilizable en Kotlin que impulsa herramientas
+como <em>Mail Server Factory</em>, otorgando a todo el ecosistema
+<em>Server Factory</em> una columna vertebral única y coherente para
+construir aplicaciones basadas en servidores.</p>
+<h2 id="por-qué-es-fascinante">Por qué es fascinante</h2>
+<p>La mayoría de la automatización de infraestructura es un cúmulo de
+scripts puntuales que se desvían con el tiempo. <em>Server Factory</em>
+adoptó el enfoque opuesto: extraer la maquinaria común —diseño modular,
+registro centralizado, utilidades compartidas, gestión de dependencias—
+en un <em>Core Framework</em>, y luego construir cada herramienta de
+aprovisionamiento sobre él. Por eso las herramientas del ecosistema
+transmiten coherencia: heredan los mismos patrones arquitectónicos y la
+misma infraestructura confiable. Es el pensamiento de <em>framework</em>
+aplicado al mundo poco glamuroso, pero crítico, del despliegue de
+servidores.</p>
+<h2 id="los-problemas-difíciles">Los problemas difíciles</h2>
+<p>Diseñar un <em>framework</em> sobre el que puedan construirse
+múltiples herramientas distintas es inherentemente más complejo que
+desarrollar una sola. Hay que anticipar qué necesitarán en común las
+aplicaciones de aprovisionamiento de servidores —registros que se
+comporten de manera consistente, utilidades que no filtren supuestos, un
+modelo de gestión de dependencias que se adapte a muchos servicios— sin
+limitar en exceso a las herramientas que dependen de él. Si las
+abstracciones fallan, cada herramienta que las consuma heredará el
+error; si aciertas, aceleras todas a la vez. Mantener ese fundamento a
+medida que el ecosistema crece, sin romper la estabilidad de los
+consumidores, es una disciplina constante.</p>
+<h2 id="lo-que-lo-hace-revolucionario">Lo que lo hace
+revolucionario</h2>
+<p>El <em>Core Framework</em> es apalancamiento. Al concentrar las
+partes complejas y compartidas en un solo lugar, cada nueva
+<em>factory</em> —para correo, servicios web, proxies de caché,
+<em>SonarQube</em> y más— parte de una base probada en lugar de un
+archivo en blanco. La coherencia en todo el ecosistema se traduce en
+menor mantenimiento, menos imprevistos y una experiencia operativa
+uniforme, sin importar qué estés aprovisionando. Al ser de código
+abierto, también documenta un patrón limpio y reutilizable para
+cualquiera que construya sus propias herramientas de automatización de
+servidores: separar el motor compartido de la herramienta
+específica.</p>
+<h2 id="cómo-resolvimos-los-desafíos-más-complejos">Cómo resolvimos los
+desafíos más complejos</h2>
+<p>El <em>framework</em> concentra deliberadamente las preocupaciones
+transversales —registro, utilidades, estructura modular y gestión de
+dependencias— para que las <em>factories</em> individuales nunca tengan
+que reimplementarlas. Ese diseño modular es el mecanismo que mantiene la
+coherencia de los consumidores: componen componentes del
+<em>framework</em> en lugar de copiarlos. La prueba está en el
+ecosistema mismo. <em>Mail Server Factory</em> y sus <em>factories</em>
+hermanas se sustentan en esta base, lo que significa que las
+abstracciones del <em>framework</em> han sido validadas por herramientas
+reales de aprovisionamiento orientadas a producción, y no imaginadas en
+el vacío. El valor del <em>framework</em> no se mide en funcionalidades,
+sino en cuánto permite que las herramientas que lo utilizan se
+salten.</p>
+</article>

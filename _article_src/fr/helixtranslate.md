@@ -1,0 +1,22 @@
+---
+title: HelixTranslate
+slug: helixtranslate
+repo: https://github.com/HelixDevelopment/HelixTranslate
+tech: Go, REST, HTTP/3, WebSocket, SSH workers
+teaser: "Translate any ebook, any format, into any language — with multiple engines, an HTTP/3 API, and live WebSocket monitoring of every job."
+---
+
+## L’accroche
+Les livres sont prisonniers de la langue et du format. HelixTranslate les libère : une boîte à outils hautement performante, conçue pour les entreprises, capable de prendre n’importe quel format d’ebook et de le traduire dans n’importe quelle paire de langues. Le tout s’accompagne d’un tableau de bord en temps réel pour suivre l’avancée des traductions en direct.
+
+## Pourquoi c’est fascinant
+HelixTranslate est développé en Go pour une performance optimale et associe un pipeline de traduction universel à un système de supervision complet. Il prend en charge plusieurs moteurs de traduction, expose une API REST moderne avec support HTTP/3, et diffuse chaque événement – progression, erreurs, achèvement – via WebSocket vers un tableau de bord web interactif. Il peut déléguer les tâches lourdes à des workers distants via SSH et intègre des traductions par LLM via des fournisseurs comme OpenAI, Anthropic ou DeepSeek. Ce qui le rend unique, c’est la combinaison d’une approche « traduire n’importe quoi » avec une visibilité totale en temps réel.
+
+## Les défis complexes
+La traduction universelle d’ebooks repose sur deux problèmes ardus. D’abord, les formats : les ebooks adoptent des structures extrêmement variées, et préserver la mise en page, la structure et le sens tout en changeant de langue relève de la haute précision. Ensuite, l’échelle et l’observabilité : la traduction est lente, coûteuse et sujette aux échecs. Exécuter de nombreuses sessions en parallèle exige donc une visibilité en temps réel sur chacune d’elles – progression en direct, détection immédiate des erreurs, suivi par session – sans quoi l’ensemble devient une boîte noire opaque. Répartir ce travail sur des workers distants via SSH ajoute des défis de coordination et de supervision.
+
+## Ce qui change la donne
+HelixTranslate rend opérationnelle la traduction à grande échelle et multi-moteurs. Son système de supervision en temps réel élimine l’incertitude lors des longues tâches : vous voyez les barres de progression, les journaux d’événements et l’état des workers au fur et à mesure, et les erreurs apparaissent instantanément, sans attendre la fin. En abstrayant plusieurs moteurs et fournisseurs de LLM, il évite tout verrouillage sur un seul backend de traduction et permet d’utiliser le meilleur outil pour chaque tâche. Son API HTTP/3 et son flux d’événements WebSocket en font un service moderne, prêt à s’intégrer, plutôt qu’un simple script ponctuel.
+
+## Comment nous avons résolu les défis les plus ardus
+L’architecture sépare clairement l’outil en ligne de commande et le moteur de traduction d’un serveur de supervision dédié : les tâches de traduction émettent des événements WebSocket qui convergent vers un moniteur central, lequel les redistribue vers un tableau de bord web en direct. Cette conception événementielle est ce qui permet une visibilité en temps réel sans lier le lourd travail de traduction à l’interface utilisateur. Plusieurs stratégies – mode démo, LLM simulé et mode worker SSH – permettent d’exécuter le même pipeline supervisé avec des backends simulés ou réels, ce qui est précieux pour tester en toute sécurité les comportements distribués. L’intégration des fournisseurs est modulaire : ajouter un nouveau moteur de traduction ou un LLM se fait par extension, sans réécriture, et le support des workers SSH permet au système de monter en charge horizontalement quand une seule machine ne suffit plus.
