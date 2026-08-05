@@ -1,798 +1,412 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vasic Digital - Advanced Software Engineering</title>
-    <meta name="description" content="Vasic Digital — advanced software engineering. Open-source platforms for AI, project management, infrastructure automation, and mobile, across five GitHub organizations.">
-    <meta name="theme-color" content="#dc3545">
-    <!-- No-flash theme bootstrap: apply saved/OS theme before first paint -->
-    <script>(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/articles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script>(function(){try{var t=localStorage.getItem('od-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+<link rel="stylesheet" href="assets/od/fonts.css"/>
+<link rel="stylesheet" href="assets/od/vasic-digital.css"/>
+<link rel="stylesheet" href="assets/od/components-extended.css"/>
+<link rel="stylesheet" href="assets/od/animations.css"/>
+<link rel="stylesheet" href="assets/od/overlays.css"/>
+<title>Vasic Digital — AI-Native Software Engineering</title>
+<meta name="description" content="Vasic Digital builds AI development systems — multi-provider LLM infrastructure, agent orchestration, and the constitution-plus-evidence governance that makes them trustworthy."/>
+<link rel="canonical" href="https://vasic.digital/"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Vasic Digital"/>
+<meta property="og:title" content="Vasic Digital — AI-Native Software Engineering"/>
+<meta property="og:description" content="Vasic Digital builds AI development systems — multi-provider LLM infrastructure, agent orchestration, and the constitution-plus-evidence governance that makes them trustworthy."/>
+<meta property="og:url" content="https://vasic.digital/"/>
+<meta property="og:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
+<meta property="og:locale" content="en_US"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Vasic Digital — AI-Native Software Engineering"/>
+<meta name="twitter:description" content="Vasic Digital builds AI development systems — multi-provider LLM infrastructure, agent orchestration, and the constitution-plus-evidence governance that makes them trustworthy."/>
+<meta name="twitter:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
+<link rel="alternate" hreflang="en" href="https://vasic.digital/"/>
+<link rel="alternate" hreflang="de" href="https://vasic.digital/de/"/>
+<link rel="alternate" hreflang="ru" href="https://vasic.digital/ru/"/>
+<link rel="alternate" hreflang="sr" href="https://vasic.digital/sr/"/>
+<link rel="alternate" hreflang="x-default" href="https://vasic.digital/"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://vasic.digital/#identity",
+      "@type": "Organization",
+      "logo": "https://vasic.digital/Assets/Logo.jpeg",
+      "name": "Vasic Digital",
+      "sameAs": [
+        "https://github.com/Helix-Track",
+        "https://github.com/nexu-io"
+      ],
+      "url": "https://vasic.digital/"
+    },
+    {
+      "@id": "https://vasic.digital/#website",
+      "@type": "WebSite",
+      "inLanguage": "en",
+      "name": "Vasic Digital",
+      "publisher": {
+        "@id": "https://vasic.digital/#identity"
+      },
+      "url": "https://vasic.digital/"
+    }
+  ]
+}
+</script>
+  <style>
+    .od-icon{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+    /* Accessible skip link: on-screen 1px (SR-reachable) instead of transformed off-screen; reveals on focus */
+    .od-skip-link{position:absolute;top:0;left:0;transform:none;width:1px;height:1px;overflow:hidden;white-space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);padding:0}
+    .od-skip-link:focus{width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;padding:var(--od-space-2) var(--od-space-4)}
+    .od-brand{font-family:var(--od-font-display);font-weight:700;font-size:var(--od-fs-lg);color:var(--od-text);text-decoration:none}
+    /* header/nav wrap so 375px never overflows horizontally */
+    .od-header{flex-wrap:wrap;row-gap:var(--od-space-3)}
+    .od-nav{flex-wrap:wrap;align-items:center}
+    .od-header__actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--od-space-4)}
+    .od-theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:var(--od-space-2);padding:var(--od-space-2) var(--od-space-3)}
+    .od-theme-toggle .od-icon--sun{display:none}
+    :root[data-theme="dark"] .od-theme-toggle .od-icon--sun{display:inline-block}
+    :root[data-theme="dark"] .od-theme-toggle .od-icon--moon{display:none}
+    @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .od-theme-toggle .od-icon--moon{display:none}:root:not([data-theme="light"]) .od-theme-toggle .od-icon--sun{display:inline-block}}
+    img,svg{max-width:100%}
+    .vd-hero__cta{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--od-space-3);margin-top:var(--od-space-6)}
+    .vd-lede{font-size:var(--od-fs-lg);line-height:var(--od-lh-normal);color:var(--od-text);max-width:72ch;margin:0 0 var(--od-space-4)}
+    .vd-muted{color:var(--od-text-muted)}
+    .vd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:var(--od-space-6);align-items:stretch}
+    .vd-grid--two{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+    .vd-card__blurb{font-size:var(--od-fs-base);line-height:var(--od-lh-normal);color:var(--od-text);margin:0 0 var(--od-space-4)}
+    .vd-card__actions{margin-top:auto;padding-top:var(--od-space-3)}
+    .od-product-card__tech{display:flex;flex-wrap:wrap;gap:var(--od-space-2)}
+    /* grid cards must be allowed to shrink below their min-content (≤320px) */
+    .vd-grid>*,.od-product-card{min-width:0}
+    .od-product-card__title{overflow-wrap:anywhere}
+    .vd-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--od-space-6);max-width:56rem;margin:var(--od-space-8) auto 0}
+    .vd-contact{display:flex;flex-wrap:wrap;gap:var(--od-space-8)}
+    .vd-contact a{color:var(--od-accent)}
+    .od-section__lede{font-size:var(--od-fs-lg);color:var(--od-text-muted);max-width:72ch;margin:0 0 var(--od-space-6)}
+    /* status badge extensions — OpenDesign tokens only (§11.4.162) */
+    .od-badge--status--production,.od-badge--status--shipped,.od-badge--status--active,.od-badge--status--stable{background-color:var(--od-success);color:var(--od-on-accent)}
+    .od-badge--status--scaffold,.od-badge--status--mixed{background-color:var(--od-surface-2);color:var(--od-text)}
+  </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo-container">
-                    <img src="Assets/Logo.jpeg" alt="Vasic Digital Logo" class="logo" id="logo">
-                    <span class="logo-text">VASIC DIGITAL</span>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <button id="theme-toggle" class="theme-toggle">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+<a class="od-skip-link" href="#main">Skip to content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.9 4.9l1.4 1.4"/><path d="M17.7 17.7l1.4 1.4"/><path d="M19.1 4.9l-1.4 1.4"/><path d="M6.3 17.7l-1.4 1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></symbol>
+  </svg>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Excellence in Software Engineering</h1>
-                <p class="hero-subtitle">Pioneering tools and platforms — from enterprise project management and AI-powered development to automated infrastructure and mobile apps. Built in the open across five GitHub organizations and 240+ repositories.</p>
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn btn-primary">Explore Our Projects</a>
-                    <a href="https://github.com/vasic-digital" target="_blank" class="btn btn-secondary">Visit GitHub</a>
-                </div>
-            </div>
-            <div class="hero-animation">
-                <div class="floating-element element-1"></div>
-                <div class="floating-element element-2"></div>
-                <div class="floating-element element-3"></div>
-            </div>
-        </section>
+  <header class="od-header">
+    <a class="od-brand" href="index.html">Vasic Digital</a>
+    <div class="od-header__actions">
+      <nav class="od-nav" aria-label="Primary">
+        <a class="od-nav__link" href="#work" data-i18n="nav.work">Work</a>
+        <a class="od-nav__link" href="#products" data-i18n="nav.products">Products</a>
+        <a class="od-nav__link" href="portfolio/" data-i18n="nav.portfolio">Portfolio</a>
+        <a class="od-nav__link" href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle light or dark theme">
+        <svg class="od-icon od-icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="od-icon od-icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+    </div>
+  </header>
 
-        <!-- About Section -->
-        <section id="about" class="section about">
-            <div class="container">
-                <h2 class="section-title">About Vasic Digital</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Vasic Digital is a cutting-edge software engineering organization specializing in open-source development and innovative digital solutions. We create powerful, developer-friendly tools and applications that solve real-world problems across multiple platforms and technologies.</p>
-                        <p>Our mission is to build high-quality, scalable software that empowers developers and users worldwide. From enterprise-grade project tracking systems and AI-powered development platforms to automated server deployment tools, mobile applications, and media management systems, our diverse portfolio showcases our commitment to excellence and innovation across the Server Factory, HelixTrack, HelixDevelopment, Helix-Flow, and Vasic Digital organizations.</p>
-                        <p>We believe in the power of open source and community-driven development. Our projects on GitHub have garnered significant attention, with dozens of forks and active contributors worldwide, serving developers and organizations across multiple continents.</p>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3 class="stat-number">240+</h3>
-                            <p class="stat-label">Repositories</p>
-                        </div>
-                        <div class="stat">
-                            <h3 class="stat-number">5</h3>
-                            <p class="stat-label">GitHub Organizations</p>
-                        </div>
-                        <div class="stat">
-                            <h3 class="stat-number">15+</h3>
-                            <p class="stat-label">Technologies</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <main id="main">
 
-        <!-- Services Section -->
-        <section id="services" class="section services">
-            <div class="container">
-                <h2 class="section-title">Our Expertise</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <i class="fas fa-robot service-icon"></i>
-                        <h3>AI-Powered Development</h3>
-                        <p>Enterprise-grade AI development platforms with multi-LLM support, distributed computing, intelligent task division, and automated application building pipelines for modern software development.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-server service-icon"></i>
-                        <h3>Enterprise Infrastructure</h3>
-                        <p>Automated server deployment and management solutions including mail servers, web services, and virtualization with QEMU across 25+ OS distributions.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-tasks service-icon"></i>
-                        <h3>Project Management Systems</h3>
-                        <p>Production-ready, enterprise-grade project tracking and issue management platforms with extreme performance, military-grade encryption, and comprehensive agile/scrum support.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-mobile-alt service-icon"></i>
-                        <h3>Mobile Development</h3>
-                        <p>Android and cross-platform mobile applications using Kotlin, Java, and Dart/Flutter with modern architecture patterns.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-download service-icon"></i>
-                        <h3>Media & Content Management</h3>
-                        <p>Advanced solutions for media cataloging, video downloading, and content organization across multiple platforms.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-network-wired service-icon"></i>
-                        <h3>Distributed Systems</h3>
-                        <p>Remote management tools, distributed processing endpoints, SSH-based worker pools, and inter-process synchronization for scalable architectures.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-vial service-icon"></i>
-                        <h3>Automated Testing</h3>
-                        <p>Comprehensive testing frameworks, UI recording, screenshot capture, and visual regression testing tools.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-code-branch service-icon"></i>
-                        <h3>Open Source Development</h3>
-                        <p>Building community-driven projects with clean architecture, comprehensive documentation, and active maintenance.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-layer-group service-icon"></i>
-                        <h3>Developer Frameworks</h3>
-                        <p>Reusable frameworks and libraries for Android, JVM, Go, and multi-platform development including core frameworks, toolkits, and architectural patterns.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="od-hero od-reveal">
+      <p class="od-section__eyebrow" data-i18n="hero.eyebrow">// AI-native software engineering</p>
+      <h1 class="od-hero__title" data-i18n="hero.title">AI-native software engineering, built to be trusted.</h1>
+      <p class="od-hero__lede" data-i18n="hero.lede">We build AI development systems — the models, agents, orchestration, and infrastructure that turn large language models into dependable software — together with the governance layer that keeps them honest.</p>
+      <div class="vd-hero__cta">
+        <a class="od-btn od-btn--primary" href="#products" data-i18n="hero.cta_products">Explore the products</a>
+        <a class="od-btn od-btn--secondary" href="portfolio/" data-i18n="hero.cta_portfolio">View the portfolio</a>
+      </div>
+      <div class="vd-stats">
+        <div class="od-stat"><div class="od-stat__value">40+</div><div class="od-stat__label" data-i18n="stat.providers">LLM providers, one interface</div></div>
+        <div class="od-stat"><div class="od-stat__value">140+</div><div class="od-stat__label" data-i18n="stat.repos">repositories, one constitution</div></div>
+        <div class="od-stat"><div class="od-stat__value">33</div><div class="od-stat__label" data-i18n="stat.products">products across three tiers</div></div>
+      </div>
+    </section>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="section portfolio">
-            <div class="container">
-                <h2 class="section-title">Our Portfolio</h2>
-                <p class="portfolio-intro">Explore our cutting-edge open-source projects that empower developers and users worldwide with innovative solutions.</p>
+    <section class="od-section od-reveal" id="about">
+      <p class="od-section__eyebrow" data-i18n="about.eyebrow">// about</p>
+      <h2 class="od-section__title" data-i18n="about.title">A fleet, not a monolith.</h2>
+      <p class="vd-lede" data-i18n="about.body1">Vasic Digital is a focused engineering practice building an interconnected family of AI-development products and reusable modules. Rather than one monolith, the work is organized as a fleet: large product applications on top of dozens of small, independently-tested, decoupled modules — so proven parts are reused across every product instead of rebuilt.</p>
+      <p class="vd-lede vd-muted" data-i18n="about.body2">The backbone language is Go, complemented by Kotlin &amp; Kotlin Multiplatform, TypeScript/React, Python, Swift, and Shell — chosen per job. What ties the fleet together is discipline made mechanical: every project inherits a shared engineering Constitution as a Git submodule, and every capability a product advertises must be backed by an automated, evidence-producing test. A feature is not "done" when the tests pass; it is done when a real user can actually use it, and there is captured evidence to prove it.</p>
+    </section>
 
-                <div class="portfolio-grid">
-                    <!-- Catalogizer -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff8e8e;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad3)" opacity="0.2"/>
-                                <rect x="60" y="70" width="80" height="60" rx="5" fill="none" stroke="white" stroke-width="4"/>
-                                <line x1="60" y1="90" x2="140" y2="90" stroke="white" stroke-width="4"/>
-                                <line x1="80" y1="105" x2="120" y2="105" stroke="white" stroke-width="3"/>
-                                <line x1="80" y1="115" x2="120" y2="115" stroke="white" stroke-width="3"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Catalogizer</h3>
-                            <p class="project-tech"><i class="fab fa-html5"></i> Multi-Protocol • Apache 2.0</p>
-                            <p>Advanced multi-protocol media collection management system. Organize, catalog, and manage your media library with intelligent automation and cross-platform synchronization.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/vasic-digital/Catalogizer" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="catalogizer">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+    <section class="od-section od-reveal" id="work">
+      <p class="od-section__eyebrow" data-i18n="work.eyebrow">// what we do</p>
+      <h2 class="od-section__title" data-i18n="work.title">AI-based development, end to end.</h2>
+      <p class="od-section__lede" data-i18n="work.lede">We build the substrate for AI systems — the hard part beneath the app.</p>
+      <div class="vd-grid vd-grid--two od-stagger">
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="wd.llm.title">Multi-provider LLM access</h3>
+          <p class="vd-card__blurb" data-i18n="wd.llm.body">A first-party abstraction over 40+ providers — Anthropic/Claude, OpenAI, DeepSeek, Gemini, Mistral, Groq, xAI/Grok, and local Ollama as a fallback — behind one interface with retries, circuit breakers, and health checks.</p>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="wd.agents.title">Agent orchestration</h3>
+          <p class="vd-card__blurb" data-i18n="wd.agents.body">Headless CLI coding-agent control planes, graph-based agentic workflows, multi-round "AI debate" consensus, and DAG/pipeline runtimes.</p>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="wd.verify.title">LLM verification</h3>
+          <p class="vd-card__blurb" data-i18n="wd.verify.body">A trust layer that scores models with a mandatory comprehension gate ("Do you see my code?") plus latency, streaming, function-calling, vision, and embeddings tests — exporting a verified-only configuration.</p>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="wd.memory.title">Retrieval &amp; memory</h3>
+          <p class="vd-card__blurb" data-i18n="wd.memory.body">RAG, vector databases, embeddings, and fused agent-memory engines (Mem0 + Cognee + Letta) with infinite-context compression.</p>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="wd.defensive.title">Defensive LLM</h3>
+          <p class="vd-card__blurb" data-i18n="wd.defensive.body">Guardrails, PII detection, adversarial red-team fixtures, and input canonicalisation — safety built into the substrate, not bolted on.</p>
+        </article>
+      </div>
+    </section>
 
-                    <!-- GrabTube -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad4)" opacity="0.2"/>
-                                <rect x="50" y="70" width="100" height="60" rx="8" fill="none" stroke="white" stroke-width="4"/>
-                                <polygon points="85,90 85,110 105,100" fill="white"/>
-                                <path d="M 120 85 L 135 75 M 120 100 L 140 100 M 120 115 L 135 125" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>GrabTube</h3>
-                            <p class="project-tech"><i class="fas fa-mobile-alt"></i> Dart • Apache 2.0</p>
-                            <p>Elegant video downloader for popular streaming platforms. Download your favorite content with high quality, fast speeds, and a beautiful, intuitive interface built with Flutter.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/vasic-digital/GrabTube" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="grabtube">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+    <section class="od-section od-reveal" id="products">
+      <p class="od-section__eyebrow" data-i18n="products.eyebrow">// tier 1 — flagship</p>
+      <h2 class="od-section__title" data-i18n="products.title">The Helix product family &amp; LLM infrastructure</h2>
+      <p class="od-section__lede" data-i18n="products.lede">Our flagship line spans the full AI-development lifecycle. In priority order.</p>
+      <div class="vd-grid od-stagger">
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">HelixTrack <span class="od-badge--status od-badge--status--beta">beta</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">HTTP/3 QUIC</span><span class="od-chip">PostgreSQL</span><span class="od-chip">+8</span></div>
+          <p class="vd-card__blurb" data-i18n="p.helixtrack">A free-world alternative to JIRA — the flagship of the Helix-Track line.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/helixtrack.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">HelixAgent <span class="od-badge--status od-badge--status--beta">beta</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">PostgreSQL</span><span class="od-chip">LLMsVerifier</span><span class="od-chip">+6</span></div>
+          <p class="vd-card__blurb" data-i18n="p.helixagent">An ensemble LLM service that lets multiple models debate and ships the answer they agree on.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/helixagent.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">HelixCode <span class="od-badge--status od-badge--status--beta">beta</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">SSH</span><span class="od-chip">Model Context Protocol</span><span class="od-chip">+2</span></div>
+          <p class="vd-card__blurb" data-i18n="p.helixcode">A distributed AI development platform that divides work across SSH-managed workers with checkpoint/rollback.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/helixcode.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">HelixLLM <span class="od-badge--status od-badge--status--beta">beta</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">HTTP/3 QUIC</span><span class="od-chip">llama.cpp</span><span class="od-chip">LLMsVerifier</span><span class="od-chip">+5</span></div>
+          <p class="vd-card__blurb" data-i18n="p.helixllm">One binary, six modes: OpenAI- and Anthropic-compatible inference from laptop to cluster, over HTTP/3.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/helixllm.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">HelixCluster <span class="od-badge--status od-badge--status--in-development">in-development</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Zig</span><span class="od-chip">gRPC</span><span class="od-chip">Raft + SWIM</span><span class="od-chip">+7</span></div>
+          <p class="vd-card__blurb" data-i18n="p.helixcluster">A distributed operating system for AI compute, from datacenter GPUs to edge handhelds.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/helixcluster.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">LLMProvider <span class="od-badge--status od-badge--status--beta">beta</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">net/http</span><span class="od-chip">logrus</span><span class="od-chip">digital.vasic.models</span><span class="od-chip">+2</span></div>
+          <p class="vd-card__blurb" data-i18n="p.llmprovider">One interface, 43 providers — with circuit breakers, retries, and health baked in.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/llmprovider.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">LLMOrchestrator <span class="od-badge--status od-badge--status--beta">beta</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">JSON-lines over stdio</span><span class="od-chip">Circuit breaker</span><span class="od-chip">HealthMonitor</span><span class="od-chip">+2</span></div>
+          <p class="vd-card__blurb" data-i18n="p.llmorchestrator">One control plane for every headless CLI coding agent.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/llmorchestrator.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">LLMsVerifier <span class="od-badge--status od-badge--status--beta">beta</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">SQLite + SQLCipher</span><span class="od-chip">gRPC</span><span class="od-chip">+6</span></div>
+          <p class="vd-card__blurb" data-i18n="p.llmsverifier">Verify. Monitor. Optimize. The single source of truth for LLM and provider verification metadata.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/llmsverifier.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">HelixMemory <span class="od-badge--status od-badge--status--beta">beta</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Mem0</span><span class="od-chip">Cognee</span><span class="od-chip">Letta</span><span class="od-chip">+3</span></div>
+          <p class="vd-card__blurb" data-i18n="p.helixmemory">One memory brain for AI agents — four best-in-class engines, fused.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/helixmemory.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+      </div>
+    </section>
 
-                    <!-- ShareConnect -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad5)" opacity="0.2"/>
-                                <circle cx="75" cy="80" r="15" fill="white"/>
-                                <circle cx="125" cy="80" r="15" fill="white"/>
-                                <circle cx="100" cy="130" r="15" fill="white"/>
-                                <line x1="85" y1="88" x2="110" y2="122" stroke="white" stroke-width="3"/>
-                                <line x1="115" y1="88" x2="100" y2="115" stroke="white" stroke-width="3"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>ShareConnect</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Kotlin • MIT</p>
-                            <p>Innovative solution for sharing downloadable URLs to remote or local processing endpoints. Streamline your workflow with intelligent URL distribution and processing automation.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/vasic-digital/ShareConnect" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="shareconnect">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+    <section class="od-section od-reveal" id="governance">
+      <p class="od-section__eyebrow" data-i18n="gov.eyebrow">// quality &amp; governance — our differentiator</p>
+      <h2 class="od-section__title" data-i18n="gov.title">Governance as an auditable fact, not an aspiration.</h2>
+      <p class="od-section__lede" data-i18n="gov.lede">Two pillars make the whole fleet coherent and trustworthy.</p>
+      <div class="vd-grid vd-grid--two od-stagger">
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">HelixConstitution <span class="od-badge--status od-badge--status--shipped">shipped</span></h3>
+          <p class="vd-card__blurb" data-i18n="gov.constitution">A universal, project-agnostic engineering rulebook shipped as a Git submodule and inherited by every project across a 140+-repository fleet. It encodes non-negotiable discipline — anti-bluff evidence gates, false-positive immunity, data and host safety — that a project may extend but never weaken. One submodule bump upgrades the rules everywhere, and every gate is paired with a mutation test that proves the gate itself isn't a sham.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/helixconstitution.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">HelixQA <span class="od-badge--status od-badge--status--beta">beta</span></h3>
+          <p class="vd-card__blurb" data-i18n="gov.qa">Anti-bluff QA orchestration. It runs written YAML test banks and fully-autonomous, LLM-plus-computer-vision QA sessions across Android, Android TV, Web, and Desktop — and it refuses to score a PASS without captured runtime evidence: screenshots, logcat, video, stack traces. "We tested it" becomes "here is the video, the logcat, and the ticket."</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/helixqa.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+      </div>
+    </section>
 
-                    <!-- Panoptic -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff8e8e;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad6)" opacity="0.2"/>
-                                <circle cx="100" cy="100" r="35" fill="none" stroke="white" stroke-width="4"/>
-                                <circle cx="100" cy="100" r="15" fill="white"/>
-                                <path d="M 100 65 L 100 55 M 135 100 L 145 100 M 100 135 L 100 145 M 65 100 L 55 100" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Panoptic</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Go • MIT</p>
-                            <p>Comprehensive tool for automated testing, UI recording, and screenshot capture. Enhance your QA workflow with powerful automation and detailed visual regression testing capabilities.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/vasic-digital/Panoptic" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="panoptic">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+    <section class="od-section od-reveal" id="utilities">
+      <p class="od-section__eyebrow" data-i18n="utils.eyebrow">// tier 2 — utilities</p>
+      <h2 class="od-section__title" data-i18n="utils.title">Vasic Digital utilities</h2>
+      <p class="od-section__lede" data-i18n="utils.lede">Product-grade tools that stand on their own.</p>
+      <div class="vd-grid od-stagger">
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">Catalogizer <span class="od-badge--status od-badge--status--production">production</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">React</span><span class="od-chip">WebSockets</span><span class="od-chip">+10</span></div>
+          <p class="vd-card__blurb" data-i18n="p.catalogizer">Advanced multi-protocol, encrypted media collection management — detect, catalog, and enrich everything you own.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/catalogizer.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">Courses-Creator <span class="od-badge--status od-badge--status--production">production</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">React</span><span class="od-chip">Electron</span><span class="od-chip">React Native</span><span class="od-chip">+8</span></div>
+          <p class="vd-card__blurb" data-i18n="p.coursescreator">Markdown in, professional video course out — AI-enhanced, multi-platform.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/courses-creator.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">VisionEngine <span class="od-badge--status od-badge--status--active">active</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">GoCV / OpenCV</span><span class="od-chip">LLM vision</span><span class="od-chip">Graph algorithms</span></div>
+          <p class="vd-card__blurb" data-i18n="p.visionengine">See the UI like a user — computer vision plus LLM vision for analysis and navigation.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/visionengine.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">DocProcessor <span class="od-badge--status od-badge--status--active">active</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">LLM agents</span><span class="od-chip">Heuristic parser</span><span class="od-chip">i18n</span></div>
+          <p class="vd-card__blurb" data-i18n="p.docprocessor">Turn documentation into a verifiable feature map for QA automation.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/docprocessor.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">Docs Chain <span class="od-badge--status od-badge--status--active">active</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">DAG</span><span class="od-chip">SQLite</span><span class="od-chip">fsnotify</span></div>
+          <p class="vd-card__blurb" data-i18n="p.docschain">No tracked document can fall out of sync — content-hashed, bidirectional, atomic.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/docs-chain.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">Herald <span class="od-badge--status od-badge--status--active">active</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Shell</span><span class="od-chip">LLM intent inference</span><span class="od-chip">Docs Chain</span></div>
+          <p class="vd-card__blurb" data-i18n="p.herald">Every alert reaches the right destination — no command syntax required.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/herald.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">task_bridge <span class="od-badge--status od-badge--status--scaffold">scaffold</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">SQLite</span><span class="od-chip">HMAC-SHA256</span><span class="od-chip">cron + webhooks</span></div>
+          <p class="vd-card__blurb" data-i18n="p.taskbridge">Your task board and your source-of-truth, impeccably in sync — both ways.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/task-bridge.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">Reusable Module Suite <span class="od-badge--status od-badge--status--scaffold">scaffold</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go (digital.vasic.*)</span><span class="od-chip">Kotlin Multiplatform</span><span class="od-chip">Vector DB / RAG / MCP</span><span class="od-chip">+1</span></div>
+          <p class="vd-card__blurb" data-i18n="p.rms">Build once, reuse everywhere — a fleet of small, decoupled, independently-tested Go and KMP modules.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/vasic-digital-reusable-module-suite.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+      </div>
+    </section>
 
-                    <!-- Android-Toolkit -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad7)" opacity="0.2"/>
-                                <rect x="70" y="65" width="60" height="70" rx="5" fill="none" stroke="white" stroke-width="4"/>
-                                <line x1="70" y1="80" x2="130" y2="80" stroke="white" stroke-width="4"/>
-                                <circle cx="100" cy="120" r="3" fill="white"/>
-                                <line x1="85" y1="95" x2="100" y2="105" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                                <line x1="100" y1="105" x2="115" y2="90" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Android-Toolkit</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Kotlin • Apache 2.0</p>
-                            <p>Essential collection of abstractions and implementations for Android development. Accelerate your mobile app development with battle-tested utilities and common patterns.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/vasic-digital/Android-Toolkit" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="android-toolkit">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+    <section class="od-section od-reveal" id="server-factory">
+      <p class="od-section__eyebrow" data-i18n="sf.eyebrow">// tier 3 — heritage</p>
+      <h2 class="od-section__title" data-i18n="sf.title">Server Factory — infrastructure automation</h2>
+      <p class="od-section__lede" data-i18n="sf.lede">Our DevOps heritage: declarative JSON turned into fully-provisioned, Dockerized servers.</p>
+      <div class="vd-grid od-stagger">
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">Mail Server Factory <span class="od-badge--status od-badge--status--production">production</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Kotlin</span><span class="od-chip">Shell</span><span class="od-chip">Docker</span><span class="od-chip">QEMU</span><span class="od-chip">+4</span></div>
+          <p class="vd-card__blurb" data-i18n="p.msf">Run your mail server like the boss — describe it in JSON, deploy it anywhere.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/mail-server-factory.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">Server Factory Core Framework <span class="od-badge--status od-badge--status--stable">stable</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Kotlin</span><span class="od-chip">Shell</span><span class="od-chip">Gradle</span></div>
+          <p class="vd-card__blurb" data-i18n="p.sfcore">The shared engine behind every Server Factory.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/server-factory-core-framework.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">Qemu-Utils <span class="od-badge--status od-badge--status--active">active</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Shell</span><span class="od-chip">QEMU</span><span class="od-chip">Bridge / TAP</span><span class="od-chip">ISO images</span></div>
+          <p class="vd-card__blurb" data-i18n="p.qemu">QEMU VM images, managed like artifacts — download, run, network, publish.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/qemu-utils.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title">Parallels-Utils <span class="od-badge--status od-badge--status--active">active</span></h3>
+          <div class="od-product-card__tech"><span class="od-chip">Shell</span><span class="od-chip">Python 3</span><span class="od-chip">Parallels</span></div>
+          <p class="vd-card__blurb" data-i18n="p.parallels">Compress, publish, and reuse your Parallels VM images across every machine.</p>
+          <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="products/parallels-utils.html" data-i18n="cta.readmore">Read more</a></div>
+        </article>
+      </div>
+    </section>
 
-                    <!-- Asinka -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad8" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad8)" opacity="0.2"/>
-                                <circle cx="70" cy="100" r="20" fill="none" stroke="white" stroke-width="4"/>
-                                <circle cx="130" cy="100" r="20" fill="none" stroke="white" stroke-width="4"/>
-                                <path d="M 90 100 L 110 100" stroke="white" stroke-width="4"/>
-                                <path d="M 95 90 L 105 90 M 95 110 L 105 110" stroke="white" stroke-width="3"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Asinka</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Kotlin</p>
-                            <p>High-performance interprocess objects synchronization library. Enable seamless communication between processes with thread-safe, efficient data sharing mechanisms.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/vasic-digital/Asinka" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="asinka">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+    <section class="od-section od-reveal" id="technologies">
+      <p class="od-section__eyebrow" data-i18n="tech.eyebrow">// technologies</p>
+      <h2 class="od-section__title" data-i18n="tech.title">Grounded in our actual stack.</h2>
+      <div class="vd-grid vd-grid--two od-stagger">
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="tech.lang.title">Languages</h3>
+          <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Kotlin / KMP</span><span class="od-chip">TypeScript</span><span class="od-chip">Python</span><span class="od-chip">Swift</span><span class="od-chip">Shell</span><span class="od-chip">PL/pgSQL</span><span class="od-chip">TLA+</span></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="tech.ai.title">AI / LLM</h3>
+          <div class="od-product-card__tech"><span class="od-chip">43+ provider adapters</span><span class="od-chip">MCP</span><span class="od-chip">RAG</span><span class="od-chip">Vector DBs</span><span class="od-chip">HiPlan / MCTS / ToT</span><span class="od-chip">SWE-bench / HumanEval / MMLU</span></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="tech.backend.title">Backend</h3>
+          <div class="od-product-card__tech"><span class="od-chip">Gin</span><span class="od-chip">gRPC + Protobuf</span><span class="od-chip">HTTP/3 (QUIC)</span><span class="od-chip">WebSockets</span><span class="od-chip">Angular / React</span><span class="od-chip">Kafka / RabbitMQ</span></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="tech.data.title">Data</h3>
+          <div class="od-product-card__tech"><span class="od-chip">PostgreSQL</span><span class="od-chip">SQLite</span><span class="od-chip">SQLCipher</span><span class="od-chip">Redis</span><span class="od-chip">Neo4j</span><span class="od-chip">ClickHouse</span><span class="od-chip">MinIO / S3</span></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="tech.infra.title">Infra / DevOps</h3>
+          <div class="od-product-card__tech"><span class="od-chip">Docker &amp; Compose</span><span class="od-chip">Kubernetes + Helm</span><span class="od-chip">Prometheus + Grafana</span><span class="od-chip">OpenTelemetry</span><span class="od-chip">QEMU / Libvirt</span><span class="od-chip">GitHub Actions</span></div>
+        </article>
+        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+          <h3 class="od-product-card__title" data-i18n="tech.qa.title">Testing / QA</h3>
+          <div class="od-product-card__tech"><span class="od-chip">HelixQA (anti-bluff)</span><span class="od-chip">Challenge harnesses</span><span class="od-chip">go test -race</span><span class="od-chip">SonarQube</span><span class="od-chip">semgrep / gosec / trivy / snyk</span></div>
+        </article>
+      </div>
+    </section>
 
-                    <!-- HelixTrack Core -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad9" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad9)" opacity="0.2"/>
-                                <path d="M 100 60 L 100 140 M 60 100 L 140 100" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                                <circle cx="100" cy="100" r="15" fill="white"/>
-                                <rect x="70" y="70" width="60" height="60" rx="5" fill="none" stroke="white" stroke-width="3"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>HelixTrack Core</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Go • Apache 2.0</p>
-                            <p>Production-ready, open-source JIRA alternative delivering enterprise-grade project and issue tracking. Built with Go for high-throughput performance, features AES-256 encryption, comprehensive agile/scrum support, and a rich REST API for complete project lifecycle management.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Helix-Track/Core" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="helixtrack-core">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+    <section class="od-section od-reveal" id="portfolio-cta">
+      <p class="od-section__eyebrow" data-i18n="pf.eyebrow">// portfolio</p>
+      <h2 class="od-section__title" data-i18n="pf.title">One fleet, one discipline — see all 33 products.</h2>
+      <p class="od-section__lede" data-i18n="pf.lede">A unified, evidence-based portfolio of the Helix family, the vasic-digital utilities, and the Server Factory toolchain.</p>
+      <div class="vd-hero__cta" style="justify-content:flex-start">
+        <a class="od-btn od-btn--primary" href="portfolio/" data-i18n="pf.cta">Open the portfolio</a>
+      </div>
+    </section>
 
-                    <!-- HelixCode -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad10" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff8e8e;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad10)" opacity="0.2"/>
-                                <path d="M 70 90 L 85 100 L 70 110" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                <path d="M 130 90 L 115 100 L 130 110" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                <line x1="105" y1="85" x2="95" y2="115" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>HelixCode</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Go • MIT</p>
-                            <p>Enterprise-grade distributed AI development platform with intelligent task division and multi-LLM support. Coordinate LLM-powered work across multiple machines with SSH-based worker pools, comprehensive workflows for planning, building, testing, and refactoring, plus advanced chain-of-thought reasoning patterns.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/HelixDevelopment/HelixCode" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="helixcode">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+    <section class="od-section od-reveal" id="contact">
+      <p class="od-section__eyebrow" data-i18n="contact.eyebrow">// contact</p>
+      <h2 class="od-section__title" data-i18n="contact.title">Let's build something verifiable.</h2>
+      <p class="od-section__lede" data-i18n="contact.lede">Anyone can wire an app to an LLM. We build the part that is hard: AI systems that are verifiable, reusable, and honest. We don't ask you to trust the green checkmark — we show you the evidence behind it.</p>
+      <div class="vd-contact">
+        <p><strong data-i18n="contact.email_label">Email</strong><br/><a href="mailto:i@mvasic.ru">i@mvasic.ru</a></p>
+        <p><strong data-i18n="contact.github_label">GitHub</strong><br/><a href="https://github.com/vasic-digital" rel="noopener noreferrer" target="_blank">github.com/vasic-digital <svg class="od-icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+      </div>
+    </section>
 
-                    <!-- HelixTranslate -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="gradHT" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff8e8e;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#gradHT)" opacity="0.2"/>
-                                <text x="64" y="112" font-size="42" fill="white" font-family="serif">A</text>
-                                <text x="108" y="112" font-size="42" fill="white" font-family="sans-serif">文</text>
-                                <path d="M 60 130 L 140 130" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>HelixTranslate</h3>
-                            <p class="project-tech"><i class="fas fa-language"></i> Go • Apache 2.0</p>
-                            <p>High-performance, enterprise-grade universal ebook translation toolkit — any ebook format, any language pair. Multiple translation engines, a REST API with HTTP/3 support, and real-time WebSocket events.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/HelixDevelopment/HelixTranslate" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="helixtranslate">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+  </main>
 
-                    <!-- Helix-Flow Platform -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="gradHF" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#gradHF)" opacity="0.2"/>
-                                <path d="M 65 75 C 110 75 90 125 135 125" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/>
-                                <circle cx="65" cy="75" r="8" fill="white"/>
-                                <circle cx="135" cy="125" r="8" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Helix-Flow Platform</h3>
-                            <p class="project-tech"><i class="fas fa-bolt"></i> Go</p>
-                            <p>One platform for all your AI inference needs — run powerful AI models faster and smarter, at any scale, with predictable costs.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Helix-Flow/Platform" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="helix-flow-platform">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+  <footer class="od-footer" data-i18n="footer.text">© 2026 Vasic Digital — built on the OpenDesign system.</footer>
 
-                    <!-- LLMsVerifier -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="gradLV" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#gradLV)" opacity="0.2"/>
-                                <path d="M 70 100 L 92 122 L 134 78" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>LLMsVerifier</h3>
-                            <p class="project-tech"><i class="fas fa-vial-circle-check"></i> Go</p>
-                            <p>Benchmark and verify large language models — a toolkit for measuring and validating LLM behavior and quality.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/vasic-digital/LLMsVerifier" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="llmsverifier">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Server Factory Core Framework -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad12" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff8e8e;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad12)" opacity="0.2"/>
-                                <rect x="70" y="60" width="60" height="80" rx="5" fill="none" stroke="white" stroke-width="4"/>
-                                <line x1="80" y1="80" x2="120" y2="80" stroke="white" stroke-width="3"/>
-                                <line x1="80" y1="95" x2="120" y2="95" stroke="white" stroke-width="3"/>
-                                <line x1="80" y1="110" x2="120" y2="110" stroke="white" stroke-width="3"/>
-                                <line x1="80" y1="125" x2="120" y2="125" stroke="white" stroke-width="3"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Server Factory Core Framework</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Kotlin • Apache 2.0</p>
-                            <p>Foundational framework for server-based applications providing reusable components and architectural patterns. Powers projects like Mail Server Factory with modular design, centralized logging, utilities, and upstream management capabilities to ensure consistency across the Server Factory ecosystem.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Server-Factory/Core-Framework" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="server-factory-core-framework">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mail Server Factory -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad13" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad13)" opacity="0.2"/>
-                                <rect x="60" y="80" width="80" height="50" rx="5" fill="none" stroke="white" stroke-width="4"/>
-                                <path d="M 60 80 L 100 110 L 140 80" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Mail Server Factory</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Kotlin • Docker • Apache 2.0</p>
-                            <p>Streamline mail server deployment with JSON-based configuration and automated implementation across 25 OS distributions. Features AES-256-GCM encryption, TLS 1.3 enforcement, QEMU virtualization for testing, Docker containerization with Postfix, Dovecot, Rspamd, and ClamAV, plus enterprise monitoring and security.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Server-Factory/Mail-Server-Factory" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="mail-server-factory">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- HelixTrack Web Client -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad17" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff8e8e;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad17)" opacity="0.2"/>
-                                <rect x="50" y="70" width="100" height="70" rx="5" fill="none" stroke="white" stroke-width="4"/>
-                                <line x1="50" y1="90" x2="150" y2="90" stroke="white" stroke-width="4"/>
-                                <circle cx="65" cy="80" r="3" fill="white"/>
-                                <circle cx="75" cy="80" r="3" fill="white"/>
-                                <circle cx="85" cy="80" r="3" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>HelixTrack Web Client</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> TypeScript</p>
-                            <p>Modern web application for HelixTrack project management platform. Responsive, feature-rich interface delivering comprehensive project tracking and collaboration capabilities directly in your browser.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Helix-Track" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="helixtrack-web-client">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- HelixTrack Desktop Client -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad18" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad18)" opacity="0.2"/>
-                                <rect x="60" y="60" width="80" height="60" rx="5" fill="none" stroke="white" stroke-width="4"/>
-                                <line x1="60" y1="105" x2="140" y2="105" stroke="white" stroke-width="4"/>
-                                <rect x="85" y="120" width="30" height="5" rx="2" fill="white"/>
-                                <line x1="70" y1="130" x2="130" y2="130" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>HelixTrack Desktop Client</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> TypeScript</p>
-                            <p>Cross-platform desktop application for HelixTrack. Native performance and offline capabilities with seamless synchronization for professional project management on Windows, macOS, and Linux.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Helix-Track" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="helixtrack-desktop-client">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- HelixTrack Android Client -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad19" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ff8e8e;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#dc3545;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad19)" opacity="0.2"/>
-                                <rect x="70" y="55" width="60" height="90" rx="8" fill="none" stroke="white" stroke-width="4"/>
-                                <line x1="70" y1="70" x2="130" y2="70" stroke="white" stroke-width="4"/>
-                                <line x1="70" y1="130" x2="130" y2="130" stroke="white" stroke-width="4"/>
-                                <circle cx="100" cy="138" r="4" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>HelixTrack Android Client</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Kotlin</p>
-                            <p>Native Android application for HelixTrack project management. Optimized mobile experience with offline support, push notifications, and seamless integration with Android ecosystem.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Helix-Track" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="helixtrack-android-client">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- HelixTrack iOS Client -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad20" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad20)" opacity="0.2"/>
-                                <rect x="70" y="50" width="60" height="100" rx="10" fill="none" stroke="white" stroke-width="4"/>
-                                <circle cx="100" cy="63" r="2" fill="white"/>
-                                <line x1="90" y1="140" x2="110" y2="140" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>HelixTrack iOS Client</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Swift</p>
-                            <p>Native iOS application for HelixTrack. Beautiful, performant interface designed for iPhone and iPad with native iOS features, widgets, and iCloud integration.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Helix-Track" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="helixtrack-ios-client">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Yole -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <svg class="project-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad23" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="url(#grad23)" opacity="0.2"/>
-                                <rect x="60" y="60" width="80" height="80" rx="5" fill="none" stroke="white" stroke-width="4"/>
-                                <line x1="75" y1="80" x2="125" y2="80" stroke="white" stroke-width="3"/>
-                                <line x1="75" y1="95" x2="125" y2="95" stroke="white" stroke-width="3"/>
-                                <line x1="75" y1="110" x2="110" y2="110" stroke="white" stroke-width="3"/>
-                                <circle cx="70" cy="125" r="3" fill="white"/>
-                                <circle cx="80" cy="125" r="3" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Yole</h3>
-                            <p class="project-tech"><i class="fas fa-code"></i> Kotlin</p>
-                            <p>Versatile text editor, notes and ToDo application. Support for Markdown, todo.txt, plaintext, mathematical notation, and much more. Perfect for developers and note-takers alike.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/vasic-digital/Yole" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View on GitHub
-                                </a>
-                                <a class="read-more" href="#" data-article="yole">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="contact-subtitle">We'd love to hear from you. Reach out through any of the following channels:</p>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Email</h3>
-                                <a href="mailto:i@mvasic.ru" class="contact-link">i@mvasic.ru</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h3>Phone</h3>
-                                <a href="tel:+79663237717" class="contact-link">+7 966 323 77 17</a>
-                                <a href="tel:+381692535718" class="contact-link">+381 69 25 35 718</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h3>Location</h3>
-                                <p>Belgrade (Serbia) and Moscow (Russian Federation)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="Assets/Logo.jpeg" alt="Vasic Digital Logo" class="logo" id="footer-logo">
-                    <p>Innovative software solutions since 2023</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Featured Projects</h3>
-                        <ul>
-                            <li><a href="https://github.com/Helix-Track/Core" target="_blank">HelixTrack Core</a></li>
-                            <li><a href="https://github.com/HelixDevelopment/HelixCode" target="_blank">HelixCode</a></li>
-                            <li><a href="https://github.com/Server-Factory/Mail-Server-Factory" target="_blank">Mail Server Factory</a></li>
-                            <li><a href="https://github.com/vasic-digital/GrabTube" target="_blank">GrabTube</a></li>
-                            <li><a href="https://github.com/vasic-digital/Catalogizer" target="_blank">Catalogizer</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Organizations</h3>
-                        <ul>
-                            <li><a href="https://github.com/Server-Factory" target="_blank">Server Factory</a></li>
-                            <li><a href="https://github.com/Helix-Track" target="_blank">Helix Track</a></li>
-                            <li><a href="https://github.com/HelixDevelopment" target="_blank">Helix Development</a></li>
-                            <li><a href="https://github.com/Helix-Flow" target="_blank">Helix Flow</a></li>
-                            <li><a href="https://github.com/vasic-digital" target="_blank">Vasic Digital</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Contact</h3>
-                        <ul>
-                            <li><a href="mailto:i@mvasic.ru">Email Us</a></li>
-                            <li><a href="#">Schedule Call</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Vasic Digital. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://github.com/vasic-digital" target="_blank" title="GitHub Organization"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/translations.js"></script>
-    <script src="js/language-switcher.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/articles.js" defer></script>
+<script>
+  (function(){
+    var btn=document.getElementById('od-theme-toggle');
+    if(!btn)return;
+    btn.addEventListener('click',function(){
+      var d=document.documentElement;var cur=d.getAttribute('data-theme');
+      var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var next=cur==='dark'?'light':(cur==='light'?'dark':(prefersDark?'light':'dark'));
+      d.setAttribute('data-theme',next);
+      try{localStorage.setItem('od-theme',next);}catch(e){}
+    });
+  })();
+</script>
+<script defer src="assets/od/motion.js"></script>
 </body>
 </html>
