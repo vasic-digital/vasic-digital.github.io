@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../assets/od/overlays.css"/>
 <title>HelixPlay — Vasic Digital</title>
 <meta name="description" content="HelixPlay is a self-hostable cloud-gaming platform that turns any GPU-equipped machine into a remote streaming host, delivering console-class gameplay to desktop, mobile, TV, and browser clients. It is built as a Go-centric monorepo of 46 submodules with a triple-stack client and is white-labellable for partners."/>
+<meta name="keywords" content="software engineering, AI development platforms, LLM orchestration, open source, developer tools, SDK"/>
 <link rel="canonical" href="https://vasic.digital/products/helixplay.html"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta property="og:type" content="article"/>
@@ -25,7 +26,9 @@
 <meta name="twitter:description" content="HelixPlay is a self-hostable cloud-gaming platform that turns any GPU-equipped machine into a remote streaming host, delivering console-class gameplay to desktop, mobile, TV, and browser clients. It is built as a Go-centric monorepo of 46 submodules with a triple-stack client and is white-labellable for partners."/>
 <meta name="twitter:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
 <link rel="alternate" hreflang="en" href="https://vasic.digital/products/helixplay.html"/>
+<link rel="alternate" hreflang="de" href="https://vasic.digital/products/de/helixplay.html"/>
 <link rel="alternate" hreflang="ru" href="https://vasic.digital/products/ru/helixplay.html"/>
+<link rel="alternate" hreflang="sr" href="https://vasic.digital/products/sr/helixplay.html"/>
 <link rel="alternate" hreflang="x-default" href="https://vasic.digital/products/helixplay.html"/>
 <script type="application/ld+json">
 {
@@ -98,6 +101,21 @@
     .od-product-detail__tagline{font-family:var(--od-font-display);font-size:var(--od-fs-xl);font-weight:700;line-height:var(--od-lh-tight);letter-spacing:var(--od-tracking-tight);color:var(--od-text);margin:0 0 var(--od-space-4)}
     .od-product-detail__lede{font-size:var(--od-fs-lg);line-height:var(--od-lh-normal);color:var(--od-text-muted);margin:0 0 var(--od-space-6)}
     .od-product-detail blockquote{border-inline-start:3px solid var(--od-accent);padding-inline-start:var(--od-space-4);margin:0 0 var(--od-space-4);color:var(--od-text-muted)}
+    /* Accordion (disclosure) chrome for the deep product sections. The library
+       (motion/animations.css) owns the chevron rotation, panel fade + reduced-
+       motion neutralization; here we only style the trigger button + layout so it
+       reads as an editorial heading, not a default button. GPU-safe: no animated
+       width/height/box-shadow. */
+    .od-accordion{margin-top:var(--od-space-8);border-top:1px solid var(--od-border)}
+    .od-accordion__item{border-bottom:1px solid var(--od-border)}
+    .od-accordion__heading{margin:0}
+    .od-accordion__trigger{display:flex;align-items:center;justify-content:space-between;gap:var(--od-space-4);width:100%;padding:var(--od-space-5) 0;background:none;border:0;cursor:pointer;color:var(--od-text);text-align:start;font-family:var(--od-font-display);font-size:var(--od-fs-xl);font-weight:700;line-height:var(--od-lh-tight);letter-spacing:var(--od-tracking-tight)}
+    .od-accordion__trigger:hover .od-accordion__label{color:var(--od-accent)}
+    .od-accordion__trigger:focus-visible{outline:2px solid var(--od-accent);outline-offset:3px;border-radius:var(--od-radius-sm)}
+    .od-accordion__label{transition:color var(--od-dur-fast,150ms) var(--od-ease-standard,ease)}
+    .od-accordion__icon{flex:none;width:1.5em;height:1.5em;color:var(--od-text-muted)}
+    .od-accordion__inner{padding:0 0 var(--od-space-6)}
+    .od-accordion__inner>:first-child{margin-top:0}
   </style>
 </head>
 <body>
@@ -107,6 +125,7 @@
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.9 4.9l1.4 1.4"/><path d="M17.7 17.7l1.4 1.4"/><path d="M19.1 4.9l-1.4 1.4"/><path d="M6.3 17.7l-1.4 1.4"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
   </svg>
   <header class="od-header">
     <a class="od-brand" href="../index.html">Vasic Digital</a>
@@ -115,7 +134,8 @@
         <a class="od-nav__link" href="../index.html">Home</a>
         <a class="od-nav__link" href="../index.html#products">Products</a>
       </nav>
-      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle light or dark theme">
+      <span id="od-lang-mount"></span>
+      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle theme">
         <svg class="od-icon od-icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
         <svg class="od-icon od-icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
       </button>
@@ -191,24 +211,77 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
       <p>HelixPlay is a cloud-gaming platform built as a Go-centric monorepo composed of 46 Git submodules. It takes any gaming PC you already own and turns it into a streaming host, delivering console-class experience to desktop, mobile, TV, and browser clients — self-hostable, open, and white-labellable for partners. The pitch is blunt: your hardware, your service, your brand, no third-party cloud in the middle.</p>
       <p>Its defining design choice is triple-stack client convergence — the hard architectural bet that pays off everywhere else. A Wails desktop app, a Flutter mobile/TV app, and an Angular web client all sit on top of a *single* Go core, compiled to WASM for the browser, so behaviour is written once and shared across every surface instead of forked three ways. Under that lives the real-time media path: Capture → Encode → Packetize → Transmit → Decode → Render, wired to platform-native capture (DXGI / ScreenCaptureKit / PipeWire) and hardware encoders (NVENC / QSV / AMF / VideoToolbox) so the GPU does the heavy lifting, and transported over WebRTC (Pion v4), QUIC (quic-go), and custom UDP datagrams chosen for latency rather than convenience. The backend core owns sessions, tenants, catalog, and auth; a host agent handles capture, encode, and transport at the edge; and mDNS/rendezvous stitches discovery together so clients find their host without manual wiring.</p>
       <p>HelixPlay is architected from the ground up for white-label SaaS — per-tenant theming, catalog filtering, OAuth2, and billing — so a partner can stand up a fully branded service rather than a thin reskin. And it is container-native to the last detail: every service, database, build, test, and scan runs inside containers, which makes the whole platform reproducible to deploy and to verify. Like the rest of the Helix family, it lives under an anti-bluff constitution where a green test is meant to guarantee real, end-user-usable behaviour — not a passing mock.</p>
-      <h2>The itch we had to scratch</h2>
+      <div class="od-accordion">
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixplay-0" aria-expanded="true" aria-controls="od-acc-helixplay-0-panel">
+              <span class="od-accordion__label">The itch we had to scratch</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixplay-0-panel" role="region" aria-labelledby="od-acc-helixplay-0">
+            <div class="od-accordion__inner">
       <p>Commercial cloud gaming is closed, centralized, and rented. HelixPlay was built so anyone with a GPU machine can run their own streaming host — open, self-hosted, and white-labellable — instead of depending on a third-party service.</p>
-      <h2>The leap it delivers</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixplay-1" aria-expanded="true" aria-controls="od-acc-helixplay-1-panel">
+              <span class="od-accordion__label">The leap it delivers</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixplay-1-panel" role="region" aria-labelledby="od-acc-helixplay-1">
+            <div class="od-accordion__inner">
       <p>It fuses three things the commercial services keep apart: self-hosting on hardware you control, one shared Go core driving three client stacks so features land everywhere at once, and white-label multi-tenancy. The result is that a partner can launch a fully branded cloud-gaming service on their *own* GPUs — owning the experience, the users, and the economics — instead of reselling capacity on someone else's cloud and living inside its limits.</p>
-      <h2>What's genuinely new</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixplay-2" aria-expanded="true" aria-controls="od-acc-helixplay-2-panel">
+              <span class="od-accordion__label">What's genuinely new</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixplay-2-panel" role="region" aria-labelledby="od-acc-helixplay-2">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Triple-stack client convergence</strong> — Wails, Flutter, and Angular all riding one Go core (WASM in the browser), so desktop, mobile, TV, and web share a single implementation instead of three drifting ones.</li>
         <li><strong>Self-hostable, white-label SaaS</strong> — per-tenant theming, catalog filtering, OAuth2, and billing built in, so the platform ships as a brandable product, not a demo.</li>
         <li><strong>Modern low-latency transport</strong> — WebRTC (Pion), QUIC, and custom UDP paired with per-platform hardware-encoder selection (NVENC / QSV / AMF / VideoToolbox), tuned for responsiveness over convenience.</li>
         <li><strong>46-submodule decoupled architecture</strong> — cleanly separated components with container-native everything: each service, DB, build, test, and scan runs in a container.</li>
       </ul>
-      <h2>The tough parts — and the fixes</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixplay-3" aria-expanded="true" aria-controls="od-acc-helixplay-3-panel">
+              <span class="od-accordion__label">The tough parts — and the fixes</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixplay-3-panel" role="region" aria-labelledby="od-acc-helixplay-3">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Low-latency streaming across heterogeneous hardware.</strong> Every OS and GPU exposes capture and encode differently, and latency is unforgiving. Solved with a platform-aware capture/encode path — DXGI / ScreenCaptureKit / PipeWire feeding NVENC / QSV / AMF / VideoToolbox — carried over WebRTC / QUIC / UDP so each machine uses its own fastest native route to the pixels.</li>
         <li><strong>One product across desktop, mobile, TV, and web.</strong> Solved with triple-stack clients (Wails, Flutter, Angular) sharing a single Go core compiled to WASM for the browser, so a fix or feature written once shows up on all four surfaces instead of being ported four times.</li>
         <li><strong>Multi-tenant white-label operation.</strong> Solved by building per-tenant theming, catalog filtering, OAuth2, and billing directly into the core backend, so tenant isolation and branding are platform primitives rather than per-customer forks.</li>
       </ul>
-      <h2>How it's built</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixplay-4" aria-expanded="true" aria-controls="od-acc-helixplay-4-panel">
+              <span class="od-accordion__label">How it's built</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixplay-4-panel" role="region" aria-labelledby="od-acc-helixplay-4">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Go (1.26.2 root / 1.25+ submodules)</strong> — the shared core backend and host agent; one language that compiles to native binaries *and* to WASM, which is what makes the single-core, multi-client design possible.</li>
         <li><strong>Wails v2</strong> — the desktop client, binding the Go core to an embedded webview so the desktop app reuses core logic directly instead of reimplementing it.</li>
@@ -219,12 +292,27 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         <li><strong>Containers (Docker/Podman)</strong> — every service, database, build, test, and scan runs containerized, making the whole system reproducible to deploy and to verify.</li>
         <li><strong>mDNS / rendezvous</strong> — zero-config host discovery so clients locate their streaming host automatically on the network.</li>
       </ul>
-      <h2>Where it really stands</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixplay-5" aria-expanded="true" aria-controls="od-acc-helixplay-5-panel">
+              <span class="od-accordion__label">Where it really stands</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixplay-5-panel" role="region" aria-labelledby="od-acc-helixplay-5">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Status: beta.</strong> The README's latency targets (≤30 ms LAN / ≤50 ms WAN p999), "console-class / PS4-Pro-class" framing, and the test-matrix cell count are the project's own stated design targets, not independently benchmarked, and are presented as such.</li>
         <li><strong>License: TBD.</strong> No LICENSE was detected via the GitHub API — UNVERIFIED / not declared.</li>
       </ul>
       <p><strong>Priority tier:</strong> Helix-primary.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
   </main>
 
@@ -244,5 +332,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
   })();
 </script>
 <script defer src="../assets/od/motion.js"></script>
+<script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"de","name":"Deutsch"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"}];window.OD_PAGE={"paths":{"de":"/products/de/helixplay.html","en":"/products/helixplay.html","ru":"/products/ru/helixplay.html","sr":"/products/sr/helixplay.html"},"type":"product"};window.OD_I18N={};</script>
+<script defer src="../assets/od/od-i18n.js"></script>
 </body>
 </html>

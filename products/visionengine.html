@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../assets/od/overlays.css"/>
 <title>VisionEngine — Vasic Digital</title>
 <meta name="description" content="VisionEngine is a decoupled Go toolkit that combines classic computer vision with LLM-based vision to analyze user interfaces, detect UI elements and visual issues, and build navigation graphs of app screen transitions — with pluggable multi-provider vision backends and OpenCV gated behind a build tag."/>
+<meta name="keywords" content="software engineering, AI development platforms, LLM orchestration, open source, developer tools, SDK"/>
 <link rel="canonical" href="https://vasic.digital/products/visionengine.html"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta property="og:type" content="article"/>
@@ -25,7 +26,9 @@
 <meta name="twitter:description" content="VisionEngine is a decoupled Go toolkit that combines classic computer vision with LLM-based vision to analyze user interfaces, detect UI elements and visual issues, and build navigation graphs of app screen transitions — with pluggable multi-provider vision backends and OpenCV gated behind a build tag."/>
 <meta name="twitter:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
 <link rel="alternate" hreflang="en" href="https://vasic.digital/products/visionengine.html"/>
+<link rel="alternate" hreflang="de" href="https://vasic.digital/products/de/visionengine.html"/>
 <link rel="alternate" hreflang="ru" href="https://vasic.digital/products/ru/visionengine.html"/>
+<link rel="alternate" hreflang="sr" href="https://vasic.digital/products/sr/visionengine.html"/>
 <link rel="alternate" hreflang="x-default" href="https://vasic.digital/products/visionengine.html"/>
 <script type="application/ld+json">
 {
@@ -98,6 +101,21 @@
     .od-product-detail__tagline{font-family:var(--od-font-display);font-size:var(--od-fs-xl);font-weight:700;line-height:var(--od-lh-tight);letter-spacing:var(--od-tracking-tight);color:var(--od-text);margin:0 0 var(--od-space-4)}
     .od-product-detail__lede{font-size:var(--od-fs-lg);line-height:var(--od-lh-normal);color:var(--od-text-muted);margin:0 0 var(--od-space-6)}
     .od-product-detail blockquote{border-inline-start:3px solid var(--od-accent);padding-inline-start:var(--od-space-4);margin:0 0 var(--od-space-4);color:var(--od-text-muted)}
+    /* Accordion (disclosure) chrome for the deep product sections. The library
+       (motion/animations.css) owns the chevron rotation, panel fade + reduced-
+       motion neutralization; here we only style the trigger button + layout so it
+       reads as an editorial heading, not a default button. GPU-safe: no animated
+       width/height/box-shadow. */
+    .od-accordion{margin-top:var(--od-space-8);border-top:1px solid var(--od-border)}
+    .od-accordion__item{border-bottom:1px solid var(--od-border)}
+    .od-accordion__heading{margin:0}
+    .od-accordion__trigger{display:flex;align-items:center;justify-content:space-between;gap:var(--od-space-4);width:100%;padding:var(--od-space-5) 0;background:none;border:0;cursor:pointer;color:var(--od-text);text-align:start;font-family:var(--od-font-display);font-size:var(--od-fs-xl);font-weight:700;line-height:var(--od-lh-tight);letter-spacing:var(--od-tracking-tight)}
+    .od-accordion__trigger:hover .od-accordion__label{color:var(--od-accent)}
+    .od-accordion__trigger:focus-visible{outline:2px solid var(--od-accent);outline-offset:3px;border-radius:var(--od-radius-sm)}
+    .od-accordion__label{transition:color var(--od-dur-fast,150ms) var(--od-ease-standard,ease)}
+    .od-accordion__icon{flex:none;width:1.5em;height:1.5em;color:var(--od-text-muted)}
+    .od-accordion__inner{padding:0 0 var(--od-space-6)}
+    .od-accordion__inner>:first-child{margin-top:0}
   </style>
 </head>
 <body>
@@ -107,6 +125,7 @@
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.9 4.9l1.4 1.4"/><path d="M17.7 17.7l1.4 1.4"/><path d="M19.1 4.9l-1.4 1.4"/><path d="M6.3 17.7l-1.4 1.4"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
   </svg>
   <header class="od-header">
     <a class="od-brand" href="../index.html">Vasic Digital</a>
@@ -115,7 +134,8 @@
         <a class="od-nav__link" href="../index.html">Home</a>
         <a class="od-nav__link" href="../index.html#products">Products</a>
       </nav>
-      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle light or dark theme">
+      <span id="od-lang-mount"></span>
+      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle theme">
         <svg class="od-icon od-icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
         <svg class="od-icon od-icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
       </button>
@@ -205,25 +225,78 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
       <p>VisionEngine is a decoupled Go toolkit that combines classic computer vision with LLM-based vision to analyze user interfaces, detect UI elements and visual issues, and build navigation graphs of app screen transitions — with pluggable multi-provider vision backends and OpenCV gated behind a build tag.</p>
       <p>Most UI test automation is effectively blind. It reaches for accessibility trees and DOM selectors — a machine's idea of an interface — and misses everything a human actually experiences: whether a button is visibly rendered, whether the layout broke, whether the screen it landed on is the one it expected. VisionEngine closes that gap by giving automation genuine perception, the ability to look at a UI and reason about it the way a person would. It is organized into four cooperating layers that build from raw pixels up to whole-app understanding. The <strong>Analyzer</strong> defines the stable contract — interfaces (<code>Analyzer</code>, <code>VideoProcessor</code>) and value types (<code>UIElement</code>, <code>ScreenAnalysis</code>, <code>ScreenDiff</code>, <code>Rect</code>, <code>Size</code>, <code>TextRegion</code>, <code>VisualIssue</code>, <code>ScreenIdentity</code>, <code>Action</code>, <code>KeyFrame</code>) with a <code>StubAnalyzer</code> reference implementation — so consumers can detect elements, diff screens, and surface visual issues against a contract that won't shift under them. The <strong>NavigationGraph</strong> lifts the view from a single screen to the whole application, modelling it as a directed graph of screen transitions with BFS pathfinding and three export back-ends (DOT, JSON, Mermaid), so automation can not only see a screen but plan a route to any other — and it ships stress, automation, integration, and security test suites to prove it. The <strong>LLM Vision</strong> layer adds modern multimodal reasoning: a <code>VisionProvider</code> interface with adapters for OpenAI (GPT-4o), Anthropic (Claude), Gemini, Qwen-VL, Kimi, StepGUI, Astica, and Ollama, composed via a <code>FallbackChain</code> so a failing, rate-limited, or weak provider degrades gracefully to the next instead of taking the run down with it. A <strong>Configuration</strong> layer handles env-var loading and validation with every user-facing error string routed through the <code>i18n.Translator</code> seam.</p>
       <p>The decision that makes all of this actually adoptable is that the heavy native dependency is optional. OpenCV bindings are build-tag-gated behind <code>-tags vision</code>, and the default build ships stubs — so the entire module compiles, tests, and runs on any Go 1.25+ host with no OpenCV toolchain in sight, and only pulls in the native stack when a consumer explicitly opts into it. That is what lets VisionEngine drop into a plain CI runner without a bespoke image. Fully decoupled per the constitution (CONST-051(B)), it is incorporated by consumers — notably HelixQA — as an equal-codebase submodule, giving evidence-driven UI testing a real pair of eyes.</p>
-      <h2>The itch we had to scratch</h2>
+      <div class="od-accordion">
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-visionengine-0" aria-expanded="true" aria-controls="od-acc-visionengine-0-panel">
+              <span class="od-accordion__label">The itch we had to scratch</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-visionengine-0-panel" role="region" aria-labelledby="od-acc-visionengine-0">
+            <div class="od-accordion__inner">
       <p>UI test automation that relies only on accessibility trees or selectors misses what the user actually sees. VisionEngine adds real visual understanding — element detection, screen diffing, and LLM-vision reasoning — plus a navigable map of app screens, so automation can both perceive and route through a UI.</p>
-      <h2>Why it matters</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-visionengine-1" aria-expanded="true" aria-controls="od-acc-visionengine-1-panel">
+              <span class="od-accordion__label">Why it matters</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-visionengine-1-panel" role="region" aria-labelledby="od-acc-visionengine-1">
+            <div class="od-accordion__inner">
       <p>It puts two normally-incompatible approaches — fast, deterministic classic computer vision and flexible, semantic LLM vision — behind a single interface with a fallback chain, so a consumer gets the precision of one and the reasoning of the other without choosing. And by keeping OpenCV strictly optional, it removes the usual tax on that power: any Go project can gain real UI perception without dragging a native vision toolchain into its build.</p>
-      <h2>Ideas worth stealing</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-visionengine-2" aria-expanded="true" aria-controls="od-acc-visionengine-2-panel">
+              <span class="od-accordion__label">Ideas worth stealing</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-visionengine-2-panel" role="region" aria-labelledby="od-acc-visionengine-2">
+            <div class="od-accordion__inner">
       <ul>
         <li>Dual perception: classic CV (OpenCV/GoCV) plus multi-provider LLM vision with a fallback chain.</li>
         <li>Navigation graph with BFS pathfinding and DOT/JSON/Mermaid export.</li>
         <li>Build-tag-gated OpenCV so the module stays buildable/testable without native deps.</li>
         <li>Fully decoupled, i18n-seamed, equal-codebase submodule (used by HelixQA).</li>
       </ul>
-      <h2>Where it got hard, and how we won</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-visionengine-3" aria-expanded="true" aria-controls="od-acc-visionengine-3-panel">
+              <span class="od-accordion__label">Where it got hard, and how we won</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-visionengine-3-panel" role="region" aria-labelledby="od-acc-visionengine-3">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Heavy native dependency friction:</strong> solved with <code>-tags vision</code> gating and default stubs so CI/hosts without OpenCV still build and test.</li>
         <li><strong>Vision-provider unreliability:</strong> solved with a <code>VisionProvider</code> interface and <code>FallbackChain</code> composer.</li>
         <li><strong>Mapping complex app flows:</strong> solved with a directed navigation graph plus BFS pathfinding and multi-format export.</li>
         <li><strong>Coupling:</strong> solved via CONST-051(B) decoupling and the i18n translator seam.</li>
       </ul>
-      <h2>The engineering stack</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-visionengine-4" aria-expanded="true" aria-controls="od-acc-visionengine-4-panel">
+              <span class="od-accordion__label">The engineering stack</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-visionengine-4-panel" role="region" aria-labelledby="od-acc-visionengine-4">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Go (1.25+)</strong> — module core and all four layers.</li>
         <li><strong>GoCV / OpenCV</strong> — classic computer vision, build-tag-gated.</li>
@@ -232,6 +305,10 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         <li><strong>DOT / JSON / Mermaid exporters</strong> — navigation-graph visualization.</li>
         <li><strong>i18n Translator</strong> — decoupled user-facing strings.</li>
       </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
   </main>
 
@@ -251,5 +328,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
   })();
 </script>
 <script defer src="../assets/od/motion.js"></script>
+<script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"de","name":"Deutsch"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"}];window.OD_PAGE={"paths":{"de":"/products/de/visionengine.html","en":"/products/visionengine.html","ru":"/products/ru/visionengine.html","sr":"/products/sr/visionengine.html"},"type":"product"};window.OD_I18N={};</script>
+<script defer src="../assets/od/od-i18n.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../assets/od/overlays.css"/>
 <title>HelixBuilder — Vasic Digital</title>
 <meta name="description" content="HelixBuilder is an AI-powered application-building pipeline installed and driven from the shell. It provisions category-specific toolchains — from coding and testing to generative media (animation, audio, images) — via a single install script."/>
+<meta name="keywords" content="software engineering, AI development platforms, LLM orchestration, open source, developer tools, SDK"/>
 <link rel="canonical" href="https://vasic.digital/products/helixbuilder.html"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta property="og:type" content="article"/>
@@ -25,7 +26,9 @@
 <meta name="twitter:description" content="HelixBuilder is an AI-powered application-building pipeline installed and driven from the shell. It provisions category-specific toolchains — from coding and testing to generative media (animation, audio, images) — via a single install script."/>
 <meta name="twitter:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
 <link rel="alternate" hreflang="en" href="https://vasic.digital/products/helixbuilder.html"/>
+<link rel="alternate" hreflang="de" href="https://vasic.digital/products/de/helixbuilder.html"/>
 <link rel="alternate" hreflang="ru" href="https://vasic.digital/products/ru/helixbuilder.html"/>
+<link rel="alternate" hreflang="sr" href="https://vasic.digital/products/sr/helixbuilder.html"/>
 <link rel="alternate" hreflang="x-default" href="https://vasic.digital/products/helixbuilder.html"/>
 <script type="application/ld+json">
 {
@@ -99,6 +102,21 @@
     .od-product-detail__tagline{font-family:var(--od-font-display);font-size:var(--od-fs-xl);font-weight:700;line-height:var(--od-lh-tight);letter-spacing:var(--od-tracking-tight);color:var(--od-text);margin:0 0 var(--od-space-4)}
     .od-product-detail__lede{font-size:var(--od-fs-lg);line-height:var(--od-lh-normal);color:var(--od-text-muted);margin:0 0 var(--od-space-6)}
     .od-product-detail blockquote{border-inline-start:3px solid var(--od-accent);padding-inline-start:var(--od-space-4);margin:0 0 var(--od-space-4);color:var(--od-text-muted)}
+    /* Accordion (disclosure) chrome for the deep product sections. The library
+       (motion/animations.css) owns the chevron rotation, panel fade + reduced-
+       motion neutralization; here we only style the trigger button + layout so it
+       reads as an editorial heading, not a default button. GPU-safe: no animated
+       width/height/box-shadow. */
+    .od-accordion{margin-top:var(--od-space-8);border-top:1px solid var(--od-border)}
+    .od-accordion__item{border-bottom:1px solid var(--od-border)}
+    .od-accordion__heading{margin:0}
+    .od-accordion__trigger{display:flex;align-items:center;justify-content:space-between;gap:var(--od-space-4);width:100%;padding:var(--od-space-5) 0;background:none;border:0;cursor:pointer;color:var(--od-text);text-align:start;font-family:var(--od-font-display);font-size:var(--od-fs-xl);font-weight:700;line-height:var(--od-lh-tight);letter-spacing:var(--od-tracking-tight)}
+    .od-accordion__trigger:hover .od-accordion__label{color:var(--od-accent)}
+    .od-accordion__trigger:focus-visible{outline:2px solid var(--od-accent);outline-offset:3px;border-radius:var(--od-radius-sm)}
+    .od-accordion__label{transition:color var(--od-dur-fast,150ms) var(--od-ease-standard,ease)}
+    .od-accordion__icon{flex:none;width:1.5em;height:1.5em;color:var(--od-text-muted)}
+    .od-accordion__inner{padding:0 0 var(--od-space-6)}
+    .od-accordion__inner>:first-child{margin-top:0}
   </style>
 </head>
 <body>
@@ -108,6 +126,7 @@
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.9 4.9l1.4 1.4"/><path d="M17.7 17.7l1.4 1.4"/><path d="M19.1 4.9l-1.4 1.4"/><path d="M6.3 17.7l-1.4 1.4"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
   </svg>
   <header class="od-header">
     <a class="od-brand" href="../index.html">Vasic Digital</a>
@@ -116,7 +135,8 @@
         <a class="od-nav__link" href="../index.html">Home</a>
         <a class="od-nav__link" href="../index.html#products">Products</a>
       </nav>
-      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle light or dark theme">
+      <span id="od-lang-mount"></span>
+      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle theme">
         <svg class="od-icon od-icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
         <svg class="od-icon od-icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
       </button>
@@ -198,31 +218,99 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
       <p>HelixBuilder is an AI-powered application building pipeline in the Helix family, implemented primarily as shell tooling. Its purpose is to stand up a build/generation workflow for a specific kind of work with a single command: from the project root, <code>./install.sh</code> (optionally with a category argument) provisions the pipeline for that category.</p>
       <p>The pipeline is organized into categories, each corresponding to a distinct class of AI-assisted work: <code>General</code> (the default), <code>Coder</code>, <code>Tester</code>, <code>Translation</code>, and a set of generative categories — <code>Generative/Animation</code>, <code>Generative/Audio</code>, <code>Generative/JPEG</code>, <code>Generative/PNG</code>, and <code>Generative/SVG</code>. Running the installer without an argument selects <code>General</code>; passing a category name installs the toolchain tailored to exactly that kind of work. The payoff is opt-in surface area: a developer pulls down only the capabilities the task actually needs — a code-generation environment, a testing pipeline, or an image-generation stack — instead of swallowing one heavyweight monolithic install and the maintenance burden that comes with it.</p>
       <p>HelixBuilder is Apache-2.0 licensed and part of the broader HelixDevelopment reusable-component ecosystem, where it is positioned as the "AI build pipeline" building block. Its public README is intentionally brief and points to fuller documentation within the repository; details beyond the install surface and category list are not asserted here.</p>
-      <h2>Why this exists</h2>
+      <div class="od-accordion">
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixbuilder-0" aria-expanded="true" aria-controls="od-acc-helixbuilder-0-panel">
+              <span class="od-accordion__label">Why this exists</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixbuilder-0-panel" role="region" aria-labelledby="od-acc-helixbuilder-0">
+            <div class="od-accordion__inner">
       <p>AI-assisted work spans very different toolchains — coding, testing, translation, and several kinds of generative media. HelixBuilder was built so each of those can be provisioned on demand through one consistent installer instead of assembling a bespoke environment every time.</p>
-      <h2>What sets it apart</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixbuilder-1" aria-expanded="true" aria-controls="od-acc-helixbuilder-1-panel">
+              <span class="od-accordion__label">What sets it apart</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixbuilder-1-panel" role="region" aria-labelledby="od-acc-helixbuilder-1">
+            <div class="od-accordion__inner">
       <p>It collapses "set up an AI build environment for X" — usually a bespoke, error-prone afternoon — into a single categorized command, turning AI-assisted build and generation pipelines into something repeatable, shareable, and consistent across every project that adopts it.</p>
-      <h2>The innovations inside</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixbuilder-2" aria-expanded="true" aria-controls="od-acc-helixbuilder-2-panel">
+              <span class="od-accordion__label">The innovations inside</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixbuilder-2-panel" role="region" aria-labelledby="od-acc-helixbuilder-2">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Category-based provisioning</strong> — one installer, many specialized pipelines (code, test, translation, generative media), each resolved from the same single entry point.</li>
         <li><strong>Generative-media breadth</strong> — animation, audio, and multiple image formats (JPEG/PNG/SVG) are treated as first-class build categories in their own right, not bolted on as afterthoughts.</li>
         <li><strong>Shell-native</strong> — installs into practically any environment with no heavyweight runtime prerequisite standing between you and a working pipeline.</li>
       </ul>
-      <h2>Engineering the hard bits</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixbuilder-3" aria-expanded="true" aria-controls="od-acc-helixbuilder-3-panel">
+              <span class="od-accordion__label">Engineering the hard bits</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixbuilder-3-panel" role="region" aria-labelledby="od-acc-helixbuilder-3">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Serving very different AI workflows from one tool</strong> — addressed by a category abstraction in the installer, so each category resolves to its own toolchain while sharing a common entry point. (Implementation depth beyond this is not documented in the public README — UNVERIFIED.)</li>
       </ul>
-      <h2>Under the hood</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixbuilder-4" aria-expanded="true" aria-controls="od-acc-helixbuilder-4-panel">
+              <span class="od-accordion__label">Under the hood</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixbuilder-4-panel" role="region" aria-labelledby="od-acc-helixbuilder-4">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Shell</strong> — primary implementation language and the install/orchestration surface (<code>install.sh</code>); chosen because a shell entry point runs almost everywhere a build happens, keeping the "one command to provision" promise portable across build environments with no runtime to install first.</li>
         <li><strong>Category toolchains</strong> — per-category tool sets for General / Coder / Tester / Translation / Generative (Animation, Audio, JPEG, PNG, SVG). Specific underlying tools/models per category are not enumerated in the public README (UNVERIFIED).</li>
       </ul>
-      <h2>The honest status</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-helixbuilder-5" aria-expanded="true" aria-controls="od-acc-helixbuilder-5-panel">
+              <span class="od-accordion__label">The honest status</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-helixbuilder-5-panel" role="region" aria-labelledby="od-acc-helixbuilder-5">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Status: beta.</strong> The public README is minimal (install script + category list); per-category tooling/models, AI providers, and internal architecture are not described publicly and are therefore not asserted. Fuller docs referenced at <code>./Documentation/README.md</code> were not read.</li>
         <li><strong>License: Apache-2.0</strong> (per GitHub API).</li>
       </ul>
       <p><strong>Priority tier:</strong> Helix-primary.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
   </main>
 
@@ -242,5 +330,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
   })();
 </script>
 <script defer src="../assets/od/motion.js"></script>
+<script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"de","name":"Deutsch"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"}];window.OD_PAGE={"paths":{"de":"/products/de/helixbuilder.html","en":"/products/helixbuilder.html","ru":"/products/ru/helixbuilder.html","sr":"/products/sr/helixbuilder.html"},"type":"product"};window.OD_I18N={};</script>
+<script defer src="../assets/od/od-i18n.js"></script>
 </body>
 </html>

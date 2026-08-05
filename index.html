@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="assets/od/overlays.css"/>
 <title>Vasic Digital — AI-Native Software Engineering</title>
 <meta name="description" content="Vasic Digital builds AI development systems — multi-provider LLM infrastructure, agent orchestration, and the constitution-plus-evidence governance that makes them trustworthy."/>
+<meta name="keywords" content="software engineering, AI development platforms, LLM orchestration, open source, developer tools, SDK"/>
 <link rel="canonical" href="https://vasic.digital/"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta property="og:type" content="website"/>
@@ -25,7 +26,9 @@
 <meta name="twitter:description" content="Vasic Digital builds AI development systems — multi-provider LLM infrastructure, agent orchestration, and the constitution-plus-evidence governance that makes them trustworthy."/>
 <meta name="twitter:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
 <link rel="alternate" hreflang="en" href="https://vasic.digital/"/>
+<link rel="alternate" hreflang="de" href="https://vasic.digital/de/"/>
 <link rel="alternate" hreflang="ru" href="https://vasic.digital/ru/"/>
+<link rel="alternate" hreflang="sr" href="https://vasic.digital/sr/"/>
 <link rel="alternate" hreflang="x-default" href="https://vasic.digital/"/>
 <script type="application/ld+json">
 {
@@ -107,7 +110,7 @@
   </svg>
 
   <header class="od-header">
-    <a class="od-brand" href="index.html"><img class="od-brand__logo" src="Assets/Logo.jpeg" alt="" width="28" height="28" decoding="async"> Vasic Digital</a>
+    <a class="od-brand" href="index.html"><img class="od-brand__logo" src="Assets/logo.svg" alt="" width="28" height="28" decoding="async"> Vasic Digital</a>
     <div class="od-header__actions">
       <nav class="od-nav" aria-label="Primary">
         <a class="od-nav__link" href="#work" data-i18n="nav.work">Work</a>
@@ -115,6 +118,7 @@
         <a class="od-nav__link" href="portfolio/" data-i18n="nav.portfolio">Portfolio</a>
         <a class="od-nav__link" href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
+      <span id="od-lang-mount"></span>
       <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle light or dark theme">
         <svg class="od-icon od-icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
         <svg class="od-icon od-icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
@@ -125,7 +129,7 @@
   <main id="main">
 
     <section class="od-hero od-reveal">
-      <div class="vd-hero__logo"><img src="Assets/Logo.jpeg" alt="Vasic Digital logo" width="112" height="112" decoding="async"></div>
+      <div class="vd-hero__logo"><img src="Assets/logo.svg" alt="Vasic Digital logo" width="112" height="112" decoding="async"></div>
       <p class="od-section__eyebrow" data-i18n="hero.eyebrow">// AI-native software engineering</p>
       <h1 class="od-hero__title" data-i18n="hero.title">AI-native software engineering, built to be trusted.</h1>
       <p class="od-hero__lede" data-i18n="hero.lede">We build AI development systems — the models, agents, orchestration, and infrastructure that turn large language models into dependable software — together with the governance layer that keeps them honest.</p>
@@ -134,10 +138,10 @@
         <a class="od-btn od-btn--secondary" href="portfolio/" data-i18n="hero.cta_portfolio">View the portfolio</a>
         <a class="od-btn od-btn--ghost" href="downloads/Portfolio_EN.pdf">Download Portfolio (PDF)</a>
       </div>
-      <div class="vd-stats">
-        <div class="od-stat"><div class="od-stat__value">40+</div><div class="od-stat__label" data-i18n="stat.providers">LLM providers, one interface</div></div>
-        <div class="od-stat"><div class="od-stat__value">140+</div><div class="od-stat__label" data-i18n="stat.repos">repositories, one constitution</div></div>
-        <div class="od-stat"><div class="od-stat__value">33</div><div class="od-stat__label" data-i18n="stat.products">products across three tiers</div></div>
+      <div class="vd-stats od-stagger">
+        <div class="od-stat"><div class="od-stat__value od-highlight">40+</div><div class="od-stat__label" data-i18n="stat.providers">LLM providers, one interface</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight">140+</div><div class="od-stat__label" data-i18n="stat.repos">repositories, one constitution</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight">33</div><div class="od-stat__label" data-i18n="stat.products">products across three tiers</div></div>
       </div>
     </section>
 
@@ -412,5 +416,7 @@
   })();
 </script>
 <script defer src="assets/od/motion.js"></script>
+<script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"de","name":"Deutsch"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"}];window.OD_PAGE={"paths":{},"type":"home"};window.OD_I18N={"de":{"cta.readmore":"Weiterlesen","footer.text":"© 2026 Vasic Digital — aufgebaut auf dem OpenDesign System.","nav.portfolio":"Portfolio","nav.products":"Produkte"},"en":{"cta.readmore":"Read more","footer.text":"© 2026 Vasic Digital — built on the OpenDesign system.","nav.portfolio":"Portfolio","nav.products":"Products"},"ru":{"cta.readmore":"Read more","footer.text":"© 2026 Vasic Digital — built on the OpenDesign system.","nav.portfolio":"Portfolio","nav.products":"Products"},"sr":{"cta.readmore":"Read more","footer.text":"© 2026 Vasic Digital — built on the OpenDesign system.","nav.portfolio":"Portfolio","nav.products":"Products"}};</script>
+<script defer src="assets/od/od-i18n.js"></script>
 </body>
 </html>

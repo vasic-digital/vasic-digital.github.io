@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../assets/od/overlays.css"/>
 <title>LLMProvider — Vasic Digital</title>
 <meta name="description" content="LLMProvider is a generic, reusable Go module that defines a unified `LLMProvider` interface plus the production resilience patterns around it — circuit breaker, health monitoring, retry with backoff, lazy loading — and ships 43 concrete provider implementations behind that one contract, with an OpenAI-compatible generic adapter and honest, no-hardcoded-fallback model discovery."/>
+<meta name="keywords" content="software engineering, AI development platforms, LLM orchestration, open source, developer tools, SDK"/>
 <link rel="canonical" href="https://vasic.digital/products/llmprovider.html"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta property="og:type" content="article"/>
@@ -25,7 +26,9 @@
 <meta name="twitter:description" content="LLMProvider is a generic, reusable Go module that defines a unified `LLMProvider` interface plus the production resilience patterns around it — circuit breaker, health monitoring, retry with backoff, lazy loading — and ships 43 concrete provider implementations behind that one contract, with an OpenAI-compatible generic adapter and honest, no-hardcoded-fallback model discovery."/>
 <meta name="twitter:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
 <link rel="alternate" hreflang="en" href="https://vasic.digital/products/llmprovider.html"/>
+<link rel="alternate" hreflang="de" href="https://vasic.digital/products/de/llmprovider.html"/>
 <link rel="alternate" hreflang="ru" href="https://vasic.digital/products/ru/llmprovider.html"/>
+<link rel="alternate" hreflang="sr" href="https://vasic.digital/products/sr/llmprovider.html"/>
 <link rel="alternate" hreflang="x-default" href="https://vasic.digital/products/llmprovider.html"/>
 <script type="application/ld+json">
 {
@@ -98,6 +101,21 @@
     .od-product-detail__tagline{font-family:var(--od-font-display);font-size:var(--od-fs-xl);font-weight:700;line-height:var(--od-lh-tight);letter-spacing:var(--od-tracking-tight);color:var(--od-text);margin:0 0 var(--od-space-4)}
     .od-product-detail__lede{font-size:var(--od-fs-lg);line-height:var(--od-lh-normal);color:var(--od-text-muted);margin:0 0 var(--od-space-6)}
     .od-product-detail blockquote{border-inline-start:3px solid var(--od-accent);padding-inline-start:var(--od-space-4);margin:0 0 var(--od-space-4);color:var(--od-text-muted)}
+    /* Accordion (disclosure) chrome for the deep product sections. The library
+       (motion/animations.css) owns the chevron rotation, panel fade + reduced-
+       motion neutralization; here we only style the trigger button + layout so it
+       reads as an editorial heading, not a default button. GPU-safe: no animated
+       width/height/box-shadow. */
+    .od-accordion{margin-top:var(--od-space-8);border-top:1px solid var(--od-border)}
+    .od-accordion__item{border-bottom:1px solid var(--od-border)}
+    .od-accordion__heading{margin:0}
+    .od-accordion__trigger{display:flex;align-items:center;justify-content:space-between;gap:var(--od-space-4);width:100%;padding:var(--od-space-5) 0;background:none;border:0;cursor:pointer;color:var(--od-text);text-align:start;font-family:var(--od-font-display);font-size:var(--od-fs-xl);font-weight:700;line-height:var(--od-lh-tight);letter-spacing:var(--od-tracking-tight)}
+    .od-accordion__trigger:hover .od-accordion__label{color:var(--od-accent)}
+    .od-accordion__trigger:focus-visible{outline:2px solid var(--od-accent);outline-offset:3px;border-radius:var(--od-radius-sm)}
+    .od-accordion__label{transition:color var(--od-dur-fast,150ms) var(--od-ease-standard,ease)}
+    .od-accordion__icon{flex:none;width:1.5em;height:1.5em;color:var(--od-text-muted)}
+    .od-accordion__inner{padding:0 0 var(--od-space-6)}
+    .od-accordion__inner>:first-child{margin-top:0}
   </style>
 </head>
 <body>
@@ -107,6 +125,7 @@
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.9 4.9l1.4 1.4"/><path d="M17.7 17.7l1.4 1.4"/><path d="M19.1 4.9l-1.4 1.4"/><path d="M6.3 17.7l-1.4 1.4"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
   </svg>
   <header class="od-header">
     <a class="od-brand" href="../index.html">Vasic Digital</a>
@@ -115,7 +134,8 @@
         <a class="od-nav__link" href="../index.html">Home</a>
         <a class="od-nav__link" href="../index.html#products">Products</a>
       </nav>
-      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle light or dark theme">
+      <span id="od-lang-mount"></span>
+      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle theme">
         <svg class="od-icon od-icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
         <svg class="od-icon od-icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
       </button>
@@ -198,11 +218,42 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
       <p>LLMProvider is a generic, reusable Go module that defines a unified <code>LLMProvider</code> interface plus the production resilience patterns around it — circuit breaker, health monitoring, retry with backoff, lazy loading — and ships 43 concrete provider implementations behind that one contract, with an OpenAI-compatible generic adapter and honest, no-hardcoded-fallback model discovery.</p>
       <p>LLMProvider is the abstraction layer every LLM-consuming service needs but almost nobody builds well — the unglamorous plumbing that separates a demo from a system that survives contact with real traffic. It defines a single, capability-aware interface — <code>Complete</code>, <code>CompleteStream</code>, <code>HealthCheck</code>, <code>GetCapabilities</code>, <code>ValidateConfig</code> — so application code targets exactly one contract no matter which of 43 backends answers the call, and then it ships the operational hardening that turns fragile provider calls into something you can run in production without holding your breath. A three-state circuit breaker (closed → open → half-open) transparently wraps any provider — *including its streaming channel*, where an empty stream is correctly counted as a failure — so a single misbehaving backend can trip open and stop taking the whole service down with it; a central <code>CircuitBreakerManager</code> tracks every breaker at once. A configurable health monitor continuously walks providers through healthy / degraded / unhealthy / unknown states on threshold-and-interval checks, so degradation is observed rather than discovered by an outage. Retry logic layers exponential backoff with jitter on top, making status-aware decisions — retry the errors worth retrying (429, 5xx, transient network faults), never burn cycles on 4xx or a cancelled context — with delays clamped so a backoff storm can't run away. And a lazy-init pattern defers each provider's construction until its first real use — a deliberate design choice that keeps registration of all 43 providers essentially free.</p>
       <p>The module ships 43 concrete provider packages plus a <code>generic</code> OpenAI-compatible adapter that implements the full interface against *any* <code>/v1/chat/completions</code> endpoint — Bearer auth, SSE streaming with correct <code>[DONE]</code> handling — so a vendor without a dedicated package is still a first-class citizen the moment you point the adapter at its URL. Credentials are resolved in exactly one place (<code>apikeys</code>, using a strict <code>ApiKey_&lt;Provider&gt;</code> convention), closing off the whole "hardcoded key passes the test suite, the real key was never wired, product breaks in prod" class of bug at the source. Model discovery is deliberately, almost stubbornly honest: it queries live provider APIs behind a TTL cache, and — per governance — the old hardcoded fallback tier was deleted outright. When live discovery fails, LLMProvider returns *nothing* rather than a stale catalogue, so a caller is never handed a model ID that looks valid and then can't be invoked. Every piece of this is built thread-safe for concurrent use.</p>
-      <h2>The itch we had to scratch</h2>
+      <div class="od-accordion">
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-llmprovider-0" aria-expanded="true" aria-controls="od-acc-llmprovider-0-panel">
+              <span class="od-accordion__label">The itch we had to scratch</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-llmprovider-0-panel" role="region" aria-labelledby="od-acc-llmprovider-0">
+            <div class="od-accordion__inner">
       <p>Naive LLM calls fail in production — providers rate-limit, degrade, or go down, and one bad backend can take a service with it. Model catalogues drift, and hardcoded lists hand callers IDs that no longer work. LLMProvider centralizes the interface, the resilience patterns, and honest discovery so every consumer inherits fault tolerance and truthfulness for free.</p>
-      <h2>The leap it delivers</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-llmprovider-1" aria-expanded="true" aria-controls="od-acc-llmprovider-1-panel">
+              <span class="od-accordion__label">The leap it delivers</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-llmprovider-1-panel" role="region" aria-labelledby="od-acc-llmprovider-1">
+            <div class="od-accordion__inner">
       <p>It collapses "integrate an LLM provider" down to a single move — implement one interface, or just point the generic adapter at an endpoint — and then wraps that provider, automatically and transparently, in circuit breaking, health monitoring, and jittered-backoff retry. Resilience stops being something each team reinvents (badly, under deadline, after the first outage) and becomes the library's default behaviour across all 43 backends. The reliability engineering is written once, tested hard, and inherited for free by everyone who imports it.</p>
-      <h2>What's genuinely new</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-llmprovider-2" aria-expanded="true" aria-controls="od-acc-llmprovider-2-panel">
+              <span class="od-accordion__label">What's genuinely new</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-llmprovider-2-panel" role="region" aria-labelledby="od-acc-llmprovider-2">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>One capability-aware interface</strong> — completion, streaming, health, capabilities, and config validation collapsed into a single contract every backend honours identically.</li>
         <li><strong>Transparent circuit-breaker wrapping — including streams.</strong> The breaker protects <code>CompleteStream</code>'s channel, not just request/response, and treats an empty stream as the failure it really is — with deadlock-safe, off-lock listener notification.</li>
@@ -212,7 +263,18 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         <li><strong>Lazy init with <code>sync.Once</code></strong> — construction is deferred to first use, so registering all 43 providers costs almost nothing until you actually call one.</li>
         <li><strong>Anti-bluff, multi-locale Challenge stack</strong> — a real runner that exercises circuit, health, and retry behaviour across five locales, gated by paired mutation testing (unmutated code must exit 0; an injected mutation must force exit 99), so a passing suite provably means working behaviour.</li>
       </ul>
-      <h2>The tough parts — and the fixes</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-llmprovider-3" aria-expanded="true" aria-controls="od-acc-llmprovider-3-panel">
+              <span class="od-accordion__label">The tough parts — and the fixes</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-llmprovider-3-panel" role="region" aria-labelledby="od-acc-llmprovider-3">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Cascading provider failures.</strong> One flaky backend must not drag a whole service down with it. Solved with a three-state circuit breaker (closed → open → half-open) that transparently wraps any provider *and its stream*, trips open on sustained failure, probes for recovery in half-open, and is coordinated centrally by a <code>CircuitBreakerManager</code>.</li>
         <li><strong>Transient errors and rate limits.</strong> Solved with status-aware exponential backoff plus jitter — <code>min(InitialDelay·Multiplier^(n-1), MaxDelay) ± jitter</code> — so retries spread out instead of synchronising into a thundering herd. It retries exactly what should be retried (429, 500, 502, 503, 504, and network errors) and refuses to waste attempts on a cancelled context or any other 4xx.</li>
@@ -220,7 +282,18 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         <li><strong>Handing out invalid model IDs.</strong> Solved by deleting the hardcoded discovery fallback tier outright (per CONST-036) and returning nothing on live-discovery failure — plus a defensive copy-on-return so a caller can't mutate the cache or race another reader. Truthfulness is enforced structurally, not by convention.</li>
         <li><strong>Streaming + concurrency correctness.</strong> The subtle failure mode is a deadlock between the breaker's lock and its listener callbacks. Solved by snapshotting listeners and notifying them off-lock under a 5-second timeout, and by unlocking before notifying on reset — with every component built for concurrent use and pinned by the <code>-race</code> suite.</li>
       </ul>
-      <h2>How it's built</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-llmprovider-4" aria-expanded="true" aria-controls="od-acc-llmprovider-4-panel">
+              <span class="od-accordion__label">How it's built</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-llmprovider-4-panel" role="region" aria-labelledby="od-acc-llmprovider-4">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Go (1.25.3)</strong> — chosen for first-class concurrency, static binaries, and a strong standard library; carries the module, the interface, every resilience primitive, and all 43 adapters.</li>
         <li><strong><code>net/http</code> (stdlib)</strong> — deliberately dependency-free HTTP: powers the per-provider clients, the generic OpenAI-compatible adapter, and the live discovery calls, so there's no third-party transport to audit or patch.</li>
@@ -232,13 +305,28 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         <li><strong><code>.env</code> + <code>~/api_keys.sh</code> (<code>ApiKey_&lt;Provider&gt;</code> convention)</strong> — a single, unambiguous source of credential truth, so keys are wired the same way in tests and in production.</li>
         <li><strong>Makefile race suite (<code>-race -p 1</code>) + Challenge runner</strong> — the anti-bluff backbone: the race detector proves concurrency correctness, and the Challenge runner hammers real behaviour through chaos, ddos, scaling, stress, live-discovery, and no-suspend scenarios.</li>
       </ul>
-      <h2>Where it really stands</h2>
+            </div>
+          </div>
+        </div>
+        <div class="od-accordion__item">
+          <h2 class="od-accordion__heading">
+            <button class="od-accordion__trigger" type="button" id="od-acc-llmprovider-5" aria-expanded="true" aria-controls="od-acc-llmprovider-5-panel">
+              <span class="od-accordion__label">Where it really stands</span>
+              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <div class="od-accordion__panel is-open" id="od-acc-llmprovider-5-panel" role="region" aria-labelledby="od-acc-llmprovider-5">
+            <div class="od-accordion__inner">
       <ul>
         <li><strong>Status: beta.</strong> A decoupled reusable module; the GitHub repo is public.</li>
         <li><strong>License: TBD.</strong> Inconsistent — <code>doc.go</code> says MIT while an Apache-2.0-style LICENSE file is present — verify before publishing.</li>
         <li>LLMsVerifier is the upstream single source of truth for the canonical model catalogue. The <code>helix-deps.yaml</code> manifest appears stale (declares <code>deps: []</code> while docs state a dependency on <code>digital.vasic.models</code>); discovery's "Tier 2 (models.dev)" is a planned stub, not active.</li>
       </ul>
       <p><strong>Priority tier:</strong> Helix-primary (LLM-infrastructure cluster — decoupled reusable module). Ranks after HelixTrack.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
   </main>
 
@@ -258,5 +346,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
   })();
 </script>
 <script defer src="../assets/od/motion.js"></script>
+<script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"de","name":"Deutsch"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"}];window.OD_PAGE={"paths":{"de":"/products/de/llmprovider.html","en":"/products/llmprovider.html","ru":"/products/ru/llmprovider.html","sr":"/products/sr/llmprovider.html"},"type":"product"};window.OD_I18N={};</script>
+<script defer src="../assets/od/od-i18n.js"></script>
 </body>
 </html>
