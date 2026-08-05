@@ -2,10 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://vasic.digital/</loc></url>
   <url><loc>https://vasic.digital/portfolio/</loc></url>
+  <url><loc>https://vasic.digital/portfolio/de/</loc></url>
   <url><loc>https://vasic.digital/portfolio/ru/</loc></url>
   <url><loc>https://vasic.digital/portfolio/sr/</loc></url>
   <url><loc>https://vasic.digital/products/catalogizer.html</loc></url>
   <url><loc>https://vasic.digital/products/courses-creator.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/catalogizer.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/courses-creator.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/docprocessor.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/docs-chain.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helix-flow.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixagent.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixbuilder.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixcluster.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixcode.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixconstitution.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixgitpx.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixllm.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixmemory.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixota.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixplay.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixqa.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixskills.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixspecifier.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixterminator.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixtrack.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/helixtranslate.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/herald.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/llmorchestrator.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/llmprovider.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/llmsverifier.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/mail-server-factory.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/parallels-utils.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/qemu-utils.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/server-factory-additional-components.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/server-factory-core-framework.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/task-bridge.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/vasic-digital-reusable-module-suite.html</loc></url>
+  <url><loc>https://vasic.digital/products/de/visionengine.html</loc></url>
   <url><loc>https://vasic.digital/products/docprocessor.html</loc></url>
   <url><loc>https://vasic.digital/products/docs-chain.html</loc></url>
   <url><loc>https://vasic.digital/products/helix-flow.html</loc></url>
