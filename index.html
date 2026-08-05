@@ -62,7 +62,11 @@
     /* Accessible skip link: on-screen 1px (SR-reachable) instead of transformed off-screen; reveals on focus */
     .od-skip-link{position:absolute;top:0;left:0;transform:none;width:1px;height:1px;overflow:hidden;white-space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);padding:0}
     .od-skip-link:focus{width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;padding:var(--od-space-2) var(--od-space-4)}
-    .od-brand{font-family:var(--od-font-display);font-weight:700;font-size:var(--od-fs-lg);color:var(--od-text);text-decoration:none}
+    .od-brand{display:inline-flex;align-items:center;gap:var(--od-space-2);font-family:var(--od-font-display);font-weight:700;font-size:var(--od-fs-lg);color:var(--od-text);text-decoration:none}
+    .od-brand__logo{width:28px;height:28px;object-fit:contain;background:#fff;border:1px solid var(--od-border);border-radius:var(--od-radius-md);padding:2px;flex:none}
+    /* restored hero logo lockup — rounded white chip reads in light + dark (fix #3) */
+    .vd-hero__logo{display:flex;justify-content:center;margin-bottom:var(--od-space-6)}
+    .vd-hero__logo img{width:112px;height:112px;object-fit:contain;background:#fff;border:1px solid var(--od-border);border-radius:var(--od-radius-xl);padding:var(--od-space-3);box-shadow:var(--od-shadow-md)}
     /* header/nav wrap so 375px never overflows horizontally */
     .od-header{flex-wrap:wrap;row-gap:var(--od-space-3)}
     .od-nav{flex-wrap:wrap;align-items:center}
@@ -105,7 +109,7 @@
   </svg>
 
   <header class="od-header">
-    <a class="od-brand" href="index.html">Vasic Digital</a>
+    <a class="od-brand" href="index.html"><img class="od-brand__logo" src="Assets/Logo.jpeg" alt="" width="28" height="28" decoding="async"> Vasic Digital</a>
     <div class="od-header__actions">
       <nav class="od-nav" aria-label="Primary">
         <a class="od-nav__link" href="#work" data-i18n="nav.work">Work</a>
@@ -123,12 +127,14 @@
   <main id="main">
 
     <section class="od-hero od-reveal">
+      <div class="vd-hero__logo"><img src="Assets/Logo.jpeg" alt="Vasic Digital logo" width="112" height="112" decoding="async"></div>
       <p class="od-section__eyebrow" data-i18n="hero.eyebrow">// AI-native software engineering</p>
       <h1 class="od-hero__title" data-i18n="hero.title">AI-native software engineering, built to be trusted.</h1>
       <p class="od-hero__lede" data-i18n="hero.lede">We build AI development systems — the models, agents, orchestration, and infrastructure that turn large language models into dependable software — together with the governance layer that keeps them honest.</p>
       <div class="vd-hero__cta">
         <a class="od-btn od-btn--primary" href="#products" data-i18n="hero.cta_products">Explore the products</a>
         <a class="od-btn od-btn--secondary" href="portfolio/" data-i18n="hero.cta_portfolio">View the portfolio</a>
+        <a class="od-btn od-btn--ghost" href="downloads/Portfolio_EN.pdf">Download Portfolio (PDF)</a>
       </div>
       <div class="vd-stats">
         <div class="od-stat"><div class="od-stat__value">40+</div><div class="od-stat__label" data-i18n="stat.providers">LLM providers, one interface</div></div>

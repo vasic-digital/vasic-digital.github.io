@@ -1,30 +1,31 @@
 :root {
-  /* Design tokens */
-  --od-accent-50: #fff5f5;
-  --od-accent-100: #fed7d7;
-  --od-accent-200: #feb2b2;
-  --od-accent-300: #fc8181;
-  --od-accent-400: #f56565;
-  --od-accent-500: #e53e3e;
-  --od-accent-600: #dc3545;
-  --od-accent-700: #c53030;
-  --od-accent-800: #9b2c2c;
-  --od-accent-900: #742a2a;
+  /* Design tokens — DEEP DARK RED (#8f1d2d) accent over black/white/gray
+     neutrals. Light ramp de-pinked (deep-red tints, not salmon/pink). */
+  --od-accent-50: #f7f1f2;
+  --od-accent-100: #eddddf;
+  --od-accent-200: #d9b3b8;
+  --od-accent-300: #c2868d;
+  --od-accent-400: #a85a63;
+  --od-accent-500: #9a3541;
+  --od-accent-600: #97202f;
+  --od-accent-700: #8f1d2d;
+  --od-accent-800: #701a26;
+  --od-accent-900: #561019;
 
   --od-bg: #ffffff;
   --od-surface: #f8f9fa;
   --od-surface-2: #e9ecef;
-  --od-text: #212529;
+  --od-text: #1a1c1e;        /* near-black neutral text */
   --od-text-muted: #565d64; /* darkened to clear WCAG AA (4.5:1) on --od-surface-2 (§11.4.107) */
   --od-border: #dee2e6;
-  --od-accent: var(--od-accent-600);
-  --od-accent-hover: var(--od-accent-700);
-  --od-accent-active: var(--od-accent-800);
+  --od-accent: var(--od-accent-700);   /* deep dark red as the primary accent */
+  --od-accent-hover: var(--od-accent-800);
+  --od-accent-active: var(--od-accent-900);
   --od-on-accent: #ffffff;
-  --od-focus: rgba(220, 53, 69, 0.5);
+  --od-focus: rgba(143, 29, 45, 0.55);
   --od-success: #28a745;
   --od-warning: #ffc107;
-  --od-danger: var(--od-accent-600);
+  --od-danger: var(--od-accent-700);
   --od-shadow-color: rgba(0, 0, 0, 0.1);
 
   --od-font-display: var(--od-font-space-grotesk);
@@ -96,14 +97,14 @@
   --od-text: #f8f9fa;
   --od-text-muted: #adb5bd;
   --od-border: #495057;
-  --od-accent: #ff6b6b;
-  --od-accent-hover: #ff8787;
-  --od-accent-active: #ffa4a4;
+  --od-accent: #e06b73;        /* dark-red family, lighter for AA on near-black (5.8:1) */
+  --od-accent-hover: #e8737b;
+  --od-accent-active: #ef999f;
   --od-on-accent: #121212;
-  --od-focus: rgba(255, 107, 107, 0.5);
+  --od-focus: rgba(224, 107, 115, 0.55);
   --od-success: #2b8a3e;
   --od-warning: #e6b800;
-  --od-danger: #ff6b6b;
+  --od-danger: #e06b73;
   --od-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -115,14 +116,14 @@
     --od-text: #f8f9fa;
     --od-text-muted: #adb5bd;
     --od-border: #495057;
-    --od-accent: #ff6b6b;
-    --od-accent-hover: #ff8787;
-    --od-accent-active: #ffa4a4;
+    --od-accent: #e06b73;
+    --od-accent-hover: #e8737b;
+    --od-accent-active: #ef999f;
     --od-on-accent: #121212;
-    --od-focus: rgba(255, 107, 107, 0.5);
+    --od-focus: rgba(224, 107, 115, 0.55);
     --od-success: #2b8a3e;
     --od-warning: #e6b800;
-    --od-danger: #ff6b6b;
+    --od-danger: #e06b73;
     --od-shadow-color: rgba(0, 0, 0, 0.2);
   }
 }
@@ -626,6 +627,16 @@ body {
   color: var(--od-text);
   font-size: var(--od-fs-sm);
   font-weight: 500;
+}
+
+/* Breathing room: guarantee a fluid gutter on every band at every width — the
+   content must never touch the viewport edge (16px floor → 48px ceiling). This
+   override wins over the shorthand paddings above. (fix #1) */
+.od-header,
+.od-footer,
+.od-hero,
+.od-section {
+  padding-inline: clamp(1rem, 5vw, 3rem);
 }
 
 /* Reduced motion */
