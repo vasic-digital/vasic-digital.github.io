@@ -34,6 +34,17 @@
       var k = nodes[i].getAttribute("data-i18n");
       if (Object.prototype.hasOwnProperty.call(dict, k)) nodes[i].innerHTML = dict[k];
     }
+    // Accessibility labels/tooltips: mirror the text path for aria-label/title.
+    var aNodes = document.querySelectorAll("[data-i18n-aria]");
+    for (var a = 0; a < aNodes.length; a++) {
+      var ak = aNodes[a].getAttribute("data-i18n-aria");
+      if (Object.prototype.hasOwnProperty.call(dict, ak)) aNodes[a].setAttribute("aria-label", dict[ak]);
+    }
+    var tNodes = document.querySelectorAll("[data-i18n-title]");
+    for (var t = 0; t < tNodes.length; t++) {
+      var tk = tNodes[t].getAttribute("data-i18n-title");
+      if (Object.prototype.hasOwnProperty.call(dict, tk)) tNodes[t].setAttribute("title", dict[tk]);
+    }
     root.setAttribute("lang", l);
     root.setAttribute("dir", dirFor(l));
     try { localStorage.setItem("od-lang", l); } catch (e) {}

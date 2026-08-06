@@ -95,7 +95,7 @@
   <a class="od-skip-link" href="#main">Saltar al contenido</a>
   <header class="od-header">
     <a class="od-nav__link" href="../../es/" style="font-family:var(--od-font-display);font-weight:700">Vasic Digital</a>
-    <nav class="od-nav">
+    <nav class="od-nav" aria-label="Principal">
       <a class="od-nav__link" href="../../es/">Inicio</a>
       <a class="od-nav__link" href="#main">Portafolio</a>
       <span id="od-lang-mount"></span>
@@ -393,7 +393,7 @@
       btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('od-theme',n);}catch(e){}});
     })();
   </script>
-  <button class="od-to-top" type="button" aria-label="Back to top"><svg class="od-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
+  <button class="od-to-top" type="button" data-i18n-aria="aria.backToTop" aria-label="Volver al principio"><svg class="od-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
 <script defer src="../assets/od/motion.js"></script>
 <script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"ar","name":"العربية"},{"code":"be","name":"Беларуская"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"fa","name":"فارسی"},{"code":"fr","name":"Français"},{"code":"hi","name":"हिन्दी"},{"code":"ja","name":"日本語"},{"code":"kk","name":"Қазақша"},{"code":"ko","name":"한국어"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"},{"code":"tr","name":"Türkçe"},{"code":"zh","name":"中文"}];window.OD_PAGE={"paths":{"ar":"/portfolio/ar/","be":"/portfolio/be/","de":"/portfolio/de/","en":"/portfolio/","es":"/portfolio/es/","fa":"/portfolio/fa/","fr":"/portfolio/fr/","hi":"/portfolio/hi/","ja":"/portfolio/ja/","kk":"/portfolio/kk/","ko":"/portfolio/ko/","ru":"/portfolio/ru/","sr":"/portfolio/sr/","tr":"/portfolio/tr/","zh":"/portfolio/zh/"},"type":"portfolio"};window.OD_I18N={};</script>
 <script defer src="../assets/od/od-i18n.js"></script>
