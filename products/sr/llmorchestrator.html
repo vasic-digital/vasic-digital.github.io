@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/od/overlays.css"/>
 <title>LLMOrchestrator — Vasic Digital</title>
 <meta name="description" content="LLMOrchestrator is a standalone, reusable Go module for spawning, managing, and communicating with headless CLI agents (OpenCode, Claude Code, Gemini, Junie, Qwen Code) over a hybrid pipe+file protocol, with per-agent circuit breakers, pluggable multi-provider selection, a decoupled i18n abstraction, and anti-bluff test guarantees."/>
-<meta name="keywords" content="software engineering, AI development platforms, LLM orchestration, open source, developer tools, SDK"/>
+<meta name="keywords" content="инжењеринг софтвера, платформе за развој AI, LLM оркестрација, отворени извор, алатке за програмере, SDK"/>
 <link rel="canonical" href="https://vasic.digital/products/llmorchestrator.html"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta property="og:type" content="article"/>
@@ -30,6 +30,7 @@
 <link rel="alternate" hreflang="be" href="https://vasic.digital/products/be/llmorchestrator.html"/>
 <link rel="alternate" hreflang="de" href="https://vasic.digital/products/de/llmorchestrator.html"/>
 <link rel="alternate" hreflang="es" href="https://vasic.digital/products/es/llmorchestrator.html"/>
+<link rel="alternate" hreflang="fa" href="https://vasic.digital/products/fa/llmorchestrator.html"/>
 <link rel="alternate" hreflang="fr" href="https://vasic.digital/products/fr/llmorchestrator.html"/>
 <link rel="alternate" hreflang="hi" href="https://vasic.digital/products/hi/llmorchestrator.html"/>
 <link rel="alternate" hreflang="ja" href="https://vasic.digital/products/ja/llmorchestrator.html"/>
@@ -130,7 +131,7 @@
   </style>
 </head>
 <body>
-<a class="od-skip-link" href="#main">Skip to content</a>
+<a class="od-skip-link" href="#main">Прескочи до садржаја</a>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
     <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></symbol>
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></symbol>
@@ -142,11 +143,11 @@
     <a class="od-brand" href="../../sr/">Vasic Digital</a>
     <div class="od-header__actions">
       <nav class="od-nav" aria-label="Primary">
-        <a class="od-nav__link" href="../../sr/">Home</a>
-        <a class="od-nav__link" href="../../sr/#products">Products</a>
+        <a class="od-nav__link" href="../../sr/">Почетна</a>
+        <a class="od-nav__link" href="../../sr/#products">Продукти</a>
       </nav>
       <span id="od-lang-mount"></span>
-      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle theme">
+      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Пребаци тему">
         <svg class="od-icon od-icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
         <svg class="od-icon od-icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
       </button>
@@ -155,12 +156,12 @@
 
   <main id="main">
     <article class="od-section od-product-detail od-reveal">
-      <p class="od-section__eyebrow">// tier: helix-primary · order 12</p>
-      <h1>LLMOrchestrator <span class="od-h1-badges"><span class="od-badge--status od-badge--status--beta">beta</span><span class="od-tag--license">license: Apache-2.0</span></span></h1>
+      <p class="od-section__eyebrow">// ниво: helix-primary · редослед 12</p>
+      <h1>LLMOrchestrator <span class="od-h1-badges"><span class="od-badge--status od-badge--status--beta">beta</span><span class="od-tag--license">лиценца: Apache-2.0</span></span></h1>
 
       <div class="od-chip-row"><span class="od-chip">Go (1.25)</span><span class="od-chip">Go stdlib (+ testify, yaml.v3)</span><span class="od-chip">Pipe transport (JSON-lines over stdio)</span><span class="od-chip">File transport (inbox/outbox/shared)</span><span class="od-chip">sync.Mutex / sync.Cond</span><span class="od-chip">Circuit breaker + HealthMonitor</span><span class="od-chip">pkg/i18n Translator</span><span class="od-chip">Challenge harness</span></div>
 
-      <h2>Source</h2>
+      <h2>Извор</h2>
       <ul class="od-repo-list">
         <li><a href="https://github.com/HelixDevelopment/LLMOrchestrator" rel="noopener noreferrer" target="_blank">HelixDevelopment/LLMOrchestrator <svg class="od-icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
         <li><a href="https://github.com/HelixDevelopment/HelixConstitution" rel="noopener noreferrer" target="_blank">HelixDevelopment/HelixConstitution <svg class="od-icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
@@ -219,7 +220,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
 <text class="t" x="130" y="394">Circuit breaker</text>
 <text class="s" x="130" y="414">closed→open→half-open</text>
 </svg>
-<figcaption class="od-section__eyebrow" style="margin-top:var(--od-space-2)">// architecture</figcaption>
+<figcaption class="od-section__eyebrow" style="margin-top:var(--od-space-2)">// архитектура</figcaption>
 </figure>
 
       <p class="od-product-detail__tagline"><strong>Jedinstvena kontrolna ravan za sve headless CLI kodirajuće agente.</strong></p>
@@ -373,7 +374,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
     </article>
   </main>
 
-  <footer class="od-footer">© 2026 Vasic Digital — built on the OpenDesign system.</footer>
+  <footer class="od-footer">© 2026 Vasic Digital — изграђен на OpenDesign систему.</footer>
 
   <button class="od-to-top" type="button" aria-label="Back to top"><svg class="od-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
 <script>
@@ -390,7 +391,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
   })();
 </script>
 <script defer src="../assets/od/motion.js"></script>
-<script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"ar","name":"العربية"},{"code":"be","name":"Беларуская"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"fr","name":"Français"},{"code":"hi","name":"हिन्दी"},{"code":"ja","name":"日本語"},{"code":"kk","name":"Қазақша"},{"code":"ko","name":"한국어"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"},{"code":"tr","name":"Türkçe"},{"code":"zh","name":"中文"}];window.OD_PAGE={"paths":{"ar":"/products/ar/llmorchestrator.html","be":"/products/be/llmorchestrator.html","de":"/products/de/llmorchestrator.html","en":"/products/llmorchestrator.html","es":"/products/es/llmorchestrator.html","fr":"/products/fr/llmorchestrator.html","hi":"/products/hi/llmorchestrator.html","ja":"/products/ja/llmorchestrator.html","kk":"/products/kk/llmorchestrator.html","ko":"/products/ko/llmorchestrator.html","ru":"/products/ru/llmorchestrator.html","sr":"/products/sr/llmorchestrator.html","tr":"/products/tr/llmorchestrator.html","zh":"/products/zh/llmorchestrator.html"},"type":"product"};window.OD_I18N={};</script>
+<script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"ar","name":"العربية"},{"code":"be","name":"Беларуская"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"fa","name":"فارسی"},{"code":"fr","name":"Français"},{"code":"hi","name":"हिन्दी"},{"code":"ja","name":"日本語"},{"code":"kk","name":"Қазақша"},{"code":"ko","name":"한국어"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"},{"code":"tr","name":"Türkçe"},{"code":"zh","name":"中文"}];window.OD_PAGE={"paths":{"ar":"/products/ar/llmorchestrator.html","be":"/products/be/llmorchestrator.html","de":"/products/de/llmorchestrator.html","en":"/products/llmorchestrator.html","es":"/products/es/llmorchestrator.html","fa":"/products/fa/llmorchestrator.html","fr":"/products/fr/llmorchestrator.html","hi":"/products/hi/llmorchestrator.html","ja":"/products/ja/llmorchestrator.html","kk":"/products/kk/llmorchestrator.html","ko":"/products/ko/llmorchestrator.html","ru":"/products/ru/llmorchestrator.html","sr":"/products/sr/llmorchestrator.html","tr":"/products/tr/llmorchestrator.html","zh":"/products/zh/llmorchestrator.html"},"type":"product"};window.OD_I18N={};</script>
 <script defer src="../assets/od/od-i18n.js"></script>
 </body>
 </html>

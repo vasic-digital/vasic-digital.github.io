@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/od/overlays.css"/>
 <title>HelixCluster — Vasic Digital</title>
 <meta name="description" content="Helix Cluster OS is a next-generation distributed operating system that orchestrates compute across heterogeneous nodes — from datacenter GPUs down to edge SBCs and handhelds — unifying HPC scheduling, container orchestration, AI/ML inference, federated multi-cluster operation, and secure multi-tenant sessions under a single control plane."/>
-<meta name="keywords" content="software engineering, AI development platforms, LLM orchestration, open source, developer tools, SDK"/>
+<meta name="keywords" content="소프트웨어 엔지니어링, AI 개발 플랫폼, LLM 오케스트레이션, 오픈소스, 개발자 툴, SDK"/>
 <link rel="canonical" href="https://vasic.digital/products/helixcluster.html"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta property="og:type" content="article"/>
@@ -30,6 +30,7 @@
 <link rel="alternate" hreflang="be" href="https://vasic.digital/products/be/helixcluster.html"/>
 <link rel="alternate" hreflang="de" href="https://vasic.digital/products/de/helixcluster.html"/>
 <link rel="alternate" hreflang="es" href="https://vasic.digital/products/es/helixcluster.html"/>
+<link rel="alternate" hreflang="fa" href="https://vasic.digital/products/fa/helixcluster.html"/>
 <link rel="alternate" hreflang="fr" href="https://vasic.digital/products/fr/helixcluster.html"/>
 <link rel="alternate" hreflang="hi" href="https://vasic.digital/products/hi/helixcluster.html"/>
 <link rel="alternate" hreflang="ja" href="https://vasic.digital/products/ja/helixcluster.html"/>
@@ -129,7 +130,7 @@
   </style>
 </head>
 <body>
-<a class="od-skip-link" href="#main">Skip to content</a>
+<a class="od-skip-link" href="#main">내용으로 건너뛰기</a>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
     <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></symbol>
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></symbol>
@@ -141,11 +142,11 @@
     <a class="od-brand" href="../../ko/">Vasic Digital</a>
     <div class="od-header__actions">
       <nav class="od-nav" aria-label="Primary">
-        <a class="od-nav__link" href="../../ko/">Home</a>
-        <a class="od-nav__link" href="../../ko/#products">Products</a>
+        <a class="od-nav__link" href="../../ko/">홈</a>
+        <a class="od-nav__link" href="../../ko/#products">제품</a>
       </nav>
       <span id="od-lang-mount"></span>
-      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="Toggle theme">
+      <button id="od-theme-toggle" class="od-btn od-btn--ghost od-theme-toggle" type="button" aria-label="테마 전환">
         <svg class="od-icon od-icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
         <svg class="od-icon od-icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
       </button>
@@ -154,12 +155,12 @@
 
   <main id="main">
     <article class="od-section od-product-detail od-reveal">
-      <p class="od-section__eyebrow">// tier: helix-primary · order 14</p>
-      <h1>HelixCluster <span class="od-h1-badges"><span class="od-badge--status od-badge--status--in-development">in-development</span><span class="od-tag--license">license: TBD</span></span></h1>
+      <p class="od-section__eyebrow">// 티어: helix-primary · 주문 14</p>
+      <h1>HelixCluster <span class="od-h1-badges"><span class="od-badge--status od-badge--status--in-development">in-development</span><span class="od-tag--license">라이선스: TBD</span></span></h1>
 
       <div class="od-chip-row"><span class="od-chip">Go (1.25 / toolchain 1.26.4)</span><span class="od-chip">Zig + C/C++</span><span class="od-chip">gRPC + Protocol Buffers</span><span class="od-chip">Raft (etcd-raft) + SWIM gossip</span><span class="od-chip">PostgreSQL 16 / Redis 7 / etcd v3.5 / SQLite</span><span class="od-chip">NATS / Kafka / RabbitMQ</span><span class="od-chip">WireGuard + ML-KEM-768/X25519 + AEAD</span><span class="od-chip">SPIFFE + JWT + OPA</span><span class="od-chip">Prometheus / Grafana / Jaeger</span><span class="od-chip">HashiCorp Vault</span><span class="od-chip">Kubernetes + Helm</span><span class="od-chip">React + TypeScript + Vite</span><span class="od-chip">TLA+</span></div>
 
-      <h2>Source</h2>
+      <h2>소스</h2>
       <ul class="od-repo-list">
         <li><a href="https://github.com/HelixDevelopment/helix_cluster" rel="noopener noreferrer" target="_blank">HelixDevelopment/helix_cluster <svg class="od-icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
         <li><a href="https://github.com/HelixDevelopment/HelixConstitution" rel="noopener noreferrer" target="_blank">HelixDevelopment/HelixConstitution <svg class="od-icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
@@ -208,7 +209,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
 <rect class="box" x="210" y="512" width="560" height="54" rx="10"/>
 <text class="t" x="490" y="546">L0 · Hardware Substrate (GPU → edge SBC)</text>
 </svg>
-<figcaption class="od-section__eyebrow" style="margin-top:var(--od-space-2)">// architecture</figcaption>
+<figcaption class="od-section__eyebrow" style="margin-top:var(--od-space-2)">// 아키텍처</figcaption>
 </figure>
 
       <p class="od-product-detail__tagline"><strong>데이터센터 GPU부터 엣지 핸드헬드까지 AI 컴퓨팅을 아우르는 분산 운영 체제 — 단일 제어 플레인 하에서.</strong></p>
@@ -372,7 +373,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
     </article>
   </main>
 
-  <footer class="od-footer">© 2026 Vasic Digital — built on the OpenDesign system.</footer>
+  <footer class="od-footer">© 2026 Vasic Digital — OpenDesign 시스템으로 구축됨.</footer>
 
   <button class="od-to-top" type="button" aria-label="Back to top"><svg class="od-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
 <script>
@@ -389,7 +390,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
   })();
 </script>
 <script defer src="../assets/od/motion.js"></script>
-<script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"ar","name":"العربية"},{"code":"be","name":"Беларуская"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"fr","name":"Français"},{"code":"hi","name":"हिन्दी"},{"code":"ja","name":"日本語"},{"code":"kk","name":"Қазақша"},{"code":"ko","name":"한국어"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"},{"code":"tr","name":"Türkçe"},{"code":"zh","name":"中文"}];window.OD_PAGE={"paths":{"ar":"/products/ar/helixcluster.html","be":"/products/be/helixcluster.html","de":"/products/de/helixcluster.html","en":"/products/helixcluster.html","es":"/products/es/helixcluster.html","fr":"/products/fr/helixcluster.html","hi":"/products/hi/helixcluster.html","ja":"/products/ja/helixcluster.html","kk":"/products/kk/helixcluster.html","ko":"/products/ko/helixcluster.html","ru":"/products/ru/helixcluster.html","sr":"/products/sr/helixcluster.html","tr":"/products/tr/helixcluster.html","zh":"/products/zh/helixcluster.html"},"type":"product"};window.OD_I18N={};</script>
+<script>window.OD_LANGS=[{"code":"en","name":"English"},{"code":"ar","name":"العربية"},{"code":"be","name":"Беларуская"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"fa","name":"فارسی"},{"code":"fr","name":"Français"},{"code":"hi","name":"हिन्दी"},{"code":"ja","name":"日本語"},{"code":"kk","name":"Қазақша"},{"code":"ko","name":"한국어"},{"code":"ru","name":"Русский"},{"code":"sr","name":"Српски"},{"code":"tr","name":"Türkçe"},{"code":"zh","name":"中文"}];window.OD_PAGE={"paths":{"ar":"/products/ar/helixcluster.html","be":"/products/be/helixcluster.html","de":"/products/de/helixcluster.html","en":"/products/helixcluster.html","es":"/products/es/helixcluster.html","fa":"/products/fa/helixcluster.html","fr":"/products/fr/helixcluster.html","hi":"/products/hi/helixcluster.html","ja":"/products/ja/helixcluster.html","kk":"/products/kk/helixcluster.html","ko":"/products/ko/helixcluster.html","ru":"/products/ru/helixcluster.html","sr":"/products/sr/helixcluster.html","tr":"/products/tr/helixcluster.html","zh":"/products/zh/helixcluster.html"},"type":"product"};window.OD_I18N={};</script>
 <script defer src="../assets/od/od-i18n.js"></script>
 </body>
 </html>
