@@ -661,6 +661,85 @@ body {
   padding-inline: clamp(1rem, 5vw, 3rem);
 }
 
+/* =============================================================================
+ * VASIC DIGITAL — MOTION SIGNATURE ("engineered / precision")
+ *
+ * A deliberately DISTINCT feel from milosvasic.ru's warm, personal-portrait
+ * signature (portrait + crimson corner accents). Here the hero sits over an
+ * animated deep-red gradient-mesh "aurora" and a faint technical grid — a
+ * systematic, high-tech backdrop for an AI-engineering company — paired with
+ * count-up metrics, a precision divider, and accent card-glow (wired in the
+ * generated markup). Every effect is GPU-only (transform/opacity) and is fully
+ * neutralized by the reduced-motion block at the foot of this file: the aurora
+ * freezes to a still gradient, the grid is already static, and count-ups keep
+ * their authored final value. Colours are the --od-accent ramp — tokens only
+ * (§11.4.162). The backdrop is decorative and aria-hidden, and its opacity is
+ * capped so hero text keeps full WCAG AA contrast (§11.4.107) in both themes.
+ * ========================================================================== */
+.vd-hero {
+  position: relative;
+  overflow: hidden;          /* clips the drifting aurora — no scroll/overflow */
+  isolation: isolate;        /* new stacking context for the z-indexed backdrop */
+}
+/* Hero content sits above the decorative backdrop. */
+.vd-hero > *:not(.vd-hero__fx) { position: relative; z-index: 1; }
+
+.vd-hero__fx {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Aurora: soft, drifting deep-red radial blobs. Transform-only animation. */
+.vd-hero__aurora {
+  position: absolute;
+  inset: -25%;
+  background:
+    radial-gradient(35% 45% at 25% 30%, var(--od-accent-400) 0%, transparent 60%),
+    radial-gradient(30% 40% at 78% 35%, var(--od-accent-700) 0%, transparent 60%),
+    radial-gradient(45% 55% at 55% 88%, var(--od-accent-600) 0%, transparent 62%);
+  opacity: 0.14;
+  animation: vd-aurora-drift 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+:root[data-theme="dark"] .vd-hero__aurora { opacity: 0.22; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .vd-hero__aurora { opacity: 0.22; }
+}
+@keyframes vd-aurora-drift {
+  0%   { transform: translate3d(-2%, -1%, 0) scale(1); }
+  50%  { transform: translate3d(2%, 2%, 0) scale(1.06); }
+  100% { transform: translate3d(-1%, 1%, 0) scale(1.02); }
+}
+
+/* Faint technical grid, masked to fade out toward the edges. Fully static. */
+.vd-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--od-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--od-border) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.35;
+  -webkit-mask-image: radial-gradient(120% 82% at 50% 0%, #000 28%, transparent 76%);
+          mask-image: radial-gradient(120% 82% at 50% 0%, #000 28%, transparent 76%);
+}
+
+/* Precision divider sizing (the scaleX reveal itself lives in animations.css). */
+.vd-hero__rule {
+  width: min(220px, 60%);
+  margin: var(--od-space-8) auto 0;
+}
+
+/* Count-up metrics: fixed-width figures so the number never reflows siblings
+   while it animates (no CLS). */
+.vd-stats .od-stat__value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -671,4 +750,6 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  /* Belt-and-braces: pin the aurora to a still frame (no drift). */
+  .vd-hero__aurora { animation: none !important; transform: none !important; }
 }

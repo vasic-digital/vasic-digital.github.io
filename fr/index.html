@@ -139,21 +139,23 @@
 
   <main id="main">
 
-    <section class="od-hero od-reveal">
+    <section class="od-hero od-reveal vd-hero">
+      <div class="vd-hero__fx" aria-hidden="true"><span class="vd-hero__aurora"></span><span class="vd-hero__grid"></span></div>
       <div class="vd-hero__logo"><picture><source srcset="../Assets/logo.webp" type="image/webp"><img src="../Assets/Logo.jpeg" alt="Vasic Digital logo" width="112" height="112" decoding="async"></picture></div>
       <p class="od-section__eyebrow" data-i18n="hero.eyebrow">// ingénierie logicielle AI-native</p>
       <h1 class="od-hero__title" data-i18n="hero.title">Ingénierie logicielle AI-native, conçue pour être fiable.</h1>
       <p class="od-hero__lede" data-i18n="hero.lede">Nous construisons des systèmes de développement IA — les modèles, agents, orchestrations et infrastructures qui transforment les grands modèles de langage en logiciels fiables — avec la couche de gouvernance qui les maintient honnêtes.</p>
       <div class="vd-hero__cta">
-        <a class="od-btn od-btn--primary" href="#products" data-i18n="hero.cta_products">Explorez les produits</a>
-        <a class="od-btn od-btn--secondary" href="portfolio/" data-i18n="hero.cta_portfolio">Voir le portefeuille</a>
-        <a class="od-btn od-btn--ghost" href="downloads/Portfolio_EN.pdf">Télécharger le portefeuille (PDF)</a>
+        <a class="od-btn od-btn--primary od-magnetic" href="#products" data-i18n="hero.cta_products">Explorez les produits</a>
+        <a class="od-btn od-btn--secondary od-magnetic" href="portfolio/" data-i18n="hero.cta_portfolio">Voir le portefeuille</a>
+        <a class="od-btn od-btn--ghost od-magnetic" href="downloads/Portfolio_EN.pdf">Télécharger le portefeuille (PDF)</a>
       </div>
       <div class="vd-stats od-stagger">
-        <div class="od-stat"><div class="od-stat__value od-highlight">40+</div><div class="od-stat__label" data-i18n="stat.providers">Fournisseurs LLM, une interface</div></div>
-        <div class="od-stat"><div class="od-stat__value od-highlight">140+</div><div class="od-stat__label" data-i18n="stat.repos">dépôts, une constitution</div></div>
-        <div class="od-stat"><div class="od-stat__value od-highlight">33</div><div class="od-stat__label" data-i18n="stat.products">produits sur trois niveaux</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight" data-od-count>40+</div><div class="od-stat__label" data-i18n="stat.providers">Fournisseurs LLM, une interface</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight" data-od-count>140+</div><div class="od-stat__label" data-i18n="stat.repos">dépôts, une constitution</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight" data-od-count>33</div><div class="od-stat__label" data-i18n="stat.products">produits sur trois niveaux</div></div>
       </div>
+      <hr class="vd-hero__rule od-divider" aria-hidden="true"/>
     </section>
 
     <section class="od-section od-reveal" id="about">
@@ -168,23 +170,23 @@
       <h2 class="od-section__title" data-i18n="work.title">Développement basé sur l'IA, de bout en bout.</h2>
       <p class="od-section__lede" data-i18n="work.lede">Nous construisons le substrat des systèmes IA — la partie difficile sous l'application.</p>
       <div class="vd-grid vd-grid--two od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.llm.title">Accès LLM multi-fournisseurs</h3>
           <p class="vd-card__blurb" data-i18n="wd.llm.body">Une abstraction de première partie sur plus de 40 fournisseurs — Anthropic/Claude, OpenAI, DeepSeek, Gemini, Mistral, Groq, xAI/Grok, et Ollama local en secours — derrière une interface unique avec reprises, disjoncteurs et contrôles de santé.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.agents.title">Orchestration d'agents</h3>
           <p class="vd-card__blurb" data-i18n="wd.agents.body">Plans de contrôle d'agents de codage CLI sans tête, flux de travail agentiques basés sur graphes, débats « AI debate » multi‑tours, et environnements d'exécution DAG/pipeline.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.verify.title">Vérification LLM</h3>
           <p class="vd-card__blurb" data-i18n="wd.verify.body">Une couche de confiance qui note les modèles avec une porte de compréhension obligatoire (« Voyez‑vous mon code ? ») plus des tests de latence, streaming, appel de fonction, vision et embeddings — exportant une configuration uniquement vérifiée.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.memory.title">Récupération &amp; mémoire</h3>
           <p class="vd-card__blurb" data-i18n="wd.memory.body">RAG, bases de données vectorielles, embeddings, et moteurs de mémoire d'agent fusionnés (Mem0 + Cognee + Letta) avec compression à contexte infini.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.defensive.title">LLM défensif</h3>
           <p class="vd-card__blurb" data-i18n="wd.defensive.body">Garde‑fous, détection PII, scénarios d'équipe rouge adversaire, et canonicalisation d'entrée — sécurité intégrée au substrat, pas ajoutée en surface.</p>
         </article>
@@ -196,55 +198,55 @@
       <h2 class="od-section__title" data-i18n="products.title">La famille de produits Helix &amp; l'infrastructure LLM</h2>
       <p class="od-section__lede" data-i18n="products.lede">Notre gamme phare couvre tout le cycle de vie du développement IA. Dans l'ordre de priorité.</p>
       <div class="vd-grid od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixTrack <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">HTTP/3 QUIC</span><span class="od-chip">PostgreSQL</span><span class="od-chip">+8</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixtrack">Une alternative libre à JIRA — le produit phare de la gamme Helix-Track.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/helixtrack.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixAgent <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">PostgreSQL</span><span class="od-chip">LLMsVerifier</span><span class="od-chip">+6</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixagent">Un service LLM ensembliste qui permet à plusieurs modèles de débattre et livre la réponse sur laquelle ils s'accordent.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/helixagent.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixCode <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">SSH</span><span class="od-chip">Model Context Protocol</span><span class="od-chip">+2</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixcode">Une plateforme de développement IA distribuée qui répartit le travail sur des travailleurs gérés par SSH avec points de contrôle/reprises.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/helixcode.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixLLM <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">HTTP/3 QUIC</span><span class="od-chip">llama.cpp</span><span class="od-chip">LLMsVerifier</span><span class="od-chip">+5</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixllm">Un seul binaire, six modes : inférence compatible OpenAI et Anthropic du portable au cluster, via HTTP/3.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/helixllm.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixCluster <span class="od-badge--status od-badge--status--in-development">in-development</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Zig</span><span class="od-chip">gRPC</span><span class="od-chip">Raft + SWIM</span><span class="od-chip">+7</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixcluster">Un système d'exploitation distribué pour le calcul IA, des GPU de datacenter aux appareils portables en périphérie.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/helixcluster.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">LLMProvider <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">net/http</span><span class="od-chip">logrus</span><span class="od-chip">digital.vasic.models</span><span class="od-chip">+2</span></div>
           <p class="vd-card__blurb" data-i18n="p.llmprovider">Une interface, 43 fournisseurs — avec disjoncteurs, reprises et santé intégrés.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/llmprovider.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">LLMOrchestrator <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">JSON-lines over stdio</span><span class="od-chip">Circuit breaker</span><span class="od-chip">HealthMonitor</span><span class="od-chip">+2</span></div>
           <p class="vd-card__blurb" data-i18n="p.llmorchestrator">Un plan de contrôle pour chaque agent de codage CLI sans tête.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/llmorchestrator.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">LLMsVerifier <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">SQLite + SQLCipher</span><span class="od-chip">gRPC</span><span class="od-chip">+6</span></div>
           <p class="vd-card__blurb" data-i18n="p.llmsverifier">Vérifier. Surveiller. Optimiser. La source unique de vérité pour les métadonnées de vérification LLM et fournisseur.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/llmsverifier.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixMemory <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Mem0</span><span class="od-chip">Cognee</span><span class="od-chip">Letta</span><span class="od-chip">+3</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixmemory">Un cerveau mémoire pour les agents IA — quatre moteurs de pointe, fusionnés.</p>
@@ -258,12 +260,12 @@
       <h2 class="od-section__title" data-i18n="gov.title">Gouvernance comme fait auditable, pas comme aspiration.</h2>
       <p class="od-section__lede" data-i18n="gov.lede">Deux piliers rendent l'ensemble de la flotte cohérente et fiable.</p>
       <div class="vd-grid vd-grid--two od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixConstitution <span class="od-badge--status od-badge--status--shipped">shipped</span></h3>
           <p class="vd-card__blurb" data-i18n="gov.constitution">Un manuel d'ingénierie universel, indépendant du projet, livré comme sous‑module Git et hérité par chaque projet d'une flotte de plus de 140 dépôts. Il encode une discipline non négociable — portes de preuve anti‑bluff, immunité aux faux positifs, sécurité des données et de l'hôte — qu'un projet peut étendre mais jamais affaiblir. Une mise à jour du sous‑module élève les règles partout, et chaque porte est associée à un test de mutation qui prouve que la porte elle‑même n'est pas une imposture.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/helixconstitution.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixQA <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <p class="vd-card__blurb" data-i18n="gov.qa">Orchestration QA anti‑bluff. Elle exécute des banques de tests YAML écrites et des sessions QA entièrement autonomes LLM + vision par ordinateur sur Android, Android TV, Web et Desktop — et refuse d'attribuer un PASS sans preuve d'exécution capturée : captures d'écran, logcat, vidéo, traces de pile. « Nous l'avons testé » devient « voici la vidéo, le logcat et le ticket. »</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/helixqa.html" data-i18n="cta.readmore">En savoir plus</a></div>
@@ -276,49 +278,49 @@
       <h2 class="od-section__title" data-i18n="utils.title">Utilitaires Vasic Digital</h2>
       <p class="od-section__lede" data-i18n="utils.lede">Outils de niveau produit autonomes.</p>
       <div class="vd-grid od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Catalogizer <span class="od-badge--status od-badge--status--production">production</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">React</span><span class="od-chip">WebSockets</span><span class="od-chip">+10</span></div>
           <p class="vd-card__blurb" data-i18n="p.catalogizer">Gestion avancée multi‑protocole, cryptée, de collections multimédia — détecter, cataloguer et enrichir tout ce que vous possédez.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/catalogizer.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Courses-Creator <span class="od-badge--status od-badge--status--production">production</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">React</span><span class="od-chip">Electron</span><span class="od-chip">React Native</span><span class="od-chip">+8</span></div>
           <p class="vd-card__blurb" data-i18n="p.coursescreator">Markdown en entrée, cours vidéo professionnel en sortie — amélioré par IA, multi‑plateforme.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/courses-creator.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">VisionEngine <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">GoCV / OpenCV</span><span class="od-chip">LLM vision</span><span class="od-chip">Graph algorithms</span></div>
           <p class="vd-card__blurb" data-i18n="p.visionengine">Voir l'UI comme un utilisateur — vision par ordinateur plus vision LLM pour l'analyse et la navigation.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/visionengine.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">DocProcessor <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">LLM agents</span><span class="od-chip">Heuristic parser</span><span class="od-chip">i18n</span></div>
           <p class="vd-card__blurb" data-i18n="p.docprocessor">Transformer la documentation en une carte de fonctionnalités vérifiable pour l'automatisation QA.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/docprocessor.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Docs Chain <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">DAG</span><span class="od-chip">SQLite</span><span class="od-chip">fsnotify</span></div>
           <p class="vd-card__blurb" data-i18n="p.docschain">Aucun document suivi ne peut devenir désynchronisé — haché par contenu, bidirectionnel, atomique.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/docs-chain.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Herald <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Shell</span><span class="od-chip">LLM intent inference</span><span class="od-chip">Docs Chain</span></div>
           <p class="vd-card__blurb" data-i18n="p.herald">Chaque alerte atteint la bonne destination — aucune syntaxe de commande requise.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/herald.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">task_bridge <span class="od-badge--status od-badge--status--scaffold">scaffold</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">SQLite</span><span class="od-chip">HMAC-SHA256</span><span class="od-chip">cron + webhooks</span></div>
           <p class="vd-card__blurb" data-i18n="p.taskbridge">Votre tableau de tâches et votre source de vérité, impeccablement synchronisés — dans les deux sens.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/task-bridge.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Reusable Module Suite <span class="od-badge--status od-badge--status--scaffold">scaffold</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go (digital.vasic.*)</span><span class="od-chip">Kotlin Multiplatform</span><span class="od-chip">Vector DB / RAG / MCP</span><span class="od-chip">+1</span></div>
           <p class="vd-card__blurb" data-i18n="p.rms">Construire une fois, réutiliser partout — une flotte de petits modules Go et KMP découplés, testés indépendamment.</p>
@@ -332,25 +334,25 @@
       <h2 class="od-section__title" data-i18n="sf.title">Server Factory — automatisation d'infrastructure</h2>
       <p class="od-section__lede" data-i18n="sf.lede">Notre héritage DevOps : JSON déclaratif transformé en serveurs entièrement provisionnés, Dockerisés.</p>
       <div class="vd-grid od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Mail Server Factory <span class="od-badge--status od-badge--status--production">production</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Kotlin</span><span class="od-chip">Shell</span><span class="od-chip">Docker</span><span class="od-chip">QEMU</span><span class="od-chip">+4</span></div>
           <p class="vd-card__blurb" data-i18n="p.msf">Exécutez votre serveur de messagerie comme le patron — décrivez‑le en JSON, déployez‑le partout.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/mail-server-factory.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Server Factory Core Framework <span class="od-badge--status od-badge--status--stable">stable</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Kotlin</span><span class="od-chip">Shell</span><span class="od-chip">Gradle</span></div>
           <p class="vd-card__blurb" data-i18n="p.sfcore">Le moteur partagé derrière chaque Server Factory.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/server-factory-core-framework.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Qemu-Utils <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Shell</span><span class="od-chip">QEMU</span><span class="od-chip">Bridge / TAP</span><span class="od-chip">ISO images</span></div>
           <p class="vd-card__blurb" data-i18n="p.qemu">Images VM QEMU, gérées comme des artefacts — télécharger, exécuter, mettre en réseau, publier.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/fr/qemu-utils.html" data-i18n="cta.readmore">En savoir plus</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Parallels-Utils <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Shell</span><span class="od-chip">Python 3</span><span class="od-chip">Parallels</span></div>
           <p class="vd-card__blurb" data-i18n="p.parallels">Compressez, publiez et réutilisez vos images VM Parallels sur chaque machine.</p>
@@ -363,27 +365,27 @@
       <p class="od-section__eyebrow" data-i18n="tech.eyebrow">// technologies</p>
       <h2 class="od-section__title" data-i18n="tech.title">Ancré dans notre stack réel.</h2>
       <div class="vd-grid vd-grid--two od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.lang.title">Langages</h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Kotlin / KMP</span><span class="od-chip">TypeScript</span><span class="od-chip">Python</span><span class="od-chip">Swift</span><span class="od-chip">Shell</span><span class="od-chip">PL/pgSQL</span><span class="od-chip">TLA+</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.ai.title">IA / LLM</h3>
           <div class="od-product-card__tech"><span class="od-chip">43+ provider adapters</span><span class="od-chip">MCP</span><span class="od-chip">RAG</span><span class="od-chip">Vector DBs</span><span class="od-chip">HiPlan / MCTS / ToT</span><span class="od-chip">SWE-bench / HumanEval / MMLU</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.backend.title">Backend</h3>
           <div class="od-product-card__tech"><span class="od-chip">Gin</span><span class="od-chip">gRPC + Protobuf</span><span class="od-chip">HTTP/3 (QUIC)</span><span class="od-chip">WebSockets</span><span class="od-chip">Angular / React</span><span class="od-chip">Kafka / RabbitMQ</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.data.title">Données</h3>
           <div class="od-product-card__tech"><span class="od-chip">PostgreSQL</span><span class="od-chip">SQLite</span><span class="od-chip">SQLCipher</span><span class="od-chip">Redis</span><span class="od-chip">Neo4j</span><span class="od-chip">ClickHouse</span><span class="od-chip">MinIO / S3</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.infra.title">Infra / DevOps</h3>
           <div class="od-product-card__tech"><span class="od-chip">Docker &amp; Compose</span><span class="od-chip">Kubernetes + Helm</span><span class="od-chip">Prometheus + Grafana</span><span class="od-chip">OpenTelemetry</span><span class="od-chip">QEMU / Libvirt</span><span class="od-chip">GitHub Actions</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.qa.title">Tests / QA</h3>
           <div class="od-product-card__tech"><span class="od-chip">HelixQA (anti-bluff)</span><span class="od-chip">Challenge harnesses</span><span class="od-chip">go test -race</span><span class="od-chip">SonarQube</span><span class="od-chip">semgrep / gosec / trivy / snyk</span></div>
         </article>

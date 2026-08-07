@@ -139,21 +139,23 @@
 
   <main id="main">
 
-    <section class="od-hero od-reveal">
+    <section class="od-hero od-reveal vd-hero">
+      <div class="vd-hero__fx" aria-hidden="true"><span class="vd-hero__aurora"></span><span class="vd-hero__grid"></span></div>
       <div class="vd-hero__logo"><picture><source srcset="../Assets/logo.webp" type="image/webp"><img src="../Assets/Logo.jpeg" alt="Vasic Digital logo" width="112" height="112" decoding="async"></picture></div>
       <p class="od-section__eyebrow" data-i18n="hero.eyebrow">// AI‑yerel yazılım mühendisliği</p>
       <h1 class="od-hero__title" data-i18n="hero.title">AI‑yerel yazılım mühendisliği, güvenilir olacak şekilde inşa edilmiştir.</h1>
       <p class="od-hero__lede" data-i18n="hero.lede">AI geliştirme sistemleri — büyük dil modellerini güvenilir yazılımlara dönüştüren modeller, ajanlar, orkestrasyon ve altyapı — bunları dürüst tutan yönetişim katmanı ile birlikte oluşturuyoruz.</p>
       <div class="vd-hero__cta">
-        <a class="od-btn od-btn--primary" href="#products" data-i18n="hero.cta_products">Ürünleri keşfedin</a>
-        <a class="od-btn od-btn--secondary" href="portfolio/" data-i18n="hero.cta_portfolio">Portföyü görüntüle</a>
-        <a class="od-btn od-btn--ghost" href="downloads/Portfolio_EN.pdf">Portföyü İndir (PDF)</a>
+        <a class="od-btn od-btn--primary od-magnetic" href="#products" data-i18n="hero.cta_products">Ürünleri keşfedin</a>
+        <a class="od-btn od-btn--secondary od-magnetic" href="portfolio/" data-i18n="hero.cta_portfolio">Portföyü görüntüle</a>
+        <a class="od-btn od-btn--ghost od-magnetic" href="downloads/Portfolio_EN.pdf">Portföyü İndir (PDF)</a>
       </div>
       <div class="vd-stats od-stagger">
-        <div class="od-stat"><div class="od-stat__value od-highlight">40+</div><div class="od-stat__label" data-i18n="stat.providers">LLM sağlayıcıları, tek bir arayüz</div></div>
-        <div class="od-stat"><div class="od-stat__value od-highlight">140+</div><div class="od-stat__label" data-i18n="stat.repos">depolar, tek bir anayasa</div></div>
-        <div class="od-stat"><div class="od-stat__value od-highlight">33</div><div class="od-stat__label" data-i18n="stat.products">üç katmanda ürünler</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight" data-od-count>40+</div><div class="od-stat__label" data-i18n="stat.providers">LLM sağlayıcıları, tek bir arayüz</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight" data-od-count>140+</div><div class="od-stat__label" data-i18n="stat.repos">depolar, tek bir anayasa</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight" data-od-count>33</div><div class="od-stat__label" data-i18n="stat.products">üç katmanda ürünler</div></div>
       </div>
+      <hr class="vd-hero__rule od-divider" aria-hidden="true"/>
     </section>
 
     <section class="od-section od-reveal" id="about">
@@ -168,23 +170,23 @@
       <h2 class="od-section__title" data-i18n="work.title">AI‑tabanlı geliştirme, uçtan uca.</h2>
       <p class="od-section__lede" data-i18n="work.lede">AI sistemleri için altyapıyı inşa ediyoruz — uygulamanın altındaki zor kısım.</p>
       <div class="vd-grid vd-grid--two od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.llm.title">Çoklu sağlayıcı LLM erişimi</h3>
           <p class="vd-card__blurb" data-i18n="wd.llm.body">40+ sağlayıcı üzerinde birinci‑taraf soyutlama — Anthropic/Claude, OpenAI, DeepSeek, Gemini, Mistral, Groq, xAI/Grok ve yedek olarak yerel Ollama — tek bir arayüzde, yeniden denemeler, devre kesiciler ve sağlık kontrolleri ile.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.agents.title">Ajan orkestrasyonu</h3>
           <p class="vd-card__blurb" data-i18n="wd.agents.body">Kafasız CLI kod‑ajanı kontrol düzlemleri, grafik‑tabanlı ajan‑odaklı iş akışları, çok‑turlu "AI tartışması" mutabakatı ve DAG/boru hattı çalışma zamanları.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.verify.title">LLM doğrulaması</h3>
           <p class="vd-card__blurb" data-i18n="wd.verify.body">Modelleri zorunlu bir kavrama kapısı ("Kodumu görüyor musun?") ve gecikme, akış, fonksiyon‑çağrısı, görsel ve gömme testleri ile puanlayan bir güven katmanı — yalnızca doğrulanmış yapılandırma dışa aktarır.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.memory.title">Getirme &amp; bellek</h3>
           <p class="vd-card__blurb" data-i18n="wd.memory.body">RAG, vektör veritabanları, gömmeler ve birleşik ajan‑bellek motorları (Mem0 + Cognee + Letta) sınırsız‑bağlam sıkıştırması ile.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.defensive.title">Savunmalı LLM</h3>
           <p class="vd-card__blurb" data-i18n="wd.defensive.body">Koruma hatları, KVK tespiti, adversarial kırmızı‑takım senaryoları ve girdi standartlaştırması — güvenlik altyapıya yerleşiktir, sonradan eklenmez.</p>
         </article>
@@ -196,55 +198,55 @@
       <h2 class="od-section__title" data-i18n="products.title">Helix ürün ailesi &amp; LLM altyapısı</h2>
       <p class="od-section__lede" data-i18n="products.lede">Amiral gemisi serimiz, AI‑geliştirme yaşam döngüsünün tamamını kapsar. Öncelik sırasına göre.</p>
       <div class="vd-grid od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixTrack <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">HTTP/3 QUIC</span><span class="od-chip">PostgreSQL</span><span class="od-chip">+8</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixtrack">JIRA'ya özgür bir alternatif — Helix-Track serisinin amiral gemisi.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/helixtrack.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixAgent <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">PostgreSQL</span><span class="od-chip">LLMsVerifier</span><span class="od-chip">+6</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixagent">Birden fazla modelin tartışmasına izin veren ve üzerinde anlaştıkları cevabı sunan bir topluluk LLM hizmeti.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/helixagent.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixCode <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">SSH</span><span class="od-chip">Model Context Protocol</span><span class="od-chip">+2</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixcode">İşleri SSH‑yönetimli çalışanlar arasında kontrol noktası/geri dönüş ile bölen dağıtık bir AI geliştirme platformu.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/helixcode.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixLLM <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">HTTP/3 QUIC</span><span class="od-chip">llama.cpp</span><span class="od-chip">LLMsVerifier</span><span class="od-chip">+5</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixllm">Tek ikili, altı mod: laptop’tan kümeye, HTTP/3 üzerinden OpenAI ve Anthropic uyumlu çıkarım.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/helixllm.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixCluster <span class="od-badge--status od-badge--status--in-development">in-development</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Zig</span><span class="od-chip">gRPC</span><span class="od-chip">Raft + SWIM</span><span class="od-chip">+7</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixcluster">Veri merkezi GPU'larından kenar cihazlarına kadar AI hesaplama için dağıtık bir işletim sistemi.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/helixcluster.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">LLMProvider <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">net/http</span><span class="od-chip">logrus</span><span class="od-chip">digital.vasic.models</span><span class="od-chip">+2</span></div>
           <p class="vd-card__blurb" data-i18n="p.llmprovider">Tek arayüz, 43 sağlayıcı — devre kesiciler, yeniden denemeler ve sağlık kontrolleri dahil.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/llmprovider.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">LLMOrchestrator <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">JSON-lines over stdio</span><span class="od-chip">Circuit breaker</span><span class="od-chip">HealthMonitor</span><span class="od-chip">+2</span></div>
           <p class="vd-card__blurb" data-i18n="p.llmorchestrator">Her kafasız CLI kod‑ajanı için tek kontrol düzlemi.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/llmorchestrator.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">LLMsVerifier <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">SQLite + SQLCipher</span><span class="od-chip">gRPC</span><span class="od-chip">+6</span></div>
           <p class="vd-card__blurb" data-i18n="p.llmsverifier">Doğrula. İzle. Optimize et. LLM ve sağlayıcı doğrulama meta verileri için tek gerçek kaynağı.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/llmsverifier.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixMemory <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Mem0</span><span class="od-chip">Cognee</span><span class="od-chip">Letta</span><span class="od-chip">+3</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixmemory">AI ajanları için tek bellek beyni — dört sınıfının en iyisi motor, birleşik.</p>
@@ -258,12 +260,12 @@
       <h2 class="od-section__title" data-i18n="gov.title">Yönetişim, denetlenebilir bir gerçek, bir hedef değil.</h2>
       <p class="od-section__lede" data-i18n="gov.lede">İki sütun, tüm filoyu tutarlı ve güvenilir kılar.</p>
       <div class="vd-grid vd-grid--two od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixConstitution <span class="od-badge--status od-badge--status--shipped">shipped</span></h3>
           <p class="vd-card__blurb" data-i18n="gov.constitution">140+ depoludan oluşan bir filo boyunca her proje tarafından devralınan, Git alt modülü olarak gönderilen evrensel, proje‑agnostik bir mühendislik kural kitabı. Tartışılmaz disiplin kodlar — anti‑bluff kanıt kapıları, yanlış‑pozitif bağışıklığı, veri ve ana bilgisayar güvenliği — bir proje bunları genişletebilir ancak asla zayıflatamaz. Tek bir alt modül yükseltmesi kuralları her yerde günceller ve her kapı, kapının kendisinin sahte olmadığını kanıtlayan bir mutasyon testiyle eşleştirilir.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/helixconstitution.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixQA <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <p class="vd-card__blurb" data-i18n="gov.qa">Anti‑bluff QA orkestrasyonu. Yazılmış YAML test bankalarını ve Android, Android TV, Web ve Desktop üzerinde tam‑özerk, LLM‑plus‑bilgisayar‑görüşü QA oturumlarını çalıştırır — ve yakalanmış çalışma zamanı kanıtı olmadan (ekran görüntüleri, logcat, video, yığın izleri) bir PASS puanı vermeyi reddeder: "Biz test ettik" yerine "işte video, logcat ve bilet" olur.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/helixqa.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
@@ -276,49 +278,49 @@
       <h2 class="od-section__title" data-i18n="utils.title">Vasic Digital yardımcı programları</h2>
       <p class="od-section__lede" data-i18n="utils.lede">Kendi başına durabilen ürün‑seviyesi araçlar.</p>
       <div class="vd-grid od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Catalogizer <span class="od-badge--status od-badge--status--production">production</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">React</span><span class="od-chip">WebSockets</span><span class="od-chip">+10</span></div>
           <p class="vd-card__blurb" data-i18n="p.catalogizer">Gelişmiş çok‑protokollü, şifreli medya koleksiyon yönetimi — sahip olduğunuz her şeyi algıla, katalogla ve zenginleştir.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/catalogizer.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Courses-Creator <span class="od-badge--status od-badge--status--production">production</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">React</span><span class="od-chip">Electron</span><span class="od-chip">React Native</span><span class="od-chip">+8</span></div>
           <p class="vd-card__blurb" data-i18n="p.coursescreator">Markdown girişi, profesyonel video kurs çıkışı — AI‑geliştirilmiş, çok‑platformlu.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/courses-creator.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">VisionEngine <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">GoCV / OpenCV</span><span class="od-chip">LLM vision</span><span class="od-chip">Graph algorithms</span></div>
           <p class="vd-card__blurb" data-i18n="p.visionengine">Kullanıcı gibi UI'yi gör — analiz ve gezinme için bilgisayar görüsü + LLM görüsü.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/visionengine.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">DocProcessor <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">LLM agents</span><span class="od-chip">Heuristic parser</span><span class="od-chip">i18n</span></div>
           <p class="vd-card__blurb" data-i18n="p.docprocessor">Dokümantasyonu, QA otomasyonu için doğrulanabilir bir özellik haritasına dönüştür.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/docprocessor.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Docs Chain <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">DAG</span><span class="od-chip">SQLite</span><span class="od-chip">fsnotify</span></div>
           <p class="vd-card__blurb" data-i18n="p.docschain">Takip edilen hiçbir belge senkron dışına çıkamaz — içerik‑hashli, çift yönlü, atomik.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/docs-chain.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Herald <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Shell</span><span class="od-chip">LLM intent inference</span><span class="od-chip">Docs Chain</span></div>
           <p class="vd-card__blurb" data-i18n="p.herald">Her uyarı doğru hedefe ulaşır — komut sözdizimi gerekmez.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/herald.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">task_bridge <span class="od-badge--status od-badge--status--scaffold">scaffold</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">SQLite</span><span class="od-chip">HMAC-SHA256</span><span class="od-chip">cron + webhooks</span></div>
           <p class="vd-card__blurb" data-i18n="p.taskbridge">Görev panonuz ve gerçek‑kaynağınız kusursuz senkronize — iki yönlü.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/task-bridge.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Reusable Module Suite <span class="od-badge--status od-badge--status--scaffold">scaffold</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go (digital.vasic.*)</span><span class="od-chip">Kotlin Multiplatform</span><span class="od-chip">Vector DB / RAG / MCP</span><span class="od-chip">+1</span></div>
           <p class="vd-card__blurb" data-i18n="p.rms">Bir kez inşa edin, her yerde yeniden kullanın — küçük, ayrık, bağımsız‑test edilmiş Go ve KMP modüllerinden oluşan bir filo.</p>
@@ -332,25 +334,25 @@
       <h2 class="od-section__title" data-i18n="sf.title">Server Factory — altyapı otomasyonu</h2>
       <p class="od-section__lede" data-i18n="sf.lede">DevOps mirasımız: deklaratif JSON tam olarak sağlanan, Docker‑laştırılmış sunuculara dönüştürülür.</p>
       <div class="vd-grid od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Mail Server Factory <span class="od-badge--status od-badge--status--production">production</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Kotlin</span><span class="od-chip">Shell</span><span class="od-chip">Docker</span><span class="od-chip">QEMU</span><span class="od-chip">+4</span></div>
           <p class="vd-card__blurb" data-i18n="p.msf">Mail sunucunuzu patron gibi çalıştırın — JSON ile tanımlayın, istediğiniz yere dağıtın.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/mail-server-factory.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Server Factory Core Framework <span class="od-badge--status od-badge--status--stable">stable</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Kotlin</span><span class="od-chip">Shell</span><span class="od-chip">Gradle</span></div>
           <p class="vd-card__blurb" data-i18n="p.sfcore">Her Server Factory'nin arkasındaki ortak motor.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/server-factory-core-framework.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Qemu-Utils <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Shell</span><span class="od-chip">QEMU</span><span class="od-chip">Bridge / TAP</span><span class="od-chip">ISO images</span></div>
           <p class="vd-card__blurb" data-i18n="p.qemu">QEMU VM imajları, artefakt gibi yönetilir — indirin, çalıştırın, ağlayın, yayınlayın.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/tr/qemu-utils.html" data-i18n="cta.readmore">Daha fazla oku</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Parallels-Utils <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Shell</span><span class="od-chip">Python 3</span><span class="od-chip">Parallels</span></div>
           <p class="vd-card__blurb" data-i18n="p.parallels">Parallels VM imajlarınızı sıkıştırın, yayınlayın ve her makinede yeniden kullanın.</p>
@@ -363,27 +365,27 @@
       <p class="od-section__eyebrow" data-i18n="tech.eyebrow">// teknolojiler</p>
       <h2 class="od-section__title" data-i18n="tech.title">Gerçek yığınımıza dayanıyor.</h2>
       <div class="vd-grid vd-grid--two od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.lang.title">Diller</h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Kotlin / KMP</span><span class="od-chip">TypeScript</span><span class="od-chip">Python</span><span class="od-chip">Swift</span><span class="od-chip">Shell</span><span class="od-chip">PL/pgSQL</span><span class="od-chip">TLA+</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.ai.title">AI / LLM</h3>
           <div class="od-product-card__tech"><span class="od-chip">43+ provider adapters</span><span class="od-chip">MCP</span><span class="od-chip">RAG</span><span class="od-chip">Vector DBs</span><span class="od-chip">HiPlan / MCTS / ToT</span><span class="od-chip">SWE-bench / HumanEval / MMLU</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.backend.title">Arka uç</h3>
           <div class="od-product-card__tech"><span class="od-chip">Gin</span><span class="od-chip">gRPC + Protobuf</span><span class="od-chip">HTTP/3 (QUIC)</span><span class="od-chip">WebSockets</span><span class="od-chip">Angular / React</span><span class="od-chip">Kafka / RabbitMQ</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.data.title">Veri</h3>
           <div class="od-product-card__tech"><span class="od-chip">PostgreSQL</span><span class="od-chip">SQLite</span><span class="od-chip">SQLCipher</span><span class="od-chip">Redis</span><span class="od-chip">Neo4j</span><span class="od-chip">ClickHouse</span><span class="od-chip">MinIO / S3</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.infra.title">Altyapı / DevOps</h3>
           <div class="od-product-card__tech"><span class="od-chip">Docker &amp; Compose</span><span class="od-chip">Kubernetes + Helm</span><span class="od-chip">Prometheus + Grafana</span><span class="od-chip">OpenTelemetry</span><span class="od-chip">QEMU / Libvirt</span><span class="od-chip">GitHub Actions</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.qa.title">Test / QA</h3>
           <div class="od-product-card__tech"><span class="od-chip">HelixQA (anti-bluff)</span><span class="od-chip">Challenge harnesses</span><span class="od-chip">go test -race</span><span class="od-chip">SonarQube</span><span class="od-chip">semgrep / gosec / trivy / snyk</span></div>
         </article>

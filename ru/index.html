@@ -139,21 +139,23 @@
 
   <main id="main">
 
-    <section class="od-hero od-reveal">
+    <section class="od-hero od-reveal vd-hero">
+      <div class="vd-hero__fx" aria-hidden="true"><span class="vd-hero__aurora"></span><span class="vd-hero__grid"></span></div>
       <div class="vd-hero__logo"><picture><source srcset="../Assets/logo.webp" type="image/webp"><img src="../Assets/Logo.jpeg" alt="Vasic Digital logo" width="112" height="112" decoding="async"></picture></div>
       <p class="od-section__eyebrow" data-i18n="hero.eyebrow">// AI‑нативная разработка программного обеспечения</p>
       <h1 class="od-hero__title" data-i18n="hero.title">AI‑нативная разработка программного обеспечения, построенная на доверии.</h1>
       <p class="od-hero__lede" data-i18n="hero.lede">Мы создаём системы разработки ИИ — модели, агентов, оркестрацию и инфраструктуру, которые превращают большие языковые модели в надёжное ПО — вместе со слоем управления, который сохраняет их честность.</p>
       <div class="vd-hero__cta">
-        <a class="od-btn od-btn--primary" href="#products" data-i18n="hero.cta_products">Исследовать продукты</a>
-        <a class="od-btn od-btn--secondary" href="portfolio/" data-i18n="hero.cta_portfolio">Посмотреть портфолио</a>
-        <a class="od-btn od-btn--ghost" href="downloads/Portfolio_EN.pdf">Скачать портфолио (PDF)</a>
+        <a class="od-btn od-btn--primary od-magnetic" href="#products" data-i18n="hero.cta_products">Исследовать продукты</a>
+        <a class="od-btn od-btn--secondary od-magnetic" href="portfolio/" data-i18n="hero.cta_portfolio">Посмотреть портфолио</a>
+        <a class="od-btn od-btn--ghost od-magnetic" href="downloads/Portfolio_EN.pdf">Скачать портфолио (PDF)</a>
       </div>
       <div class="vd-stats od-stagger">
-        <div class="od-stat"><div class="od-stat__value od-highlight">40+</div><div class="od-stat__label" data-i18n="stat.providers">Поставщики LLM, один интерфейс</div></div>
-        <div class="od-stat"><div class="od-stat__value od-highlight">140+</div><div class="od-stat__label" data-i18n="stat.repos">репозитории, одна конституция</div></div>
-        <div class="od-stat"><div class="od-stat__value od-highlight">33</div><div class="od-stat__label" data-i18n="stat.products">продукты в трёх уровнях</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight" data-od-count>40+</div><div class="od-stat__label" data-i18n="stat.providers">Поставщики LLM, один интерфейс</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight" data-od-count>140+</div><div class="od-stat__label" data-i18n="stat.repos">репозитории, одна конституция</div></div>
+        <div class="od-stat"><div class="od-stat__value od-highlight" data-od-count>33</div><div class="od-stat__label" data-i18n="stat.products">продукты в трёх уровнях</div></div>
       </div>
+      <hr class="vd-hero__rule od-divider" aria-hidden="true"/>
     </section>
 
     <section class="od-section od-reveal" id="about">
@@ -168,23 +170,23 @@
       <h2 class="od-section__title" data-i18n="work.title">Разработка на основе ИИ, от начала до конца.</h2>
       <p class="od-section__lede" data-i18n="work.lede">Мы создаём основу для ИИ‑систем — сложную часть под приложением.</p>
       <div class="vd-grid vd-grid--two od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.llm.title">Доступ к LLM от нескольких провайдеров</h3>
           <p class="vd-card__blurb" data-i18n="wd.llm.body">Первичная абстракция над более чем 40 провайдерами — Anthropic/Claude, OpenAI, DeepSeek, Gemini, Mistral, Groq, xAI/Grok и локальный Ollama как резервный вариант — через один интерфейс с повторными попытками, автоматическими выключателями и проверками состояния.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.agents.title">Оркестрация агентов</h3>
           <p class="vd-card__blurb" data-i18n="wd.agents.body">Безголовые CLI‑контроллеры‑агенты, графовые агентные рабочие процессы, многократные «AI‑дебаты» для консенсуса и DAG/конвейерные рантаймы.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.verify.title">Проверка LLM</h3>
           <p class="vd-card__blurb" data-i18n="wd.verify.body">Слой доверия, который оценивает модели обязательным проверочным вопросом («Вы видите мой код?») плюс тесты на задержку, потоковую передачу, вызов функций, зрение и эмбеддинги — экспортируя только проверенную конфигурацию.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.memory.title">Извлечение и память</h3>
           <p class="vd-card__blurb" data-i18n="wd.memory.body">RAG, векторные базы данных, эмбеддинги и объединённые движки памяти агентов (Mem0 + Cognee + Letta) с компрессией бесконечного контекста.</p>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="wd.defensive.title">Защитный LLM</h3>
           <p class="vd-card__blurb" data-i18n="wd.defensive.body">Ограничения, обнаружение PII, адверсариальные red‑team‑фикстуры и канонизация ввода — безопасность встроена в основу, а не добавлена сверху.</p>
         </article>
@@ -196,55 +198,55 @@
       <h2 class="od-section__title" data-i18n="products.title">Семейство продуктов Helix &amp; инфраструктура LLM</h2>
       <p class="od-section__lede" data-i18n="products.lede">Наша флагманская линейка охватывает весь жизненный цикл разработки ИИ. В порядке приоритета.</p>
       <div class="vd-grid od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixTrack <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">HTTP/3 QUIC</span><span class="od-chip">PostgreSQL</span><span class="od-chip">+8</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixtrack">Альтернатива JIRA без ограничений — флагманская модель линии Helix‑Track.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/helixtrack.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixAgent <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">PostgreSQL</span><span class="od-chip">LLMsVerifier</span><span class="od-chip">+6</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixagent">Сервис LLM‑ансамбля, позволяющий нескольким моделям дебатировать и выдающий согласованный ответ.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/helixagent.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixCode <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">SSH</span><span class="od-chip">Model Context Protocol</span><span class="od-chip">+2</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixcode">Распределённая платформа разработки ИИ, распределяющая работу между SSH‑управляемыми воркерами с контрольными точками/откатом.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/helixcode.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixLLM <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">HTTP/3 QUIC</span><span class="od-chip">llama.cpp</span><span class="od-chip">LLMsVerifier</span><span class="od-chip">+5</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixllm">Один бинарный файл, шесть режимов: совместимый с OpenAI и Anthropic вывод от ноутбука до кластера, через HTTP/3.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/helixllm.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixCluster <span class="od-badge--status od-badge--status--in-development">in-development</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Zig</span><span class="od-chip">gRPC</span><span class="od-chip">Raft + SWIM</span><span class="od-chip">+7</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixcluster">Распределённая операционная система для AI‑вычислений, от дата‑центровых GPU до портативных edge‑устройств.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/helixcluster.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">LLMProvider <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">net/http</span><span class="od-chip">logrus</span><span class="od-chip">digital.vasic.models</span><span class="od-chip">+2</span></div>
           <p class="vd-card__blurb" data-i18n="p.llmprovider">Один интерфейс, 43 провайдера — с автоматическими выключателями, повторными попытками и встроенными проверками состояния.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/llmprovider.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">LLMOrchestrator <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">JSON-lines over stdio</span><span class="od-chip">Circuit breaker</span><span class="od-chip">HealthMonitor</span><span class="od-chip">+2</span></div>
           <p class="vd-card__blurb" data-i18n="p.llmorchestrator">Один контрольный план для каждого безголового CLI‑агента‑кодера.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/llmorchestrator.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">LLMsVerifier <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">SQLite + SQLCipher</span><span class="od-chip">gRPC</span><span class="od-chip">+6</span></div>
           <p class="vd-card__blurb" data-i18n="p.llmsverifier">Проверяйте. Мониторьте. Оптимизируйте. Единственный источник правды для метаданных проверки LLM и провайдеров.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/llmsverifier.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixMemory <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Mem0</span><span class="od-chip">Cognee</span><span class="od-chip">Letta</span><span class="od-chip">+3</span></div>
           <p class="vd-card__blurb" data-i18n="p.helixmemory">Один мозг памяти для AI‑агентов — четыре лучших движка, объединённые вместе.</p>
@@ -258,12 +260,12 @@
       <h2 class="od-section__title" data-i18n="gov.title">Управление как проверяемый факт, а не как стремление.</h2>
       <p class="od-section__lede" data-i18n="gov.lede">Два столпа делают весь флот согласованным и надёжным.</p>
       <div class="vd-grid vd-grid--two od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixConstitution <span class="od-badge--status od-badge--status--shipped">shipped</span></h3>
           <p class="vd-card__blurb" data-i18n="gov.constitution">Универсальная, независимая от проекта инженерная книга правил, поставляемая как Git‑submodule и наследуемая каждым проектом в флоте из более чем 140‑репозиториев. Она кодирует неделимую дисциплину — ворота доказательств против обмана, иммунитет к ложноположительным срабатываниям, безопасность данных и хостов — которые проект может расширять, но никогда не ослаблять. Одно обновление submodule повышает правила везде, и каждый ворота сопровождаются тестом‑мутацией, доказывающим, что ворота не являются фиктивными.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/helixconstitution.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">HelixQA <span class="od-badge--status od-badge--status--beta">beta</span></h3>
           <p class="vd-card__blurb" data-i18n="gov.qa">Оркестрация QA без обмана. Запускает написанные YAML‑банки тестов и полностью автономные сессии QA LLM + компьютерного зрения на Android, Android TV, Web и Desktop — и отказывается ставить PASS без зафиксированных доказательств выполнения: скриншоты, logcat, видео, трассировки стека. «Мы протестировали» превращается в «вот видео, logcat и тикет».</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/helixqa.html" data-i18n="cta.readmore">Читать дальше</a></div>
@@ -276,49 +278,49 @@
       <h2 class="od-section__title" data-i18n="utils.title">Утилиты Vasic Digital</h2>
       <p class="od-section__lede" data-i18n="utils.lede">Инструменты уровня продукта, которые работают самостоятельно.</p>
       <div class="vd-grid od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Catalogizer <span class="od-badge--status od-badge--status--production">production</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Gin</span><span class="od-chip">React</span><span class="od-chip">WebSockets</span><span class="od-chip">+10</span></div>
           <p class="vd-card__blurb" data-i18n="p.catalogizer">Продвинутое управление зашифрованными медиа‑коллекциями по нескольким протоколам — обнаружение, каталогизация и обогащение всего, что у вас есть.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/catalogizer.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Courses-Creator <span class="od-badge--status od-badge--status--production">production</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">React</span><span class="od-chip">Electron</span><span class="od-chip">React Native</span><span class="od-chip">+8</span></div>
           <p class="vd-card__blurb" data-i18n="p.coursescreator">Markdown‑вход, профессиональный видеокурс‑выход — с поддержкой ИИ, мультиплатформенный.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/courses-creator.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">VisionEngine <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">GoCV / OpenCV</span><span class="od-chip">LLM vision</span><span class="od-chip">Graph algorithms</span></div>
           <p class="vd-card__blurb" data-i18n="p.visionengine">Смотрите UI как пользователь — компьютерное зрение плюс зрение LLM для анализа и навигации.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/visionengine.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">DocProcessor <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">LLM agents</span><span class="od-chip">Heuristic parser</span><span class="od-chip">i18n</span></div>
           <p class="vd-card__blurb" data-i18n="p.docprocessor">Преобразуйте документацию в проверяемую карту функций для автоматизации QA.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/docprocessor.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Docs Chain <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">DAG</span><span class="od-chip">SQLite</span><span class="od-chip">fsnotify</span></div>
           <p class="vd-card__blurb" data-i18n="p.docschain">Ни один отслеживаемый документ не выйдет из синхронизации — хеш‑контент, двунаправленный, атомарный.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/docs-chain.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Herald <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Shell</span><span class="od-chip">LLM intent inference</span><span class="od-chip">Docs Chain</span></div>
           <p class="vd-card__blurb" data-i18n="p.herald">Каждое оповещение попадает в нужное место — без необходимости в синтаксисе команд.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/herald.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">task_bridge <span class="od-badge--status od-badge--status--scaffold">scaffold</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">SQLite</span><span class="od-chip">HMAC-SHA256</span><span class="od-chip">cron + webhooks</span></div>
           <p class="vd-card__blurb" data-i18n="p.taskbridge">Ваша доска задач и ваш источник правды, безупречно синхронны — в обе стороны.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/task-bridge.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Reusable Module Suite <span class="od-badge--status od-badge--status--scaffold">scaffold</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Go (digital.vasic.*)</span><span class="od-chip">Kotlin Multiplatform</span><span class="od-chip">Vector DB / RAG / MCP</span><span class="od-chip">+1</span></div>
           <p class="vd-card__blurb" data-i18n="p.rms">Собирайте один раз, переиспользуйте везде — флот небольших, разобщённых, независимо протестированных модулей Go и KMP.</p>
@@ -332,25 +334,25 @@
       <h2 class="od-section__title" data-i18n="sf.title">Server Factory — автоматизация инфраструктуры</h2>
       <p class="od-section__lede" data-i18n="sf.lede">Наше наследие DevOps: декларативный JSON, превращённый в полностью подготовленные, Docker‑изолированные серверы.</p>
       <div class="vd-grid od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Mail Server Factory <span class="od-badge--status od-badge--status--production">production</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Kotlin</span><span class="od-chip">Shell</span><span class="od-chip">Docker</span><span class="od-chip">QEMU</span><span class="od-chip">+4</span></div>
           <p class="vd-card__blurb" data-i18n="p.msf">Запускайте ваш почтовый сервер как босс — опишите его в JSON, разверните где угодно.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/mail-server-factory.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Server Factory Core Framework <span class="od-badge--status od-badge--status--stable">stable</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Kotlin</span><span class="od-chip">Shell</span><span class="od-chip">Gradle</span></div>
           <p class="vd-card__blurb" data-i18n="p.sfcore">Общий движок за каждым Server Factory.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/server-factory-core-framework.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Qemu-Utils <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Shell</span><span class="od-chip">QEMU</span><span class="od-chip">Bridge / TAP</span><span class="od-chip">ISO images</span></div>
           <p class="vd-card__blurb" data-i18n="p.qemu">Образы VM QEMU, управляемые как артефакты — скачайте, запустите, настройте сеть, опубликуйте.</p>
           <div class="vd-card__actions"><a class="od-btn od-btn--secondary" href="../products/ru/qemu-utils.html" data-i18n="cta.readmore">Читать дальше</a></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title">Parallels-Utils <span class="od-badge--status od-badge--status--active">active</span></h3>
           <div class="od-product-card__tech"><span class="od-chip">Shell</span><span class="od-chip">Python 3</span><span class="od-chip">Parallels</span></div>
           <p class="vd-card__blurb" data-i18n="p.parallels">Сжимайте, публикуйте и переиспользуйте ваши образы VM Parallels на любой машине.</p>
@@ -363,27 +365,27 @@
       <p class="od-section__eyebrow" data-i18n="tech.eyebrow">// технологии</p>
       <h2 class="od-section__title" data-i18n="tech.title">Основано на нашем реальном стеке.</h2>
       <div class="vd-grid vd-grid--two od-stagger">
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.lang.title">Языки</h3>
           <div class="od-product-card__tech"><span class="od-chip">Go</span><span class="od-chip">Kotlin / KMP</span><span class="od-chip">TypeScript</span><span class="od-chip">Python</span><span class="od-chip">Swift</span><span class="od-chip">Shell</span><span class="od-chip">PL/pgSQL</span><span class="od-chip">TLA+</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.ai.title">ИИ / LLM</h3>
           <div class="od-product-card__tech"><span class="od-chip">43+ provider adapters</span><span class="od-chip">MCP</span><span class="od-chip">RAG</span><span class="od-chip">Vector DBs</span><span class="od-chip">HiPlan / MCTS / ToT</span><span class="od-chip">SWE-bench / HumanEval / MMLU</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.backend.title">Бэкенд</h3>
           <div class="od-product-card__tech"><span class="od-chip">Gin</span><span class="od-chip">gRPC + Protobuf</span><span class="od-chip">HTTP/3 (QUIC)</span><span class="od-chip">WebSockets</span><span class="od-chip">Angular / React</span><span class="od-chip">Kafka / RabbitMQ</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.data.title">Данные</h3>
           <div class="od-product-card__tech"><span class="od-chip">PostgreSQL</span><span class="od-chip">SQLite</span><span class="od-chip">SQLCipher</span><span class="od-chip">Redis</span><span class="od-chip">Neo4j</span><span class="od-chip">ClickHouse</span><span class="od-chip">MinIO / S3</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.infra.title">Инфраструктура / DevOps</h3>
           <div class="od-product-card__tech"><span class="od-chip">Docker &amp; Compose</span><span class="od-chip">Kubernetes + Helm</span><span class="od-chip">Prometheus + Grafana</span><span class="od-chip">OpenTelemetry</span><span class="od-chip">QEMU / Libvirt</span><span class="od-chip">GitHub Actions</span></div>
         </article>
-        <article class="od-card od-product-card" style="padding:var(--od-space-6)">
+        <article class="od-card od-product-card od-glow" style="padding:var(--od-space-6)">
           <h3 class="od-product-card__title" data-i18n="tech.qa.title">Тестирование / QA</h3>
           <div class="od-product-card__tech"><span class="od-chip">HelixQA (anti-bluff)</span><span class="od-chip">Challenge harnesses</span><span class="od-chip">go test -race</span><span class="od-chip">SonarQube</span><span class="od-chip">semgrep / gosec / trivy / snyk</span></div>
         </article>
