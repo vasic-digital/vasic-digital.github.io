@@ -10,20 +10,20 @@
 <link rel="stylesheet" href="../../assets/od/animations.css"/>
 <link rel="stylesheet" href="../../assets/od/overlays.css"/>
 <title>LLMProvider — Vasic Digital</title>
-<meta name="description" content="LLMProvider is a generic, reusable Go module that defines a unified `LLMProvider` interface plus the production resilience patterns around it — circuit breaker, health monitoring, retry with backoff, lazy loading — and ships 43 concrete provider implementations behind that one contract, with an OpenAI-compatible generic adapter and honest, no-hardcoded-fallback model discovery."/>
+<meta name="description" content="LLMProviderは、汎用的で再利用可能なGoモジュールであり、統一されたLLMProviderインターフェースと、その周辺に実装されたプロダクションレベルの耐障害性パターン（サーキットブレーカー、ヘルスモニタリング、バックオフ付きリトライ、遅延ロード）を定義します。さらに、この単一の契約のもとに43の具体的なプロバイダー実装を提供し、OpenAI互換の汎用アダプターと、ハードコードされたフォールバックを排除した正直なモデルディスカバリー機能を備えています。"/>
 <meta name="keywords" content="ソフトウェアエンジニアリング、AI開発プラットフォーム、LLMオーケストレーション、オープンソース、開発ツール、SDK"/>
 <link rel="canonical" href="https://vasic.digital/products/ja/llmprovider.html"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="Vasic Digital"/>
 <meta property="og:title" content="LLMProvider — Vasic Digital"/>
-<meta property="og:description" content="LLMProvider is a generic, reusable Go module that defines a unified `LLMProvider` interface plus the production resilience patterns around it — circuit breaker, health monitoring, retry with backoff, lazy loading — and ships 43 concrete provider implementations behind that one contract, with an OpenAI-compatible generic adapter and honest, no-hardcoded-fallback model discovery."/>
+<meta property="og:description" content="LLMProviderは、汎用的で再利用可能なGoモジュールであり、統一されたLLMProviderインターフェースと、その周辺に実装されたプロダクションレベルの耐障害性パターン（サーキットブレーカー、ヘルスモニタリング、バックオフ付きリトライ、遅延ロード）を定義します。さらに、この単一の契約のもとに43の具体的なプロバイダー実装を提供し、OpenAI互換の汎用アダプターと、ハードコードされたフォールバックを排除した正直なモデルディスカバリー機能を備えています。"/>
 <meta property="og:url" content="https://vasic.digital/products/ja/llmprovider.html"/>
 <meta property="og:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
 <meta property="og:locale" content="ja_JP"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="LLMProvider — Vasic Digital"/>
-<meta name="twitter:description" content="LLMProvider is a generic, reusable Go module that defines a unified `LLMProvider` interface plus the production resilience patterns around it — circuit breaker, health monitoring, retry with backoff, lazy loading — and ships 43 concrete provider implementations behind that one contract, with an OpenAI-compatible generic adapter and honest, no-hardcoded-fallback model discovery."/>
+<meta name="twitter:description" content="LLMProviderは、汎用的で再利用可能なGoモジュールであり、統一されたLLMProviderインターフェースと、その周辺に実装されたプロダクションレベルの耐障害性パターン（サーキットブレーカー、ヘルスモニタリング、バックオフ付きリトライ、遅延ロード）を定義します。さらに、この単一の契約のもとに43の具体的なプロバイダー実装を提供し、OpenAI互換の汎用アダプターと、ハードコードされたフォールバックを排除した正直なモデルディスカバリー機能を備えています。"/>
 <meta name="twitter:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
 <link rel="alternate" hreflang="en" href="https://vasic.digital/products/llmprovider.html"/>
 <link rel="alternate" hreflang="ar" href="https://vasic.digital/products/ar/llmprovider.html"/>
@@ -73,7 +73,7 @@
       "author": {
         "@id": "https://vasic.digital/#identity"
       },
-      "description": "LLMProvider is a generic, reusable Go module that defines a unified `LLMProvider` interface plus the production resilience patterns around it — circuit breaker, health monitoring, retry with backoff, lazy loading — and ships 43 concrete provider implementations behind that one contract, with an OpenAI-compatible generic adapter and honest, no-hardcoded-fallback model discovery.",
+      "description": "LLMProviderは、汎用的で再利用可能なGoモジュールであり、統一されたLLMProviderインターフェースと、その周辺に実装されたプロダクションレベルの耐障害性パターン（サーキットブレーカー、ヘルスモニタリング、バックオフ付きリトライ、遅延ロード）を定義します。さらに、この単一の契約のもとに43の具体的なプロバイダー実装を提供し、OpenAI互換の汎用アダプターと、ハードコードされたフォールバックを排除した正直なモデルディスカバリー機能を備えています。",
       "inLanguage": "ja",
       "name": "LLMProvider",
       "operatingSystem": "Cross-platform",
@@ -277,7 +277,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         <div class="od-accordion__item">
           <h2 class="od-accordion__heading">
             <button class="od-accordion__trigger" type="button" id="od-acc-llmprovider-3" aria-expanded="true" aria-controls="od-acc-llmprovider-3-panel">
-              <span class="od-accordion__label">なぜこれを作ったのか</span>
+              <span class="od-accordion__label">どうしても解消したかった悩み</span>
               <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
             </button>
           </h2>
@@ -303,7 +303,7 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         <div class="od-accordion__item">
           <h2 class="od-accordion__heading">
             <button class="od-accordion__trigger" type="button" id="od-acc-llmprovider-5" aria-expanded="true" aria-controls="od-acc-llmprovider-5-panel">
-              <span class="od-accordion__label">革新的なポイント</span>
+              <span class="od-accordion__label">真に新しいもの</span>
               <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
             </button>
           </h2>

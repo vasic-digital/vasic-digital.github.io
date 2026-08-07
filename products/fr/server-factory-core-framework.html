@@ -10,20 +10,20 @@
 <link rel="stylesheet" href="../../assets/od/animations.css"/>
 <link rel="stylesheet" href="../../assets/od/overlays.css"/>
 <title>Server Factory Core Framework — Vasic Digital</title>
-<meta name="description" content="Core Framework is the Kotlin framework that underpins the Server Factory family of provisioning tools. It provides the common engine and abstractions that projects such as Mail Server Factory build upon, so each &quot;factory&quot; reuses one battle-tested foundation rather than re-implementing provisioning primitives."/>
+<meta name="description" content="Core Framework est le framework Kotlin qui soutient la famille d’outils de provisionnement Server Factory. Il fournit le moteur commun et les abstractions sur lesquels s’appuient des projets comme Mail Server Factory, permettant à chaque « usine » de réutiliser une base éprouvée plutôt que de réimplémenter les primitives de provisionnement."/>
 <meta name="keywords" content="ingénierie logicielle, plateformes de développement d'IA, orchestration LLM, open source, outils de développement, SDK"/>
 <link rel="canonical" href="https://vasic.digital/products/fr/server-factory-core-framework.html"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="Vasic Digital"/>
 <meta property="og:title" content="Server Factory Core Framework — Vasic Digital"/>
-<meta property="og:description" content="Core Framework is the Kotlin framework that underpins the Server Factory family of provisioning tools. It provides the common engine and abstractions that projects such as Mail Server Factory build upon, so each &quot;factory&quot; reuses one battle-tested foundation rather than re-implementing provisioning primitives."/>
+<meta property="og:description" content="Core Framework est le framework Kotlin qui soutient la famille d’outils de provisionnement Server Factory. Il fournit le moteur commun et les abstractions sur lesquels s’appuient des projets comme Mail Server Factory, permettant à chaque « usine » de réutiliser une base éprouvée plutôt que de réimplémenter les primitives de provisionnement."/>
 <meta property="og:url" content="https://vasic.digital/products/fr/server-factory-core-framework.html"/>
 <meta property="og:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
 <meta property="og:locale" content="fr_FR"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Server Factory Core Framework — Vasic Digital"/>
-<meta name="twitter:description" content="Core Framework is the Kotlin framework that underpins the Server Factory family of provisioning tools. It provides the common engine and abstractions that projects such as Mail Server Factory build upon, so each &quot;factory&quot; reuses one battle-tested foundation rather than re-implementing provisioning primitives."/>
+<meta name="twitter:description" content="Core Framework est le framework Kotlin qui soutient la famille d’outils de provisionnement Server Factory. Il fournit le moteur commun et les abstractions sur lesquels s’appuient des projets comme Mail Server Factory, permettant à chaque « usine » de réutiliser une base éprouvée plutôt que de réimplémenter les primitives de provisionnement."/>
 <meta name="twitter:image" content="https://vasic.digital/Assets/Logo.jpeg"/>
 <link rel="alternate" hreflang="en" href="https://vasic.digital/products/server-factory-core-framework.html"/>
 <link rel="alternate" hreflang="ar" href="https://vasic.digital/products/ar/server-factory-core-framework.html"/>
@@ -73,7 +73,7 @@
       "author": {
         "@id": "https://vasic.digital/#identity"
       },
-      "description": "Core Framework is the Kotlin framework that underpins the Server Factory family of provisioning tools. It provides the common engine and abstractions that projects such as Mail Server Factory build upon, so each \"factory\" reuses one battle-tested foundation rather than re-implementing provisioning primitives.",
+      "description": "Core Framework est le framework Kotlin qui soutient la famille d’outils de provisionnement Server Factory. Il fournit le moteur commun et les abstractions sur lesquels s’appuient des projets comme Mail Server Factory, permettant à chaque « usine » de réutiliser une base éprouvée plutôt que de réimplémenter les primitives de provisionnement.",
       "inLanguage": "fr",
       "name": "Server Factory Core Framework",
       "operatingSystem": "Cross-platform",
@@ -215,54 +215,18 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
 </figure>
 
       <p class="od-product-detail__tagline"><strong>Le moteur commun derrière chaque Server Factory.</strong></p>
+      <p class="od-product-detail__lede">Le framework Kotlin partagé à la base de l’écosystème Server Factory. Il fournit le moteur de provisionnement commun, les abstractions de connexion et la machinerie des étapes d’installation exploitées par les usines en aval (Mail Server Factory, Web Service Factory, SonarQube Factory, entre autres).</p>
+      <p>Core Framework est le framework Kotlin qui soutient la famille d’outils de provisionnement Server Factory. Il fournit le moteur commun et les abstractions sur lesquels s’appuient des projets comme Mail Server Factory, permettant à chaque « usine » de réutiliser une base éprouvée plutôt que de réimplémenter les primitives de provisionnement.</p>
+      <p>Core Framework est cette pièce d’ingénierie discrète qui rend possible toute la famille Server-Factory : le moteur réutilisable sur lequel repose chaque produit « usine » (Mail Server Factory, Web Service Factory, SonarQube Factory, Caching Proxy Factory). L’approche Server Factory est déclarative — l’utilisateur décrit l’infrastructure souhaitée sous forme de configuration, et une usine interprète cette description pour installer et initialiser les logiciels sur un système cible. Core Framework est précisément l’endroit où réside la machinerie commune à ce modèle : les abstractions de connexion et de transport permettant d’atteindre tous les types de cibles, le modèle d’étapes d’installation qui définit *comment* le logiciel est provisionné, et l’ensemble des mécanismes partagés que chaque usine devrait autrement réécrire. Il apporte une réponse à une question structurelle que toute chaîne d’outils multi-produits finit par se poser — où placer le moteur commun ? — et le fait de bien y répondre une fois pour toutes permet à la famille de rester cohérente plutôt que de se fragmenter en quatre provisionneurs aux comportements subtilement différents. En centralisant cette logique dans un seul framework Kotlin, la famille évite de dupliquer la logique de provisionnement entre les produits et garantit une cohérence comportementale : une amélioration d’un type de connexion ou d’une primitive d’installation dans Core Framework profite immédiatement à toutes les usines en aval. Il est presque entièrement écrit en Kotlin (environ 990 Ko de code Kotlin avec une fine couche en Shell), reflétant son rôle de bibliothèque plutôt que de collection de scripts. Les dépôts en aval y font référence comme dépendance canonique (Parallels-Utils, Qemu-Utils, Utils et les packs Definitions citent tous le dépôt Core Framework comme noyau de l’écosystème). Son fichier README est volontairement minimal — il s’agit d’une infrastructure destinée à d’autres projets, versionnée via <code>version.txt</code>/<code>version_code.txt</code> — et il précède les travaux ultérieurs de AI, ce qui en fait un élément du patrimoine mature des outils DevOps de l’organisation.</p>
       <div class="od-accordion">
         <div class="od-accordion__item">
           <h2 class="od-accordion__heading">
             <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-0" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-0-panel">
-              <span class="od-accordion__label">Résumé</span>
-              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
-            </button>
-          </h2>
-          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-0-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-0">
-            <div class="od-accordion__inner">
-      <p>Core Framework est le framework Kotlin qui soutient la famille d’outils de provisionnement Server Factory. Il fournit le moteur commun et les abstractions sur lesquels s’appuient des projets comme Mail Server Factory, permettant à chaque « usine » de réutiliser une base éprouvée plutôt que de réimplémenter les primitives de provisionnement.</p>
-            </div>
-          </div>
-        </div>
-        <div class="od-accordion__item">
-          <h2 class="od-accordion__heading">
-            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-1" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-1-panel">
-              <span class="od-accordion__label">Description courte</span>
-              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
-            </button>
-          </h2>
-          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-1-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-1">
-            <div class="od-accordion__inner">
-      <p>Le framework Kotlin partagé à la base de l’écosystème Server Factory. Il fournit le moteur de provisionnement commun, les abstractions de connexion et la machinerie des étapes d’installation exploitées par les usines en aval (Mail Server Factory, Web Service Factory, SonarQube Factory, entre autres).</p>
-            </div>
-          </div>
-        </div>
-        <div class="od-accordion__item">
-          <h2 class="od-accordion__heading">
-            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-2" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-2-panel">
-              <span class="od-accordion__label">Description détaillée</span>
-              <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
-            </button>
-          </h2>
-          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-2-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-2">
-            <div class="od-accordion__inner">
-      <p>Core Framework est cette pièce d’ingénierie discrète qui rend possible toute la famille Server-Factory : le moteur réutilisable sur lequel repose chaque produit « usine » (Mail Server Factory, Web Service Factory, SonarQube Factory, Caching Proxy Factory). L’approche Server Factory est déclarative — l’utilisateur décrit l’infrastructure souhaitée sous forme de configuration, et une usine interprète cette description pour installer et initialiser les logiciels sur un système cible. Core Framework est précisément l’endroit où réside la machinerie commune à ce modèle : les abstractions de connexion et de transport permettant d’atteindre tous les types de cibles, le modèle d’étapes d’installation qui définit *comment* le logiciel est provisionné, et l’ensemble des mécanismes partagés que chaque usine devrait autrement réécrire. Il apporte une réponse à une question structurelle que toute chaîne d’outils multi-produits finit par se poser — où placer le moteur commun ? — et le fait de bien y répondre une fois pour toutes permet à la famille de rester cohérente plutôt que de se fragmenter en quatre provisionneurs aux comportements subtilement différents. En centralisant cette logique dans un seul framework Kotlin, la famille évite de dupliquer la logique de provisionnement entre les produits et garantit une cohérence comportementale : une amélioration d’un type de connexion ou d’une primitive d’installation dans Core Framework profite immédiatement à toutes les usines en aval. Il est presque entièrement écrit en Kotlin (environ 990 Ko de code Kotlin avec une fine couche en Shell), reflétant son rôle de bibliothèque plutôt que de collection de scripts. Les dépôts en aval y font référence comme dépendance canonique (Parallels-Utils, Qemu-Utils, Utils et les packs Definitions citent tous le dépôt Core Framework comme noyau de l’écosystème). Son fichier README est volontairement minimal — il s’agit d’une infrastructure destinée à d’autres projets, versionnée via <code>version.txt</code>/<code>version_code.txt</code> — et il précède les travaux ultérieurs de AI, ce qui en fait un élément du patrimoine mature des outils DevOps de l’organisation.</p>
-            </div>
-          </div>
-        </div>
-        <div class="od-accordion__item">
-          <h2 class="od-accordion__heading">
-            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-3" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-3-panel">
               <span class="od-accordion__label">Pourquoi nous l’avons créé</span>
               <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
             </button>
           </h2>
-          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-3-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-3">
+          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-0-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-0">
             <div class="od-accordion__inner">
       <p>Chaque outil de provisionnement a besoin des mêmes fondations : des moyens de se connecter aux cibles et des étapes pour installer/configurer les logiciels. Les réimplémenter pour chaque produit fragmenterait les comportements et multiplierait les bugs. Core Framework les centralise pour que toutes les usines partagent un moteur fiable.</p>
             </div>
@@ -270,12 +234,12 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         </div>
         <div class="od-accordion__item">
           <h2 class="od-accordion__heading">
-            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-4" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-4-panel">
+            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-1" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-1-panel">
               <span class="od-accordion__label">Pourquoi c’est un atout majeur</span>
               <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
             </button>
           </h2>
-          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-4-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-4">
+          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-1-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-1">
             <div class="od-accordion__inner">
       <p>C’est le point de levier le plus puissant de toute la famille : un type de connexion renforcé ou une primitive d’installation améliorée ici se répercute instantanément sur toutes les usines, garantissant cohérence et nouvelles capacités à l’ensemble de la chaîne d’outils. C’est la philosophie « concevoir une fois, réutiliser partout » appliquée là où elle rapporte le plus — au niveau de la couche fondatrice de l’automatisation des infrastructures, où une correction au bon endroit résout tout en aval.</p>
       <p>Contenu</p>
@@ -284,12 +248,12 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         </div>
         <div class="od-accordion__item">
           <h2 class="od-accordion__heading">
-            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-5" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-5-panel">
-              <span class="od-accordion__label">Ce qui est innovant</span>
+            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-2" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-2-panel">
+              <span class="od-accordion__label">Les innovations qu’il renferme</span>
               <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
             </button>
           </h2>
-          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-5-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-5">
+          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-2-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-2">
             <div class="od-accordion__inner">
       <ul>
         <li>Un cadre de provisionnement réutilisable unique qui abstrait la logique de connexion et des étapes d'installation.</li>
@@ -301,12 +265,12 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         </div>
         <div class="od-accordion__item">
           <h2 class="od-accordion__heading">
-            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-6" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-6-panel">
-              <span class="od-accordion__label">Défis et solutions</span>
+            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-3" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-3-panel">
+              <span class="od-accordion__label">Concevoir les parties les plus complexes</span>
               <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
             </button>
           </h2>
-          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-6-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-6">
+          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-3-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-3">
             <div class="od-accordion__inner">
       <ul>
         <li><strong>Éviter la duplication de la logique de provisionnement</strong> : résolu en extrayant les mécanismes partagés dans un cadre unique consommé par toutes les fabriques.</li>
@@ -318,12 +282,12 @@ svg{--ink:#1e293b;--muted:#475569;--line:#94a3b8;--accent:#a31e39;--panel:#f8faf
         </div>
         <div class="od-accordion__item">
           <h2 class="od-accordion__heading">
-            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-7" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-7-panel">
+            <button class="od-accordion__trigger" type="button" id="od-acc-server-factory-core-framework-4" aria-expanded="true" aria-controls="od-acc-server-factory-core-framework-4-panel">
               <span class="od-accordion__label">Pile technologique (pourquoi et comment)</span>
               <svg class="od-icon od-accordion__icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
             </button>
           </h2>
-          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-7-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-7">
+          <div class="od-accordion__panel is-open" id="od-acc-server-factory-core-framework-4-panel" role="region" aria-labelledby="od-acc-server-factory-core-framework-4">
             <div class="od-accordion__inner">
       <ul>
         <li><strong>Kotlin</strong> — l'intégralité du cadre (~990 Ko) ; le langage de la famille Server Factory.</li>
