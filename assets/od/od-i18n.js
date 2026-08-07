@@ -50,9 +50,15 @@
     try { localStorage.setItem("od-lang", l); } catch (e) {}
   }
 
+  function homeURL(l) { return l === "en" ? "/" : "/" + l + "/"; }
   function select(l) {
-    var url = PAGE.paths && PAGE.paths[l];
-    if (url && l !== current()) { location.href = url; return; }
+    // Navigate to the chosen language's real content. Product/portfolio/home
+    // pages expose PAGE.paths for every language, so the localized page loads.
+    // If THIS page type has no localized variant for `l` (path absent), fall back
+    // to the localized HOME so the chosen language ALWAYS loads translated
+    // content — never a silent chrome-only swap (BUG #63).
+    var url = (PAGE.paths && PAGE.paths[l]) || homeURL(l);
+    if (l !== current()) { location.href = url; return; }
     applyDict(l);
     updateButton(l);
     close();
