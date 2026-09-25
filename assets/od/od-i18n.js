@@ -47,7 +47,7 @@
     }
     root.setAttribute("lang", l);
     root.setAttribute("dir", dirFor(l));
-    try { localStorage.setItem("od-lang", l); } catch (e) {}
+    try { localStorage.setItem("od-lang", l); } catch (e) { if (window.console && console.debug) console.debug("od-lang: localStorage unavailable", e); }
   }
 
   function homeURL(l) { return l === "en" ? "/" : "/" + l + "/"; }
@@ -163,7 +163,7 @@
   updateButton(current());
   if (PAGE.type === "home") {
     var saved = null;
-    try { saved = localStorage.getItem("od-lang"); } catch (e) {}
+    try { saved = localStorage.getItem("od-lang"); } catch (e) { if (window.console && console.debug) console.debug("od-lang: localStorage unavailable", e); }
     if (saved && saved !== current() && I18N[saved]) { applyDict(saved); updateButton(saved); }
   }
 })();
