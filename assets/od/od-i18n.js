@@ -1,4 +1,4 @@
-/* OpenDesign language switcher for vasic.digital OD pages.
+/* OpenDesign language switcher for digital.vasic.dev OD pages.
  * Visible, keyboard-operable (WCAG 2.1 menu pattern). No external deps.
  *
  * Config (set inline by the generator before this script loads):
