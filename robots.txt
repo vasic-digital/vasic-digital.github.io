@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vasic.digital/sitemap.xml
+Sitemap: https://digital.vasic.dev/sitemap.xml
